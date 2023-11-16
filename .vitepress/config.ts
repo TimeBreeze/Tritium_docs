@@ -41,6 +41,7 @@ export const productionHead: HeadConfig[] = [
 ]
 
 export default defineConfig({
+  base：'/RedemptionProject/'
   lastUpdated: true,
   srcDir: 'src',
   outDir: './dist',
