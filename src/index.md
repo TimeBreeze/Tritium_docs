@@ -13,7 +13,7 @@ hero:
   actions:
     - theme: brand
       text: 开始
-      link: /guide/介绍/开始.md
+      link: /guide/介绍/什么是Redemption Project.md
     - theme: alt
       text: 常见问题
       link: /FAQ/FAQ.md

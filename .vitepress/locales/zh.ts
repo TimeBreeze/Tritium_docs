@@ -3,25 +3,25 @@ import { socialList } from '../theme/composables/socialList'
 import type { DefaultTheme, LocaleSpecificConfig } from 'vitepress'
 import type { CustomConfig } from './types'
 
-export const META_URL = 'https://oldmemories.gitee.io/yunzai-bot-docs/'
-export const META_TITLE = 'Yunzai bot 构建文档'
-export const META_DESCRIPTION = 'Yunzai bot 构建文档。'
+export const META_URL = 'https://github.com/Oldmemorie'
+export const META_TITLE = 'Redemption Project'
+export const META_DESCRIPTION = 'Redemption Project'
 export const META_KEYWORDS =
-  '基于vitepress书写的yunzai bot 构建文档'
-export const META_IMAGE = './刻晴Q.png'
+  ''
+export const META_IMAGE = './阿库娅.png'
 export const LOCAL_CODE = 'zh-CN'
-export const LOCAL_BASE = ''
+export const LOCAL_BASE = '/Redemption Project/'
 
 export const zhConfig: LocaleSpecificConfig<
   DefaultTheme.Config & CustomConfig
 > = {
-  titleTemplate: 'Yunzai bot ',
+  titleTemplate: 'Redemption Project ',
   description: '123123',
     head: [
-  ['link', { rel: 'icon', href: './刻晴Q.png' }],
+  ['link', { rel: 'icon', href: './阿库娅.png' }],
   ['link', { rel: 'stylesheet', href: '/styles/custom.css' }],
   ['meta', { name: 'author', content: '旧忆 残梦' }],
-  ['meta', { name: 'keywords', content: '基于vitepress书写的yunzai bot 构建文档' }],
+  ['meta', { name: 'keywords', content: '基于著名GitHub项目uperf 进行调节，及其CPU&GPU降压调教' }],
 
   ['meta', { name: 'HandheldFriendly', content: 'True' }],
   ['meta', { name: 'MobileOptimized', content: '320' }],
@@ -29,26 +29,26 @@ export const zhConfig: LocaleSpecificConfig<
   ['meta', { name: 'baidu_union_verify', content: '19bd8ed3f02a91e23043efdf1d823107' }],
   ],
   themeConfig: {
-    siteTitle: 'Yunzai bot 文档',
+    siteTitle: 'Redemption Project',
     keyword: META_KEYWORDS,
     description: META_DESCRIPTION,
     image: META_IMAGE,
     outlineTitle: '本页目录',
-    logo: './刻晴Q.png',
+    logo: './阿库娅.png',
     lastUpdatedText: '更新日期',
     returnToTopLabel: '回到顶部',
     langMenuLabel: '更改语言',
     notFound: {
       title: '这个页面找不到了',
-      quote: '可能跟温迪一起出游了吧',
+      quote: '可能跟可莉一起去炸鱼了吧',
       linkLabel: '回到首页',
     },
     team: {
       title: '关于团队',
-      desc: 'Yunzai bot的背后是一个基本来自中国的团队，以下是部分成员的个人信息。',
+      desc: 'Redemption Project的背后是一个基本来自中国的团队，以下是部分成员的个人信息。',
       coreMember: {
         title: '核心团队成员',
-        desc: '核心团队成员是那些积极长期参与维护一个或多个核心项目的人。 他们对Yunzai bot的维护与开发做出了重大贡献。',
+        desc: '核心团队成员是那些积极长期参与维护一个或多个核心项目的人。 他们对Redemption Project的维护与开发做出了核心贡献。',
       },
       emeritiMember: {
         title: '名誉核心团队',
@@ -56,11 +56,11 @@ export const zhConfig: LocaleSpecificConfig<
       },
       partnerMember: {
         title: '社区伙伴',
-        desc: '我们与这些主要合作伙伴建立了更加亲密的关系，经常与他们就即将到来的功能展开合作。',
+        desc: '社区伙伴是参与到本计划的反馈&测试人员，他们为我们提供了大量的矫正数据',
       },
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/kongying-tavern/' },
+      { icon: 'github', link: 'https://github.com/Olmemorie' },
       {
         icon: {
           svg: socialList.gitee.icon,
@@ -81,31 +81,8 @@ export const zhConfig: LocaleSpecificConfig<
       prev: '上一页',
       next: '下一页',
     },
-    payment: {
-      wechatpay: {
-        name: '微信支付',
-        address: 'wxp://f2f0dd1rszrnqJc_gnlwV_lRX5dlZ1Dtn9rp',
-      },
-      alipay: {
-        name: '支付宝',
-        address: 'https://qr.alipay.com/tsx11609thmpw9odmvdlxd6',
-      },
-      qqpay: {
-        name: 'QQ 支付',
-        address:
-          'https://i.qianbao.qq.com/wallet/sqrcode.htm?m=tenpay&a=1&u=790489566&ac=CAEQ3tP3-AIY0v2k_AU%3D_xxx_sign&n=AAAAAAAA&f=wallet',
-      },
-      paypal: {
-        name: 'Paypal',
-        address: 'https://www.paypal.com/paypalme/yuanshenditu',
-      },
-      bilibili: {
-        name: 'bilibili',
-        address: 'https://space.bilibili.com/518076785',
-      },
-    },
     editLink: {
-      pattern: 'https://oldmemories.gitee.io/yunzai-bot-docs/',
+      pattern: 'https://oldmemories.github.io/Redemption Project/',
       text: '报告错误',
     },
     sidebar: baseHelper(sidebar(), LOCAL_BASE),
@@ -118,7 +95,7 @@ function nav(): DefaultTheme.NavItem[] {
   return [
   {
     text: '指导',
-    link: '/guide/介绍/什么是Yunzai bot.md',
+    link: '/guide/介绍/什么是Redemption Project.md',
     activeMatch: '/guide/'
   },
   {
@@ -131,17 +108,6 @@ function nav(): DefaultTheme.NavItem[] {
     link: 'index.md',
     activeMatch: '/index.md/'
   },
-  
-  {
-    text: '关于',
-    items: [
-      { text: '关于文档', link: '/about/index', activeMatch: '/about/index.md' },
-      { text: '关于我', link: '/about/me', activeMatch: '/about/me.md' },
-      { text: 'MIT', link: '/about/MIT', activeMatch: '/about/MIT.md' },
-      { text: '贡献者', link: '/about/Contributors', activeMatch: '/about/Contributors.md' },
-    ],
-    activeMatch: '/about/' // // 当前页面处于匹配路径下时, 对应导航菜单将突出显示
-  },
  ]
 }
 
@@ -149,7 +115,7 @@ function footer(): CustomConfig['footer'] {
   return {
     qrcodeTitle: '反馈群',
     qrcodeMessage: '欢迎QQ扫码联系我们',
-    qrcodeLink: 'https://qm.qq.com/cgi-bin/qm/qr?authKey=7N0CiBcvD2KqE2d7GBxz9OA1F14mmhGFANC1xKYqlfVXdUYMkvxneKaiw42aSvyn&k=2MxkLTWk4LNabvMRxWLNlUr2ePqMYtPf&noverify=0',
+    qrcodeLink: 'https://qm.qq.com/cgi-bin/qm/qr?authKey=KTuDLwDt00BdCg89qwad4Y4UpXaqLp4%2Bp32fJpDGiIesphW4yBpinyf3t0fl9jrP&k=yCWwXFsMWfjsgk_E_YRbcmq50Yze9bIr&noverify=0',
     navigation: [
       {
         title: '关于',
@@ -197,38 +163,16 @@ function sidebar(): DefaultTheme.SidebarItem[] {
         {
           text: '介绍',
           items: [
-            { text: '什么是Yunzai bot', link: '/guide/介绍/什么是Yunzai bot.md' },
+            { text: '什么是Redemption Project', link: '/guide/介绍/什么是Redemption Project.md' },
             { text: '准备工作', link: '/guide/介绍/准备工作.md' },
           ]
         },
         {
           text: '开始',
           items: [
-            { text: '选择设备', link: '/guide/开始/选择设备.md' },
-            {
-              text: '脚本部署',
-              items: [
-                { text: 'TRSS管理脚本', link: '/guide/开始/脚本部署/TRSS管理脚本.md' },
-                { text: '长楠脚本', link: '/guide/开始/脚本部署/长楠脚本.md' },
-                { text: 'Bot-Help', link: '/guide/开始/脚本部署/Bot-Help.md' },
-                { text: 'Ubuntu-键安装i脚本', link: '/guide/开始/脚本部署/Ubuntu-键安装Miao-Yunzai脚本.md' },
-                { text: 'Yzai-V3 Ubuntu一键部署', link: '/guide/开始/脚本部署/Yzai-V3 Ubuntu一键部署' },
-                { text: '3QNmoqy管理脚本', link: '/guide/开始/脚本部署/3QNmoqy-Yunzai.bat Yunzai-Bot管理脚本' },
-                
+            { text: '选择设备', link: '/guide/开始/开始.md' },
               ]
             },
-            {
-              text: '手动部署',
-              items: [
-                { text: '手动部署', link: '/guide/开始/手动部署/手动部署.md' },
-                { text: 'Android手动部署', link: '/guide/开始/结构目录.md' },
-                { text: 'windows手动部署', link: '/guide/开始/开始.md' },
-                { text: '服务器手动部署', link: '/guide/开始/结构目录.md' },
-              ]
-            },
-            { text: '结构目录', link: '/guide/开始/结构目录.md' },
-          ]
-        }
       ],
   }
 }

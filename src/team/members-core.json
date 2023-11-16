@@ -1,210 +1,29 @@
-[
+[ 
+  {
+    "location": "China",
+    "name": "忘渐",
+    "qq": 2362958303,
+    "title": "uperf -Mediatek 1200/1100 ",
+    "company": "往初见亦随心，愿初见似随心",
+    "companyLink": "",
+    "socials": {}
+  },
   {
     "location": "China",
     "name": "Oldmemorie",
     "qq": 3293811490,
-    "title": "Client Developer  &  Creator",
-    "company": "Kongying Tavern",
-    "companyLink": "https://github.com/orgs/kongying-tavern",
+    "title": "Redemption Project - docs",
+    "company": "我曾经喜欢过你，但可惜我先成了大人……",
+    "companyLink": "https://github.com/Oldmemorie",
     "projects": [
       {
-        "label": "Genshin Map Client",
-        "url": "https://github.com/kongying-tavern/"
-      },
-      {
-        "label": "Genshin Map Web V1",
-        "url": "https://github.com/kongying-tavern/yuan-shen-map"
+        "label": "Redemption Project",
+        "url": "https://github.com/Oldmemorie/"
       }
     ],
     "socials": {
       "github": "Oldmemorie",
       "gitee": "Oldmemories"
     }
-  },
-  {
-    "gender": 1,
-    "jd": 1599572679,
-    "location": "China",
-    "name": "铃",
-    "qq": 717818652,
-    "socials": {
-      "bilibili": "5769504"
-    },
-    "title": "Product Manager"
-  },
-  {
-    "gender": 0,
-    "jd": 1598092032,
-    "location": "China",
-    "name": "Icarus",
-    "qq": 595272421,
-    "socials": {},
-    "projects": [
-      {
-        "label": "Genshin Map Web V3",
-        "url": "https://gitee.com/KYJGYSDT/yuanshenmap_v3"
-      },
-      {
-        "label": "Genshin Map Web V1",
-        "url": "https://github.com/kongying-tavern/yuan-shen-map"
-      }
-    ],
-    "title": "Web Developer"
-  },
-  {
-    "gender": 0,
-    "jd": 1614167120,
-    "location": "China",
-    "name": "(^_^)",
-    "qq": 1961266616,
-    "socials": {},
-    "projects": [
-      {
-        "label": "Genshin Map Web V1",
-        "url": "https://github.com/kongying-tavern/yuan-shen-map"
-      },
-      {
-        "label": "Docs",
-        "url": "https://github.com/kongying-tavern/yuan-shen-map"
-      }
-    ],
-    "title": "Web Developer & Community Management & I18N"
-  },
-  {
-    "gender": -1,
-    "jd": 1623694032,
-    "location": "China",
-    "name": "尉迟兰屏",
-    "qq": 444146855,
-    "socials": {},
-    "title": "Backend Developer & Web Developer"
-  },
-  {
-    "gender": 1,
-    "jd": 1623844069,
-    "location": "Japan",
-    "name": "壹団喵",
-    "qq": 1611956452,
-    "socials": {},
-    "title": "Mobile Developer & I18n"
-  },
-  {
-    "gender": 0,
-    "jd": 1648646500,
-    "location": "China",
-    "name": "Moment",
-    "qq": 1026821350,
-    "socials": {},
-    "title": "Backend Developer & Designer"
-  },
-  {
-    "gender": 0,
-    "jd": 1602235440,
-    "location": "China",
-    "name": "音丨HAT丶molisha",
-    "qq": 1126218124,
-    "socials": {},
-    "title": "Architect"
-  },
-  {
-    "gender": 0,
-    "jd": 1601547536,
-    "location": "China",
-    "name": "月光下的微笑",
-    "qq": 362652565,
-    "socials": {},
-    "title": "Web Developer"
-  },
-  {
-    "gender": 1,
-    "jd": 1671415743,
-    "location": "China",
-    "name": "时间有泪",
-    "qq": 2541413819,
-    "socials": {},
-    "title": "Web Developer"
-  },
-  {
-    "gender": -1,
-    "jd": 1663596063,
-    "location": "China",
-    "name": "夕云葛城",
-    "qq": 576788943,
-    "socials": {},
-    "title": "Web Developer & WebGL"
-  },
-  {
-    "gender": 0,
-    "jd": 1675003271,
-    "location": "China",
-    "name": "7c00",
-    "qq": 812760721,
-    "socials": {},
-    "title": "Mobile Developer"
-  },
-  {
-    "gender": 0,
-    "jd": 1675228987,
-    "location": "China",
-    "name": "小狸卡",
-    "qq": 885331635,
-    "socials": {},
-    "title": "Automatic Tracking Developer"
-  },
-  {
-    "gender": 1,
-    "jd": 1675072848,
-    "location": "Japan",
-    "name": "千本喵Nyancat",
-    "qq": 1158280933,
-    "socials": {},
-    "title": "Designer"
-  },
-  {
-    "gender": 1,
-    "jd": 1611481793,
-    "location": "China",
-    "name": "於随仙",
-    "qq": 2112028542,
-    "company": "WeiXiTianLi",
-    "companyLink": "https://github.com & WeiXiTianLi",
-    "socials": {
-      "github": "GengGode"
-    },
-    "title": "Automatic Tracking Developer"
-  },
-  {
-    "gender": 0,
-    "jd": 1627232875,
-    "location": "China",
-    "name": "SSSSSSSan",
-    "qq": 398522895,
-    "socials": {},
-    "title": "Client Developer"
-  },
-  {
-    "gender": 0,
-    "jd": 1648636631,
-    "location": "China",
-    "name": "(:◎)≡",
-    "qq": 582129961,
-    "socials": {},
-    "title": "Backend Developer"
-  },
-  {
-    "qq": 1148707279,
-    "jt": 1662293485,
-    "name": "Pop_Slime",
-    "socials": {},
-    "title": "English Translator & Community Management",
-    "location": "China"
-  },
-  {
-    "qq": 2405391333,
-    "jt": 1690630845,
-    "name": "Pat",
-    "socials": {},
-    "title": "English Translator & Community Management",
-    "location": "China"
   }
 ]
