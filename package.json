@@ -1,0 +1,125 @@
+{
+  "private": "true",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "vitepress build ",
+    "build-mpa": "vitepress build ",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "commit": "git-cz",
+    "dev": "vitepress ",
+    "postinstall": "husky install",
+    "lint": "prettier  --write . && eslint --fix --ext .js,.ts,.vue",
+    "lint:check": "pnpm lint:prettier && pnpm lint:eslint && pnpm lint:zh",
+    "lint:eslint": "eslint . --ext .js,.ts,.vue",
+    "lint:md": "markdownlint **/*.md && lint:zh",
+    "lint:prettier": "prettier --check .",
+    "lint:zh": "zhlint 'docs/**/*.md'",
+    "serve": "vitepress serve --base /yunzai-bot-docs/",
+    "site:preview": "vitepress build --outDir _dist"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{md,json,yml}": [
+      "prettier --write"
+    ],
+    "*.scss": [
+      "prettier --write"
+    ],
+    "package.json": [
+      "sort-package-json"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-git"
+    }
+  },
+  "prettier": "prettier-config-vuepress",
+  "dependencies": {
+    "@actions/core": "^1.10.1",
+    "@iconify-json/ic": "^1.1.14",
+    "@iconify-json/logos": "^1.1.37",
+    "@iconify-json/mdi": "^1.1.54",
+    "@iconify-json/ph": "^1.1.6",
+    "@mdit/plugin-container": "^0.5.0",
+    "@mdit/plugin-mark": "^0.5.0",
+    "@types/js-yaml": "^4.0.8",
+    "@vueuse/core": "^10.5.0",
+    "@vueuse/integrations": "^10.5.0",
+    "crypto": "^1.0.1",
+    "dayjs": "^1.11.10",
+    "feed": "^4.2.2",
+    "js-yaml": "^4.1.0",
+    "markdown-it-footnote": "^3.0.3",
+    "medium-zoom": "^1.0.8",
+    "qrcode": "^1.5.3",
+    "sass": "^1.69.4",
+    "typescript": "^5.2.2",
+    "unocss": "^0.56.5",
+    "vitepress": "^1.0.0-rc.22",
+    "vue-amazing-ui": "^0.1.17",
+    "vue-i18n": "^9.5.0",
+    "vue-router": "^4.2.5",
+    "vue-router-better-scroller": "^0.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.8.0",
+    "@commitlint/config-conventional": "^17.8.0",
+    "@commitlint/types": "^17.4.4",
+    "@mdit/plugin-figure": "^0.5.0",
+    "@mdit/plugin-img-lazyload": "^0.5.0",
+    "@mdit/plugin-img-mark": "^0.5.0",
+    "@mdit/plugin-img-size": "^0.5.0",
+    "@mdit/plugin-sub": "^0.5.0",
+    "@mdit/plugin-sup": "^0.5.0",
+    "@types/eslint": "^8.44.6",
+    "@types/markdown-it": "^13.0.4",
+    "@types/node": "^20.8.7",
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@typescript-eslint/parser": "^6.8.0",
+    "@unocss/eslint-config": "^0.56.5",
+    "@vite-pwa/vitepress": "^0.2.3",
+    "@vue/eslint-config-prettier": "^8.0.0",
+    "@vue/eslint-config-typescript": "^12.0.0",
+    "conventional-changelog-cli": "^4.1.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.51.0",
+    "eslint-config-vuepress": "^4.5.0",
+    "eslint-config-vuepress-typescript": "^4.6.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-prettier-vue": "^5.0.0",
+    "eslint-plugin-vue": "9.17.0",
+    "git-cz": "^4.9.0",
+    "husky": "^8.0.3",
+    "less": "^4.2.0",
+    "lint-staged": "^15.0.2",
+    "markdown-it": "^13.0.2",
+    "markdownlint-cli": "^0.37.0",
+    "pnpm": "^8.9.2",
+    "prettier": "^3.0.3",
+    "prettier-config-vuepress": "^4.4.0",
+    "sort-package-json": "^2.6.0",
+    "stylelint": "^15.11.0",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-config-standard-scss": "^11.0.0",
+    "stylelint-order": "^6.0.3",
+    "tsconfig-vuepress": "^4.5.0",
+    "vite-plugin-inspect": "^0.7.40",
+    "vue": "^3.3.4",
+    "zhlint": "^0.7.1"
+  },
+  "packageManager": "pnpm@8.6.12",
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search",
+        "search-insights"
+      ]
+    }
+  }
+}
