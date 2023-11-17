@@ -11,7 +11,7 @@
 
 ```sh
 # 克隆本仓库
-git clone https://github.com/Oldmemorie/Redemption Project.git
+git clone https://github.com/Oldmemorie/RedemptionProject.git
 
 # 2.安装 PNPM
 npm install pnpm -g
