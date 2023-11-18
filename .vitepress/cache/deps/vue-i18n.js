@@ -1,4 +1,7 @@
 import {
+  setupDevtoolsPlugin
+} from "./chunk-JILBLBFW.js";
+import {
   Fragment,
   Text,
   computed,
@@ -16,9 +19,6 @@ import {
   shallowRef,
   watch
 } from "./chunk-GGZMSWZI.js";
-import {
-  setupDevtoolsPlugin
-} from "./chunk-JILBLBFW.js";
 import "./chunk-LQ2VYIYD.js";
 
 // node_modules/.pnpm/@intlify+shared@9.7.0/node_modules/@intlify/shared/dist/shared.mjs
