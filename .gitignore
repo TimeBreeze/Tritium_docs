@@ -1,0 +1,7 @@
+# 下面自己配置使用的 忽略文件
+.DS_Store
+# End of https://www.gitignore.io/api/visualstudiocode
+ 
+node_modules/
+package-lock.json
+dist/
