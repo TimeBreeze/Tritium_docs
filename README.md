@@ -19,14 +19,14 @@ awk -f <(curl -L gitee.com/mo2/linux/raw/2/2.awk)
 
 在 Linux 中启动 TMOE，会出现以下选项，请选择 Manager
 
-![1](/img/1.jpg)
+![1](https://github.com/Oldmemorie/RedemptionProject/blob/mainhttps://github.com/Oldmemorie/RedemptionProject/blob/main/img/1.jpg)
 
 
 ---
 
 第一次进入，请阅读说明
 
-![2](/img/2.jpg)
+![2](https://github.com/Oldmemorie/RedemptionProject/blob/main/img/2.jpg)
 
 
 在出现 `您要继续吗? Do you want to continue?` 之类的选项时：`[Y/n]直接按回车，[y/N]输入y再回车`
@@ -35,20 +35,20 @@ awk -f <(curl -L gitee.com/mo2/linux/raw/2/2.awk)
 
 由于国内 GitHub 连接较慢，推荐使用 Gitee
 
-![3](/img/3.jpg)
+![3](https://github.com/Oldmemorie/RedemptionProject/blob/main/img/3.jpg)
 
 
 
 在出现 `(Y/I/N/O/D/Z) [default=N] ?` 之类的选项时：`直接按回车即可`
 
-![4](/img/4.jpg)
+![4](https://github.com/Oldmemorie/RedemptionProject/blob/main/img/4.jpg)
 
 
 ---
 
 进入 TMOE 后，有 `root 权限` 使用 `chroot 容器`，否则使用 `PRoot 容器`
 
-![5](/img/5.jpg)
+![5](https://github.com/Oldmemorie/RedemptionProject/blob/main/img/5.jpg)
 
 ---
 
@@ -72,14 +72,14 @@ awk -f <(curl -L gitee.com/mo2/linux/raw/2/2.awk)
 
 选择 `Arch`
 
-![7](/img/7.jpg)
+![7](https://github.com/Oldmemorie/RedemptionProject/blob/main/img/7.jpg)
 
 选择 `启动`
 
 
 如果要多开容器，请选择新建容器
 
-![8](/img/8.jpg)
+![8](https://github.com/Oldmemorie/RedemptionProject/blob/main/img/8.jpg)
 
 ---
 
