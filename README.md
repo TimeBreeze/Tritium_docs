@@ -19,7 +19,7 @@ awk -f <(curl -L gitee.com/mo2/linux/raw/2/2.awk)
 
 在 Linux 中启动 TMOE，会出现以下选项，请选择 Manager
 
-![1]https://github.com/Oldmemorie/RedemptionProject/blob/main/img/1.jpg)
+![1](https://github.com/Oldmemorie/RedemptionProject/blob/main/img/1.jpg)
 
 
 ---
