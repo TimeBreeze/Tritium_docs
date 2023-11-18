@@ -15,24 +15,27 @@ import {
   ref,
   shallowRef,
   watch
-} from "./chunk-OX6HOUGK.js";
-import "./chunk-UXIASGQL.js";
+} from "./chunk-GGZMSWZI.js";
+import {
+  setupDevtoolsPlugin
+} from "./chunk-JILBLBFW.js";
+import "./chunk-LQ2VYIYD.js";
 
-// node_modules/.pnpm/@intlify+shared@9.5.0/node_modules/@intlify/shared/dist/shared.mjs
+// node_modules/.pnpm/@intlify+shared@9.7.0/node_modules/@intlify/shared/dist/shared.mjs
 var inBrowser = typeof window !== "undefined";
 var mark;
 var measure;
 if (true) {
-  const perf2 = inBrowser && window.performance;
-  if (perf2 && perf2.mark && perf2.measure && perf2.clearMarks && // @ts-ignore browser compat
-  perf2.clearMeasures) {
+  const perf = inBrowser && window.performance;
+  if (perf && perf.mark && perf.measure && perf.clearMarks && // @ts-ignore browser compat
+  perf.clearMeasures) {
     mark = (tag) => {
-      perf2.mark(tag);
+      perf.mark(tag);
     };
     measure = (name, startTag, endTag) => {
-      perf2.measure(name, startTag, endTag);
-      perf2.clearMarks(startTag);
-      perf2.clearMarks(endTag);
+      perf.measure(name, startTag, endTag);
+      perf.clearMarks(startTag);
+      perf.clearMarks(endTag);
     };
   }
 }
@@ -160,8 +163,23 @@ function createEmitter() {
   };
   return emitter;
 }
+var isNotObjectOrIsArray = (val) => !isObject(val) || isArray(val);
+function deepCopy(src, des) {
+  if (isNotObjectOrIsArray(src) || isNotObjectOrIsArray(des)) {
+    throw new Error("Invalid value");
+  }
+  for (const key in src) {
+    if (hasOwn(src, key)) {
+      if (isNotObjectOrIsArray(src[key]) || isNotObjectOrIsArray(des[key])) {
+        des[key] = src[key];
+      } else {
+        deepCopy(src[key], des[key]);
+      }
+    }
+  }
+}
 
-// node_modules/.pnpm/@intlify+message-compiler@9.5.0/node_modules/@intlify/message-compiler/dist/message-compiler.esm-browser.js
+// node_modules/.pnpm/@intlify+message-compiler@9.7.0/node_modules/@intlify/message-compiler/dist/message-compiler.esm-browser.js
 function createPosition(line, column, offset) {
   return { line, column, offset };
 }
@@ -1653,7 +1671,7 @@ function baseCompile(source, options = {}) {
   }
 }
 
-// node_modules/.pnpm/@intlify+core-base@9.5.0/node_modules/@intlify/core-base/dist/core-base.mjs
+// node_modules/.pnpm/@intlify+core-base@9.7.0/node_modules/@intlify/core-base/dist/core-base.mjs
 function initFeatureFlags() {
   if (typeof __INTLIFY_PROD_DEVTOOLS__ !== "boolean") {
     getGlobalThis().__INTLIFY_PROD_DEVTOOLS__ = false;
@@ -2093,6 +2111,9 @@ function resolveValue(obj, path) {
     if (val === void 0) {
       return null;
     }
+    if (isFunction(last)) {
+      return null;
+    }
     last = val;
     i++;
   }
@@ -2320,7 +2341,7 @@ function appendItemToChain(chain, target, blocks) {
   }
   return follow;
 }
-var VERSION = "9.5.0";
+var VERSION = "9.7.0";
 var NOT_REOSLVED = -1;
 var DEFAULT_LOCALE = "en-US";
 var MISSING_RESOLVE_VALUE = "";
@@ -2885,11 +2906,10 @@ ${codeFrame}` : message);
   };
 }
 function getSourceForCodeFrame(source) {
-  var _a;
-  if (isString(source))
-    ;
-  else {
-    if ((_a = source.loc) == null ? void 0 : _a.source) {
+  if (isString(source)) {
+    return source;
+  } else {
+    if (source.loc && source.loc.source) {
       return source.loc.source;
     }
   }
@@ -3221,165 +3241,8 @@ function clearNumberFormat(ctx, locale, format4) {
   initFeatureFlags();
 }
 
-// node_modules/.pnpm/@vue+devtools-api@6.5.0/node_modules/@vue/devtools-api/lib/esm/env.js
-function getDevtoolsGlobalHook() {
-  return getTarget().__VUE_DEVTOOLS_GLOBAL_HOOK__;
-}
-function getTarget() {
-  return typeof navigator !== "undefined" && typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : {};
-}
-var isProxyAvailable = typeof Proxy === "function";
-
-// node_modules/.pnpm/@vue+devtools-api@6.5.0/node_modules/@vue/devtools-api/lib/esm/const.js
-var HOOK_SETUP = "devtools-plugin:setup";
-var HOOK_PLUGIN_SETTINGS_SET = "plugin:settings:set";
-
-// node_modules/.pnpm/@vue+devtools-api@6.5.0/node_modules/@vue/devtools-api/lib/esm/time.js
-var supported;
-var perf;
-function isPerformanceSupported() {
-  var _a;
-  if (supported !== void 0) {
-    return supported;
-  }
-  if (typeof window !== "undefined" && window.performance) {
-    supported = true;
-    perf = window.performance;
-  } else if (typeof global !== "undefined" && ((_a = global.perf_hooks) === null || _a === void 0 ? void 0 : _a.performance)) {
-    supported = true;
-    perf = global.perf_hooks.performance;
-  } else {
-    supported = false;
-  }
-  return supported;
-}
-function now() {
-  return isPerformanceSupported() ? perf.now() : Date.now();
-}
-
-// node_modules/.pnpm/@vue+devtools-api@6.5.0/node_modules/@vue/devtools-api/lib/esm/proxy.js
-var ApiProxy = class {
-  constructor(plugin, hook) {
-    this.target = null;
-    this.targetQueue = [];
-    this.onQueue = [];
-    this.plugin = plugin;
-    this.hook = hook;
-    const defaultSettings = {};
-    if (plugin.settings) {
-      for (const id in plugin.settings) {
-        const item = plugin.settings[id];
-        defaultSettings[id] = item.defaultValue;
-      }
-    }
-    const localSettingsSaveId = `__vue-devtools-plugin-settings__${plugin.id}`;
-    let currentSettings = Object.assign({}, defaultSettings);
-    try {
-      const raw = localStorage.getItem(localSettingsSaveId);
-      const data = JSON.parse(raw);
-      Object.assign(currentSettings, data);
-    } catch (e) {
-    }
-    this.fallbacks = {
-      getSettings() {
-        return currentSettings;
-      },
-      setSettings(value) {
-        try {
-          localStorage.setItem(localSettingsSaveId, JSON.stringify(value));
-        } catch (e) {
-        }
-        currentSettings = value;
-      },
-      now() {
-        return now();
-      }
-    };
-    if (hook) {
-      hook.on(HOOK_PLUGIN_SETTINGS_SET, (pluginId, value) => {
-        if (pluginId === this.plugin.id) {
-          this.fallbacks.setSettings(value);
-        }
-      });
-    }
-    this.proxiedOn = new Proxy({}, {
-      get: (_target, prop) => {
-        if (this.target) {
-          return this.target.on[prop];
-        } else {
-          return (...args) => {
-            this.onQueue.push({
-              method: prop,
-              args
-            });
-          };
-        }
-      }
-    });
-    this.proxiedTarget = new Proxy({}, {
-      get: (_target, prop) => {
-        if (this.target) {
-          return this.target[prop];
-        } else if (prop === "on") {
-          return this.proxiedOn;
-        } else if (Object.keys(this.fallbacks).includes(prop)) {
-          return (...args) => {
-            this.targetQueue.push({
-              method: prop,
-              args,
-              resolve: () => {
-              }
-            });
-            return this.fallbacks[prop](...args);
-          };
-        } else {
-          return (...args) => {
-            return new Promise((resolve) => {
-              this.targetQueue.push({
-                method: prop,
-                args,
-                resolve
-              });
-            });
-          };
-        }
-      }
-    });
-  }
-  async setRealTarget(target) {
-    this.target = target;
-    for (const item of this.onQueue) {
-      this.target.on[item.method](...item.args);
-    }
-    for (const item of this.targetQueue) {
-      item.resolve(await this.target[item.method](...item.args));
-    }
-  }
-};
-
-// node_modules/.pnpm/@vue+devtools-api@6.5.0/node_modules/@vue/devtools-api/lib/esm/index.js
-function setupDevtoolsPlugin(pluginDescriptor, setupFn) {
-  const descriptor = pluginDescriptor;
-  const target = getTarget();
-  const hook = getDevtoolsGlobalHook();
-  const enableProxy = isProxyAvailable && descriptor.enableEarlyProxy;
-  if (hook && (target.__VUE_DEVTOOLS_PLUGIN_API_AVAILABLE__ || !enableProxy)) {
-    hook.emit(HOOK_SETUP, pluginDescriptor, setupFn);
-  } else {
-    const proxy = enableProxy ? new ApiProxy(descriptor, hook) : null;
-    const list = target.__VUE_DEVTOOLS_PLUGINS__ = target.__VUE_DEVTOOLS_PLUGINS__ || [];
-    list.push({
-      pluginDescriptor: descriptor,
-      setupFn,
-      proxy
-    });
-    if (proxy)
-      setupFn(proxy.proxiedTarget);
-  }
-}
-
-// node_modules/.pnpm/vue-i18n@9.5.0_vue@3.3.4/node_modules/vue-i18n/dist/vue-i18n.mjs
-var VERSION2 = "9.5.0";
+// node_modules/.pnpm/vue-i18n@9.7.0_vue@3.3.8/node_modules/vue-i18n/dist/vue-i18n.mjs
+var VERSION2 = "9.7.0";
 function initFeatureFlags2() {
   if (typeof __VUE_I18N_FULL_INSTALL__ !== "boolean") {
     getGlobalThis().__VUE_I18N_FULL_INSTALL__ = true;
@@ -3553,21 +3416,6 @@ function getLocaleMessages(locale, options) {
   }
   return ret;
 }
-var isNotObjectOrIsArray = (val) => !isObject(val) || isArray(val);
-function deepCopy(src, des) {
-  if (isNotObjectOrIsArray(src) || isNotObjectOrIsArray(des)) {
-    throw createI18nError(I18nErrorCodes.INVALID_VALUE);
-  }
-  for (const key in src) {
-    if (hasOwn(src, key)) {
-      if (isNotObjectOrIsArray(src[key]) || isNotObjectOrIsArray(des[key])) {
-        des[key] = src[key];
-      } else {
-        deepCopy(src[key], des[key]);
-      }
-    }
-  }
-}
 function getComponentOptions(instance) {
   return instance.type;
 }
@@ -3608,6 +3456,8 @@ function createTextNode(key) {
   return createVNode(Text, null, key, 0);
 }
 var DEVTOOLS_META = "__INTLIFY_META__";
+var NOOP_RETURN_ARRAY = () => [];
+var NOOP_RETURN_FALSE = () => false;
 var composerID = 0;
 function defineCoreMissingHandler(missing) {
   return (ctx, locale, key, type) => {
@@ -3622,6 +3472,7 @@ var getMetaInfo = () => {
 function createComposer(options = {}, VueI18nLegacy) {
   const { __root, __injectWithOption } = options;
   const _isGlobal = __root === void 0;
+  const flatJson = options.flatJson;
   let _inheritLocale = isBoolean(options.inheritLocale) ? options.inheritLocale : true;
   const _locale = ref(
     // prettier-ignore
@@ -3748,7 +3599,8 @@ function createComposer(options = {}, VueI18nLegacy) {
         _context.fallbackContext = void 0;
       }
     }
-    if (isNumber(ret) && ret === NOT_REOSLVED) {
+    if (warnType !== "translate exists" && // for not `te` (e.g `t`)
+    isNumber(ret) && ret === NOT_REOSLVED || warnType === "translate exists" && !ret) {
       const [key, arg2] = argumentParser();
       if (__root && isString(key) && isResolvedTranslateMessage(warnType, arg2)) {
         if (_fallbackRoot && (isTranslateFallbackWarn(_fallbackWarn, key) || isTranslateMissingWarn(_missingWarn, key))) {
@@ -3829,7 +3681,7 @@ function createComposer(options = {}, VueI18nLegacy) {
       "number format",
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (root) => root[NumberPartsSymbol](...args),
-      () => [],
+      NOOP_RETURN_ARRAY,
       (val) => isString(val) || isArray(val)
     );
   }
@@ -3840,7 +3692,7 @@ function createComposer(options = {}, VueI18nLegacy) {
       "datetime format",
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (root) => root[DatetimePartsSymbol](...args),
-      () => [],
+      NOOP_RETURN_ARRAY,
       (val) => isString(val) || isArray(val)
     );
   }
@@ -3849,11 +3701,17 @@ function createComposer(options = {}, VueI18nLegacy) {
     _context.pluralRules = _pluralRules;
   }
   function te(key, locale2) {
-    if (!key)
-      return false;
-    const targetLocale = isString(locale2) ? locale2 : _locale.value;
-    const message = getLocaleMessage(targetLocale);
-    return _context.messageResolver(message, key) !== null;
+    return wrapWithDeps(() => {
+      if (!key) {
+        return false;
+      }
+      const targetLocale = isString(locale2) ? locale2 : _locale.value;
+      const message = getLocaleMessage(targetLocale);
+      const resolved = _context.messageResolver(message, key);
+      return isMessageAST(resolved) || isMessageFunction(resolved) || isString(resolved);
+    }, () => [key], "translate exists", (root) => {
+      return Reflect.apply(root.te, root, [key, locale2]);
+    }, NOOP_RETURN_FALSE, (val) => isBoolean(val));
   }
   function resolveMessages(key) {
     let messages2 = null;
@@ -3876,11 +3734,27 @@ function createComposer(options = {}, VueI18nLegacy) {
     return _messages.value[locale2] || {};
   }
   function setLocaleMessage(locale2, message) {
+    if (flatJson) {
+      const _message = { [locale2]: message };
+      for (const key in _message) {
+        if (hasOwn(_message, key)) {
+          handleFlatJson(_message[key]);
+        }
+      }
+      message = _message[locale2];
+    }
     _messages.value[locale2] = message;
     _context.messages = _messages.value;
   }
   function mergeLocaleMessage(locale2, message) {
     _messages.value[locale2] = _messages.value[locale2] || {};
+    const _message = { [locale2]: message };
+    for (const key in _message) {
+      if (hasOwn(_message, key)) {
+        handleFlatJson(_message[key]);
+      }
+    }
+    message = _message[locale2];
     deepCopy(message, _messages.value[locale2]);
     _context.messages = _messages.value;
   }
@@ -5727,28 +5601,28 @@ export {
 
 @intlify/shared/dist/shared.mjs:
   (*!
-    * shared v9.5.0
+    * shared v9.7.0
     * (c) 2023 kazuya kawaguchi
     * Released under the MIT License.
     *)
 
 @intlify/message-compiler/dist/message-compiler.esm-browser.js:
   (*!
-    * message-compiler v9.5.0
+    * message-compiler v9.7.0
     * (c) 2023 kazuya kawaguchi
     * Released under the MIT License.
     *)
 
 @intlify/core-base/dist/core-base.mjs:
   (*!
-    * core-base v9.5.0
+    * core-base v9.7.0
     * (c) 2023 kazuya kawaguchi
     * Released under the MIT License.
     *)
 
 vue-i18n/dist/vue-i18n.mjs:
   (*!
-    * vue-i18n v9.5.0
+    * vue-i18n v9.7.0
     * (c) 2023 kazuya kawaguchi
     * Released under the MIT License.
     *)

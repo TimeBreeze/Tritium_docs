@@ -1,15 +1,15 @@
 import {
   isClient,
   toRef
-} from "./chunk-NDHTEDSX.js";
+} from "./chunk-UNJ7IZWA.js";
 import {
   ref,
   watch
-} from "./chunk-OX6HOUGK.js";
+} from "./chunk-GGZMSWZI.js";
 import {
   __commonJS,
   __toESM
-} from "./chunk-UXIASGQL.js";
+} from "./chunk-LQ2VYIYD.js";
 
 // node_modules/.pnpm/qrcode@1.5.3/node_modules/qrcode/lib/can-promise.js
 var require_can_promise = __commonJS({
@@ -2172,7 +2172,7 @@ var require_browser = __commonJS({
   }
 });
 
-// node_modules/.pnpm/@vueuse+integrations@10.5.0_focus-trap@7.5.4_qrcode@1.5.3_vue@3.3.4/node_modules/@vueuse/integrations/useQRCode.mjs
+// node_modules/.pnpm/@vueuse+integrations@10.6.1_focus-trap@7.5.4_qrcode@1.5.3_vue@3.3.8/node_modules/@vueuse/integrations/useQRCode.mjs
 var import_qrcode = __toESM(require_browser(), 1);
 function useQRCode(text, options) {
   const src = toRef(text);

@@ -5,8 +5,8 @@ titleTemplate: Redemption Project
 
 hero:
   name: Redemption Project
-  text: Mediatek 1200/1100系列优化调教
-  tagline: 基于著名GitHub项目uperf 进行调节，及其CPU&GPU降压调教
+  text: Mediatek 1200/1100系列全方位优化
+  tagline: 我永远忘不了他说需要我的救赎 但是他不曾知道是他给了我救赎
   image:
     src: /阿库娅.png
     alt: 刻晴

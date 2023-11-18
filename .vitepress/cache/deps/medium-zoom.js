@@ -1,6 +1,6 @@
-import "./chunk-UXIASGQL.js";
+import "./chunk-LQ2VYIYD.js";
 
-// node_modules/.pnpm/medium-zoom@1.0.8/node_modules/medium-zoom/dist/medium-zoom.esm.js
+// node_modules/.pnpm/medium-zoom@1.1.0/node_modules/medium-zoom/dist/medium-zoom.esm.js
 var _extends = Object.assign || function(target) {
   for (var i = 1; i < arguments.length; i++) {
     var source = arguments[i];
@@ -467,6 +467,6 @@ export {
 /*! Bundled license information:
 
 medium-zoom/dist/medium-zoom.esm.js:
-  (*! medium-zoom 1.0.8 | MIT License | https://github.com/francoischalifour/medium-zoom *)
+  (*! medium-zoom 1.1.0 | MIT License | https://github.com/francoischalifour/medium-zoom *)
 */
 //# sourceMappingURL=medium-zoom.js.map

@@ -10,6 +10,8 @@ import { imgSize, obsidianImageSize } from '@mdit/plugin-img-size'
 import { mark } from '@mdit/plugin-mark'
 import { sub } from '@mdit/plugin-sub'
 import { sup } from '@mdit/plugin-sup'
+// .vitepress/config.ts or .vitepress/config.js
+import timeline from "vitepress-markdown-timeline"
 
 
 import { zhConfig } from './locales/zh'
@@ -41,7 +43,7 @@ export const productionHead: HeadConfig[] = [
 ]
 
 export default defineConfig({
-  base：'/RedemptionProject/'
+  base: '/RedemptionProject/',
   lastUpdated: true,
   srcDir: 'src',
   outDir: './dist',
@@ -141,6 +143,7 @@ export default defineConfig({
       md.use(imgSize)
       md.use(obsidianImageSize)
       md.use(figure)
+      md.use(timeline)
     },
   },
 })

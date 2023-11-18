@@ -48,6 +48,7 @@ import {
   useBrowserLocation,
   useCached,
   useClipboard,
+  useClipboardItems,
   useCloned,
   useColorMode,
   useConfirmDialog,
@@ -163,7 +164,7 @@ import {
   useWindowFocus,
   useWindowScroll,
   useWindowSize
-} from "./chunk-5HALWVXO.js";
+} from "./chunk-SUBOW4SN.js";
 import {
   assert,
   bypassFilter,
@@ -195,6 +196,7 @@ import {
   isDefined,
   isIOS,
   isObject,
+  isWorker,
   makeDestructurable,
   noop,
   normalizeDate,
@@ -270,9 +272,9 @@ import {
   watchTriggerable,
   watchWithFilter,
   whenever
-} from "./chunk-NDHTEDSX.js";
-import "./chunk-OX6HOUGK.js";
-import "./chunk-UXIASGQL.js";
+} from "./chunk-UNJ7IZWA.js";
+import "./chunk-GGZMSWZI.js";
+import "./chunk-LQ2VYIYD.js";
 export {
   DefaultMagicKeysAliasMap,
   StorageSerializers,
@@ -338,6 +340,7 @@ export {
   isDefined,
   isIOS,
   isObject,
+  isWorker,
   makeDestructurable,
   mapGamepadToXbox360Controller,
   noop,
@@ -415,6 +418,7 @@ export {
   useBrowserLocation,
   useCached,
   useClipboard,
+  useClipboardItems,
   useCloned,
   useColorMode,
   useConfirmDialog,
