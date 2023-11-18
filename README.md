@@ -6,6 +6,8 @@
 
 Android端推荐使用zerotermux 
 
+# [下载地址](https://d.icdown.club/repository/main/ZeroTermux/)
+
 ---
 # Android zerotermux 安装Arch Linux
 ---
@@ -68,7 +70,7 @@ awk -f <(curl -L gitee.com/mo2/linux/raw/2/2.awk)
 
 进入容器菜单之后，选择 `发行版列表`
 
-![6]/(img/6.jpg)
+![6](https://github.com/Oldmemorie/RedemptionProject/blob/main/img/6.jpg)
 
 选择 `Arch`
 
