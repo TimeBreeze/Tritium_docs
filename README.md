@@ -21,15 +21,13 @@ awk -f <(curl -L gitee.com/mo2/linux/raw/2/2.awk)
 
 在 Linux 中启动 TMOE，会出现以下选项，请选择 Manager
 
-![1](https://github.com/Oldmemorie/RedemptionProject/blob/main/img/1.jpg)
-
+![](https://cdn.jsdelivr.net/gh/Oldmemorie/PicPlus@main/2023/11/28/1.jpg)
 
 ---
 
 第一次进入，请阅读说明
 
-![2](https://github.com/Oldmemorie/RedemptionProject/blob/main/img/2.jpg)
-
+![](https://cdn.jsdelivr.net/gh/Oldmemorie/PicPlus@main/2023/11/28/2.jpg)
 
 在出现 `您要继续吗? Do you want to continue?` 之类的选项时：`[Y/n]直接按回车，[y/N]输入y再回车`
 
@@ -37,21 +35,18 @@ awk -f <(curl -L gitee.com/mo2/linux/raw/2/2.awk)
 
 由于国内 GitHub 连接较慢，推荐使用 Gitee
 
-![3](https://github.com/Oldmemorie/RedemptionProject/blob/main/img/3.jpg)
-
+![](https://cdn.jsdelivr.net/gh/Oldmemorie/PicPlus@main/2023/11/28/3.jpg)
 
 
 在出现 `(Y/I/N/O/D/Z) [default=N] ?` 之类的选项时：`直接按回车即可`
 
-![4](https://github.com/Oldmemorie/RedemptionProject/blob/main/img/4.jpg)
-
+![](https://cdn.jsdelivr.net/gh/Oldmemorie/PicPlus@main/2023/11/28/4.jpg)
 
 ---
 
 进入 TMOE 后，有 `root 权限` 使用 `chroot 容器`，否则使用 `PRoot 容器`
 
-![5](https://github.com/Oldmemorie/RedemptionProject/blob/main/img/5.jpg)
-
+![](https://cdn.jsdelivr.net/gh/Oldmemorie/PicPlus@main/2023/11/28/5.jpg)
 ---
 
 首次进入，按提示选择配置：
@@ -70,19 +65,15 @@ awk -f <(curl -L gitee.com/mo2/linux/raw/2/2.awk)
 
 进入容器菜单之后，选择 `发行版列表`
 
-![6](https://github.com/Oldmemorie/RedemptionProject/blob/main/img/6.jpg)
-
+![](https://cdn.jsdelivr.net/gh/Oldmemorie/PicPlus@main/2023/11/28/6.jpg)
 选择 `Arch`
-
-![7](https://github.com/Oldmemorie/RedemptionProject/blob/main/img/7.jpg)
-
+![](https://cdn.jsdelivr.net/gh/Oldmemorie/PicPlus@main/2023/11/28/7.jpg)
 选择 `启动`
 
 
 如果要多开容器，请选择新建容器
 
-![8](https://github.com/Oldmemorie/RedemptionProject/blob/main/img/8.jpg)
-
+![](https://cdn.jsdelivr.net/gh/Oldmemorie/PicPlus@main/2023/11/28/8.jpg)
 ---
 
 等待容器安装完成
