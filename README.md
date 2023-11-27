@@ -2,7 +2,7 @@
 ***Redemption Project***
 `救赎计划`
 
-欢迎你参加到文档的建设中来，请确保你永远以下工具
+欢迎你参加到文档的建设中来，请确保你拥有以下工具
 
 Android端推荐使用zerotermux 
 
@@ -97,9 +97,10 @@ awk -f <(curl -L gitee.com/mo2/linux/raw/2/2.awk)
 进入容器命令：`tmoe p/c a` (p 指 PRoot 容器，c 指 chroot 容器)
 
 管理容器命令：`tmoe ls`
-## 然后我们可以输入命令安装nodejs
+
+# 然后我们可以输入命令安装nodejs
 ```sh
-pacman -S nodejs 
+pacman -S nodejs npm
 ```
 
 ```sh
@@ -115,7 +116,7 @@ pnpm config set registry https://registry.npmmirror.com/
 # 4.安装依赖
 pnpm install
 
-# 5.dev 运行，访问：http://localhost:5173/RedemptionProject/
+# 5.dev 运行，访问：http://localhost:1999/RedemptionProject/
 pnpm dev
 
 # 6.打包
