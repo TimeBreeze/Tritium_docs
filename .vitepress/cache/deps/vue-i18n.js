@@ -18,10 +18,10 @@ import {
   ref,
   shallowRef,
   watch
-} from "./chunk-GGZMSWZI.js";
+} from "./chunk-K5RGFED5.js";
 import "./chunk-LQ2VYIYD.js";
 
-// node_modules/.pnpm/@intlify+shared@9.7.0/node_modules/@intlify/shared/dist/shared.mjs
+// node_modules/.pnpm/@intlify+shared@9.8.0/node_modules/@intlify/shared/dist/shared.mjs
 var inBrowser = typeof window !== "undefined";
 var mark;
 var measure;
@@ -75,6 +75,9 @@ var isFunction = (val) => typeof val === "function";
 var isString = (val) => typeof val === "string";
 var isBoolean = (val) => typeof val === "boolean";
 var isObject = (val) => val !== null && typeof val === "object";
+var isPromise = (val) => {
+  return isObject(val) && isFunction(val.then) && isFunction(val.catch);
+};
 var objectToString = Object.prototype.toString;
 var toTypeString = (value) => objectToString.call(value);
 var isPlainObject = (val) => {
@@ -179,7 +182,7 @@ function deepCopy(src, des) {
   }
 }
 
-// node_modules/.pnpm/@intlify+message-compiler@9.7.0/node_modules/@intlify/message-compiler/dist/message-compiler.esm-browser.js
+// node_modules/.pnpm/@intlify+message-compiler@9.8.0/node_modules/@intlify/message-compiler/dist/message-compiler.esm-browser.js
 function createPosition(line, column, offset) {
   return { line, column, offset };
 }
@@ -1671,7 +1674,7 @@ function baseCompile(source, options = {}) {
   }
 }
 
-// node_modules/.pnpm/@intlify+core-base@9.7.0/node_modules/@intlify/core-base/dist/core-base.mjs
+// node_modules/.pnpm/@intlify+core-base@9.8.0/node_modules/@intlify/core-base/dist/core-base.mjs
 function initFeatureFlags() {
   if (typeof __INTLIFY_PROD_DEVTOOLS__ !== "boolean") {
     getGlobalThis().__INTLIFY_PROD_DEVTOOLS__ = false;
@@ -2271,12 +2274,55 @@ var warnMessages = {
 function getWarnMessage(code3, ...args) {
   return format(warnMessages[code3], ...args);
 }
+var code = CompileErrorCodes.__EXTEND_POINT__;
+var inc = incrementer(code);
+var CoreErrorCodes = {
+  INVALID_ARGUMENT: code,
+  INVALID_DATE_ARGUMENT: inc(),
+  INVALID_ISO_DATE_ARGUMENT: inc(),
+  NOT_SUPPORT_NON_STRING_MESSAGE: inc(),
+  NOT_SUPPORT_LOCALE_PROMISE_VALUE: inc(),
+  NOT_SUPPORT_LOCALE_ASYNC_FUNCTION: inc(),
+  NOT_SUPPORT_LOCALE_TYPE: inc(),
+  __EXTEND_POINT__: inc()
+  // 25
+};
+function createCoreError(code3) {
+  return createCompileError(code3, null, true ? { messages: errorMessages2 } : void 0);
+}
+var errorMessages2 = {
+  [CoreErrorCodes.INVALID_ARGUMENT]: "Invalid arguments",
+  [CoreErrorCodes.INVALID_DATE_ARGUMENT]: "The date provided is an invalid Date object.Make sure your Date represents a valid date.",
+  [CoreErrorCodes.INVALID_ISO_DATE_ARGUMENT]: "The argument provided is not a valid ISO date string",
+  [CoreErrorCodes.NOT_SUPPORT_NON_STRING_MESSAGE]: "Not support non-string message",
+  [CoreErrorCodes.NOT_SUPPORT_LOCALE_PROMISE_VALUE]: "cannot support promise value",
+  [CoreErrorCodes.NOT_SUPPORT_LOCALE_ASYNC_FUNCTION]: "cannot support async function",
+  [CoreErrorCodes.NOT_SUPPORT_LOCALE_TYPE]: "cannot support locale type"
+};
 function getLocale(context, options) {
   return options.locale != null ? resolveLocale(options.locale) : resolveLocale(context.locale);
 }
 var _resolveLocale;
 function resolveLocale(locale) {
-  return isString(locale) ? locale : _resolveLocale != null && locale.resolvedOnce ? _resolveLocale : _resolveLocale = locale();
+  if (isString(locale)) {
+    return locale;
+  } else {
+    if (isFunction(locale)) {
+      if (locale.resolvedOnce && _resolveLocale != null) {
+        return _resolveLocale;
+      } else if (locale.constructor.name === "Function") {
+        const resolve = locale();
+        if (isPromise(resolve)) {
+          throw createCoreError(CoreErrorCodes.NOT_SUPPORT_LOCALE_PROMISE_VALUE);
+        }
+        return _resolveLocale = resolve;
+      } else {
+        throw createCoreError(CoreErrorCodes.NOT_SUPPORT_LOCALE_ASYNC_FUNCTION);
+      }
+    } else {
+      throw createCoreError(CoreErrorCodes.NOT_SUPPORT_LOCALE_TYPE);
+    }
+  }
 }
 function fallbackWithSimple(ctx, fallback, start) {
   return [.../* @__PURE__ */ new Set([
@@ -2341,7 +2387,7 @@ function appendItemToChain(chain, target, blocks) {
   }
   return follow;
 }
-var VERSION = "9.7.0";
+var VERSION = "9.8.0";
 var NOT_REOSLVED = -1;
 var DEFAULT_LOCALE = "en-US";
 var MISSING_RESOLVE_VALUE = "";
@@ -2541,25 +2587,6 @@ function formatMessagePart(ctx, node) {
       throw new Error(`unhandled node type on format message part: ${type}`);
   }
 }
-var code = CompileErrorCodes.__EXTEND_POINT__;
-var inc = incrementer(code);
-var CoreErrorCodes = {
-  INVALID_ARGUMENT: code,
-  INVALID_DATE_ARGUMENT: inc(),
-  INVALID_ISO_DATE_ARGUMENT: inc(),
-  NOT_SUPPORT_NON_STRING_MESSAGE: inc(),
-  __EXTEND_POINT__: inc()
-  // 22
-};
-function createCoreError(code3) {
-  return createCompileError(code3, null, true ? { messages: errorMessages2 } : void 0);
-}
-var errorMessages2 = {
-  [CoreErrorCodes.INVALID_ARGUMENT]: "Invalid arguments",
-  [CoreErrorCodes.INVALID_DATE_ARGUMENT]: "The date provided is an invalid Date object.Make sure your Date represents a valid date.",
-  [CoreErrorCodes.INVALID_ISO_DATE_ARGUMENT]: "The argument provided is not a valid ISO date string",
-  [CoreErrorCodes.NOT_SUPPORT_NON_STRING_MESSAGE]: "Not support non-string message"
-};
 var WARN_MESSAGE = `Detected HTML in '{source}' message. Recommend not using HTML messages to avoid XSS.`;
 function checkHtmlMessage(source, warnHtmlMessage) {
   if (warnHtmlMessage && detectHtmlTag(source)) {
@@ -3241,8 +3268,8 @@ function clearNumberFormat(ctx, locale, format4) {
   initFeatureFlags();
 }
 
-// node_modules/.pnpm/vue-i18n@9.7.0_vue@3.3.8/node_modules/vue-i18n/dist/vue-i18n.mjs
-var VERSION2 = "9.7.0";
+// node_modules/.pnpm/vue-i18n@9.8.0_vue@3.3.9/node_modules/vue-i18n/dist/vue-i18n.mjs
+var VERSION2 = "9.8.0";
 function initFeatureFlags2() {
   if (typeof __VUE_I18N_FULL_INSTALL__ !== "boolean") {
     getGlobalThis().__VUE_I18N_FULL_INSTALL__ = true;
@@ -3317,7 +3344,7 @@ var I18nErrorCodes = {
   NOT_AVAILABLE_COMPOSITION_IN_LEGACY: inc2(),
   // for enhancement
   __EXTEND_POINT__: inc2()
-  // 37
+  // 40
 };
 function createI18nError(code3, ...args) {
   return createCompileError(code3, null, true ? { messages: errorMessages3, args } : void 0);
@@ -5601,28 +5628,28 @@ export {
 
 @intlify/shared/dist/shared.mjs:
   (*!
-    * shared v9.7.0
+    * shared v9.8.0
     * (c) 2023 kazuya kawaguchi
     * Released under the MIT License.
     *)
 
 @intlify/message-compiler/dist/message-compiler.esm-browser.js:
   (*!
-    * message-compiler v9.7.0
+    * message-compiler v9.8.0
     * (c) 2023 kazuya kawaguchi
     * Released under the MIT License.
     *)
 
 @intlify/core-base/dist/core-base.mjs:
   (*!
-    * core-base v9.7.0
+    * core-base v9.8.0
     * (c) 2023 kazuya kawaguchi
     * Released under the MIT License.
     *)
 
 vue-i18n/dist/vue-i18n.mjs:
   (*!
-    * vue-i18n v9.7.0
+    * vue-i18n v9.8.0
     * (c) 2023 kazuya kawaguchi
     * Released under the MIT License.
     *)

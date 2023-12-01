@@ -1,74 +1,74 @@
 {
-  "hash": "731f7441",
-  "browserHash": "ebfddc72",
+  "hash": "c96b4fa8",
+  "browserHash": "2a45857d",
   "optimized": {
     "vue": {
-      "src": "../../../node_modules/.pnpm/vue@3.3.8_typescript@5.2.2/node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "src": "../../../node_modules/.pnpm/vue@3.3.9_typescript@5.3.2/node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "ee3e9aae",
+      "fileHash": "fc792dbb",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../node_modules/.pnpm/@vue+devtools-api@6.5.1/node_modules/@vue/devtools-api/lib/esm/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "6b061d0a",
+      "fileHash": "416e31eb",
       "needsInterop": false
     },
     "vitepress > @vueuse/integrations/useFocusTrap": {
-      "src": "../../../node_modules/.pnpm/@vueuse+integrations@10.6.1_focus-trap@7.5.4_qrcode@1.5.3_vue@3.3.8/node_modules/@vueuse/integrations/useFocusTrap.mjs",
+      "src": "../../../node_modules/.pnpm/@vueuse+integrations@10.6.1_focus-trap@7.5.4_qrcode@1.5.3_vue@3.3.9/node_modules/@vueuse/integrations/useFocusTrap.mjs",
       "file": "vitepress___@vueuse_integrations_useFocusTrap.js",
-      "fileHash": "8fa3ae27",
+      "fileHash": "df95267d",
       "needsInterop": false
     },
     "vitepress > mark.js/src/vanilla.js": {
       "src": "../../../node_modules/.pnpm/mark.js@8.11.1/node_modules/mark.js/src/vanilla.js",
       "file": "vitepress___mark__js_src_vanilla__js.js",
-      "fileHash": "634bcba1",
+      "fileHash": "b4bb4289",
       "needsInterop": false
     },
     "vitepress > minisearch": {
-      "src": "../../../node_modules/.pnpm/minisearch@6.2.0/node_modules/minisearch/dist/es/index.js",
+      "src": "../../../node_modules/.pnpm/minisearch@6.3.0/node_modules/minisearch/dist/es/index.js",
       "file": "vitepress___minisearch.js",
-      "fileHash": "f67ef862",
+      "fileHash": "0d810239",
       "needsInterop": false
     },
     "medium-zoom": {
       "src": "../../../node_modules/.pnpm/medium-zoom@1.1.0/node_modules/medium-zoom/dist/medium-zoom.esm.js",
       "file": "medium-zoom.js",
-      "fileHash": "1bc35a67",
+      "fileHash": "26ec2239",
       "needsInterop": false
     },
     "vue-i18n": {
-      "src": "../../../node_modules/.pnpm/vue-i18n@9.7.0_vue@3.3.8/node_modules/vue-i18n/dist/vue-i18n.mjs",
+      "src": "../../../node_modules/.pnpm/vue-i18n@9.8.0_vue@3.3.9/node_modules/vue-i18n/dist/vue-i18n.mjs",
       "file": "vue-i18n.js",
-      "fileHash": "9b37e314",
+      "fileHash": "c9f0e6c6",
       "needsInterop": false
     },
     "@vueuse/integrations/useQRCode": {
-      "src": "../../../node_modules/.pnpm/@vueuse+integrations@10.6.1_focus-trap@7.5.4_qrcode@1.5.3_vue@3.3.8/node_modules/@vueuse/integrations/useQRCode.mjs",
+      "src": "../../../node_modules/.pnpm/@vueuse+integrations@10.6.1_focus-trap@7.5.4_qrcode@1.5.3_vue@3.3.9/node_modules/@vueuse/integrations/useQRCode.mjs",
       "file": "@vueuse_integrations_useQRCode.js",
-      "fileHash": "93fe0a43",
+      "fileHash": "a2992dec",
       "needsInterop": false
     },
     "@vueuse/core": {
-      "src": "../../../node_modules/.pnpm/@vueuse+core@10.6.1_vue@3.3.8/node_modules/@vueuse/core/index.mjs",
+      "src": "../../../node_modules/.pnpm/@vueuse+core@10.6.1_vue@3.3.9/node_modules/@vueuse/core/index.mjs",
       "file": "@vueuse_core.js",
-      "fileHash": "26c0f22d",
+      "fileHash": "2c0a502c",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-SUBOW4SN": {
-      "file": "chunk-SUBOW4SN.js"
-    },
-    "chunk-UNJ7IZWA": {
-      "file": "chunk-UNJ7IZWA.js"
+    "chunk-3SYFQLSC": {
+      "file": "chunk-3SYFQLSC.js"
     },
     "chunk-JILBLBFW": {
       "file": "chunk-JILBLBFW.js"
     },
-    "chunk-GGZMSWZI": {
-      "file": "chunk-GGZMSWZI.js"
+    "chunk-UYNADFAK": {
+      "file": "chunk-UYNADFAK.js"
+    },
+    "chunk-K5RGFED5": {
+      "file": "chunk-K5RGFED5.js"
     },
     "chunk-LQ2VYIYD": {
       "file": "chunk-LQ2VYIYD.js"

@@ -1,21 +1,18 @@
-@font-face {
-  font-family: zh-cn-min;
-  src: url('https://yuanshen.site/docs/fonts/zh-cn-min.woff');
- }
+
 /**
  * Colors
  * -------------------------------------------------------------------------- */
 
 :root {
-  --vp-c-indigo-1: #18794e;
-  --vp-c-indigo-2: #fcbfc7;
+  --vp-c-indigo-1: #093B8A;
+  --vp-c-indigo-2: #093B8A;
   --vp-c-indigo-3: #defc79;
   --vp-c-indigo-soft: rgba(0, 108, 69 0.16);
   --vp-font-family-base: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
     Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', miui, 'Hiragino Sans GB',
     'Microsoft Yahei', sans-serif;
-  --vp-c-accent: #fcbfc7;
-  --vp-c-brand: #fcbfc7;
+  --vp-c-accent: #57B2BA;
+  --vp-c-brand: #57B2BA;
   --vp-c-text-code: #476582;
 
   --vp-code-block-bg: rgba(125, 125, 125, 0.04);
@@ -44,8 +41,8 @@
  * -------------------------------------------------------------------------- */
 
 :root {
-  --vp-code-line-highlight-color: rgba(125, 125, 125, 0.2);
-  --vp-c-brand-light: #34d399;
+  --vp-code-line-highlightf-color: rgba(125, 125, 125, 0.2);
+  --vp-c-brand-light: #57B2BA;
 }
 
 .dark {
@@ -72,15 +69,12 @@
 
 :root {
   --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(
-    120deg,
-    #fcbfc7 -80%,
-    #fcbfc7
-  );
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #57b2ba, #093b8a);
+
   --vp-home-hero-image-background-image: linear-gradient(
     -45deg,
-    #c9b0df 30%,
-    #fcbfc7
+    #57B2BA 35%,
+    #57B2BA
   );
   --vp-home-hero-image-filter: blur(30px);
 
@@ -97,4 +91,15 @@
   :root {
     --vp-home-hero-image-filter: blur(160px);
   }
+}
+@font-face {
+  font-family: '原神';
+  src: url('/fonts/原神') format('WOFF');
+  
+  /* 添加其他格式 */
+}
+
+body {
+  font-family: '原神', sans-serif;
+  
 }

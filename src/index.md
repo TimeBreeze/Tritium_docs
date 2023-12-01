@@ -6,10 +6,9 @@ titleTemplate: Redemption Project
 hero:
   name: Redemption Project
   text: Mediatek 1200/1100系列全方位优化
-  tagline: 我永远忘不了他说需要我的救赎 但是他不曾知道是他给了我救赎
+  tagline: 他何尝不是我们心中神明呢，一切，终将得到救赎... ...
   image:
-    src: /阿库娅.png
-    alt: 刻晴
+    src: 芙宁娜.png
   actions:
     - theme: brand
       text: 开始
