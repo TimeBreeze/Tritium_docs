@@ -45,6 +45,7 @@ export const productionHead: HeadConfig[] = [
 export default defineConfig({
   base: '/Tritium_docs/',
   lastUpdated: true,
+  ignoreDeadLinks: true
   srcDir: 'src',
   outDir: './dist',
   srcExclude: [],
