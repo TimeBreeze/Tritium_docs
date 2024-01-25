@@ -1,29 +1,24 @@
 [ 
   {
     "location": "China",
-    "name": "忘渐",
-    "qq": 2362958303,
-    "title": "uperf -Mediatek 1200/1100 ",
-    "company": "往初见亦随心，愿初见似随心",
+    "name": "chenzyadb",
+    "qq": 1834634747,
+    "title": "CuprumTurbo Scheduler开发者",
+    "company": "千人之诺诺, 不如一士之谔谔",
     "companyLink": "",
-    "socials": {}
-  },
-  {
-    "location": "China",
-    "name": "Oldmemorie",
-    "qq": 3293811490,
-    "title": "Redemption Project - docs",
-    "company": "我曾经喜欢过你，但可惜我先成了大人……",
-    "companyLink": "https://github.com/Oldmemorie",
     "projects": [
       {
-        "label": "Redemption Project",
-        "url": "https://github.com/Oldmemorie/"
+        "label": "CuprumTurbo-Scheduler",
+        "url": "https://github.com/chenzyadb/CuprumTurbo-Scheduler"
+      },
+            {
+        "label": "CuToolbox",
+        "url": "https://github.com/chenzyadb/CuprumTurbo-Scheduler"
       }
+      
     ],
     "socials": {
-      "github": "Oldmemorie",
-      "gitee": "Oldmemories"
+    "github": "chenzyadb"
     }
   }
 ]

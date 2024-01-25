@@ -1,18 +1,18 @@
 ---
 layout: home
 title: vitepress 
-titleTemplate: Redemption Project
+titleTemplate: Tritium
 
 hero:
-  name: Redemption Project
-  text: Mediatek 1200/1100系列全方位优化
+  name: Tritium
+  text: CuprumTurbo Scheduler的衍生版本
   tagline: 他何尝不是我们心中神明呢，一切，终将得到救赎... ...
   image:
     src: 芙宁娜.png
   actions:
     - theme: brand
       text: 开始
-      link: /guide/介绍/什么是Redemption Project.md
+      link: /guide/start.md
     - theme: alt
       text: 常见问题
       link: /FAQ/FAQ.md
@@ -21,7 +21,10 @@ hero:
       link: /team.md
     - theme: brand
       text: 加入我们
-      link: https://qm.qq.com/cgi-bin/qm/qr?authKey=%2BfWrZhn05ktTeSD6pibD%2Bwj1YbcZtH6p0wOibi73W94wSO2ejrzDkAt00QZ%2Fb6wY&k=iS97v7KIEHcH2bfK3BFnSnidXmNdLC3v&noverify=0
+      link: https://qm.qq.com/q/kkBufFwfeM
+    - theme: alt
+      text: 乐子记录
+      link: /clown.md
   
    
       
@@ -33,7 +36,7 @@ features:
   - icon:
       src: /img/svg/home/icon_实时更新.svg
     title:  长期更新
-    details: 历经90多天的深入探究，数以百计的测试数据，会长期不断调整更新
+    details: 深入探究，数以百计的测试数据，会长期不断调整更新
   - icon:
       src: /img/svg/home/简单.svg
     title: 上手简单

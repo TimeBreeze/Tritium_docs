@@ -43,7 +43,7 @@ export const productionHead: HeadConfig[] = [
 ]
 
 export default defineConfig({
-  base: '/RedemptionProject/',
+  base: '/Tritium_docs/',
   lastUpdated: true,
   srcDir: 'src',
   outDir: './dist',
@@ -51,8 +51,9 @@ export default defineConfig({
   scrollOffset: 'header',
   cleanUrls: true,
   sitemap: {
-    hostname: 'https://yuanshen.site',
+    hostname: 'https://oldmemorie.github.io/Tritium_docs/',
   },
+
   themeConfig: {
   //侧边栏文字更改(移动端) 
     sidebarMenuLabel:'目录',

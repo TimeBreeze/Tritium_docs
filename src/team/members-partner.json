@@ -1,20 +1,2 @@
 [
-  {
-    "location": "China",
-    "name": "Oldmemorie",
-    "qq": 3293811490,
-    "title": "Redemption Project - docs",
-    "company": "我曾经喜欢过你，但可惜我先成了大人……",
-    "companyLink": "https://github.com/Oldmemorie",
-    "projects": [
-      {
-        "label": "Redemption Project",
-        "url": "https://github.com/Oldmemorie/"
-      }
-    ],
-    "socials": {
-      "github": "Oldmemorie",
-      "gitee": "Oldmemories"
-    }
-  }
 ]

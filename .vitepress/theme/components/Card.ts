@@ -100,7 +100,7 @@ const Card: FunctionalComponent<CardProps> = ({
     icon === ''
       ? h('img', {
           class: 'vp-card-logo no-zoomable',
-          src: withBase(logo || '/imgs/logo_128.png'),
+          src: withBase(logo || '/阿库娅.png'),
         })
       : h('label', {
           class: `vp-card-icon ${icon}`,
@@ -113,10 +113,11 @@ const Card: FunctionalComponent<CardProps> = ({
         innerHTML: desc
           ? desc
           : isRelativeLink(link)
-          ? `https://oldmemories.gitee.io/yunzai-bot-docs/${
-              link.substring(0, 3).replace(/(\.\/|\/)/g, '') + link.substring(3)
-            }`
-          : link,
+            ? `https://oldmemorie.github.io/Tritium_docs/${
+                link.substring(0, 3).replace(/(\.\/|\/)/g, '') +
+                link.substring(3)
+              }`
+            : link,
       }),
     ]),
   ]

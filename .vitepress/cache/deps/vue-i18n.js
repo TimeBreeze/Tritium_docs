@@ -1,7 +1,4 @@
 import {
-  setupDevtoolsPlugin
-} from "./chunk-JILBLBFW.js";
-import {
   Fragment,
   Text,
   computed,
@@ -18,10 +15,13 @@ import {
   ref,
   shallowRef,
   watch
-} from "./chunk-K5RGFED5.js";
+} from "./chunk-YP6MUCOV.js";
+import {
+  setupDevtoolsPlugin
+} from "./chunk-JILBLBFW.js";
 import "./chunk-LQ2VYIYD.js";
 
-// node_modules/.pnpm/@intlify+shared@9.8.0/node_modules/@intlify/shared/dist/shared.mjs
+// node_modules/.pnpm/@intlify+shared@9.9.0/node_modules/@intlify/shared/dist/shared.mjs
 var inBrowser = typeof window !== "undefined";
 var mark;
 var measure;
@@ -171,18 +171,20 @@ function deepCopy(src, des) {
   if (isNotObjectOrIsArray(src) || isNotObjectOrIsArray(des)) {
     throw new Error("Invalid value");
   }
-  for (const key in src) {
-    if (hasOwn(src, key)) {
-      if (isNotObjectOrIsArray(src[key]) || isNotObjectOrIsArray(des[key])) {
-        des[key] = src[key];
+  const stack = [{ src, des }];
+  while (stack.length) {
+    const { src: src2, des: des2 } = stack.pop();
+    Object.keys(src2).forEach((key) => {
+      if (isNotObjectOrIsArray(src2[key]) || isNotObjectOrIsArray(des2[key])) {
+        des2[key] = src2[key];
       } else {
-        deepCopy(src[key], des[key]);
+        stack.push({ src: src2[key], des: des2[key] });
       }
-    }
+    });
   }
 }
 
-// node_modules/.pnpm/@intlify+message-compiler@9.8.0/node_modules/@intlify/message-compiler/dist/message-compiler.esm-browser.js
+// node_modules/.pnpm/@intlify+message-compiler@9.9.0/node_modules/@intlify/message-compiler/dist/message-compiler.esm-browser.js
 function createPosition(line, column, offset) {
   return { line, column, offset };
 }
@@ -1674,7 +1676,7 @@ function baseCompile(source, options = {}) {
   }
 }
 
-// node_modules/.pnpm/@intlify+core-base@9.8.0/node_modules/@intlify/core-base/dist/core-base.mjs
+// node_modules/.pnpm/@intlify+core-base@9.9.0/node_modules/@intlify/core-base/dist/core-base.mjs
 function initFeatureFlags() {
   if (typeof __INTLIFY_PROD_DEVTOOLS__ !== "boolean") {
     getGlobalThis().__INTLIFY_PROD_DEVTOOLS__ = false;
@@ -2387,7 +2389,7 @@ function appendItemToChain(chain, target, blocks) {
   }
   return follow;
 }
-var VERSION = "9.8.0";
+var VERSION = "9.9.0";
 var NOT_REOSLVED = -1;
 var DEFAULT_LOCALE = "en-US";
 var MISSING_RESOLVE_VALUE = "";
@@ -3268,8 +3270,8 @@ function clearNumberFormat(ctx, locale, format4) {
   initFeatureFlags();
 }
 
-// node_modules/.pnpm/vue-i18n@9.8.0_vue@3.3.9/node_modules/vue-i18n/dist/vue-i18n.mjs
-var VERSION2 = "9.8.0";
+// node_modules/.pnpm/vue-i18n@9.9.0_vue@3.4.15/node_modules/vue-i18n/dist/vue-i18n.mjs
+var VERSION2 = "9.9.0";
 function initFeatureFlags2() {
   if (typeof __VUE_I18N_FULL_INSTALL__ !== "boolean") {
     getGlobalThis().__VUE_I18N_FULL_INSTALL__ = true;
@@ -3500,18 +3502,19 @@ function createComposer(options = {}, VueI18nLegacy) {
   const { __root, __injectWithOption } = options;
   const _isGlobal = __root === void 0;
   const flatJson = options.flatJson;
+  const _ref = inBrowser ? ref : shallowRef;
   let _inheritLocale = isBoolean(options.inheritLocale) ? options.inheritLocale : true;
-  const _locale = ref(
+  const _locale = _ref(
     // prettier-ignore
     __root && _inheritLocale ? __root.locale.value : isString(options.locale) ? options.locale : DEFAULT_LOCALE
   );
-  const _fallbackLocale = ref(
+  const _fallbackLocale = _ref(
     // prettier-ignore
     __root && _inheritLocale ? __root.fallbackLocale.value : isString(options.fallbackLocale) || isArray(options.fallbackLocale) || isPlainObject(options.fallbackLocale) || options.fallbackLocale === false ? options.fallbackLocale : _locale.value
   );
-  const _messages = ref(getLocaleMessages(_locale.value, options));
-  const _datetimeFormats = ref(isPlainObject(options.datetimeFormats) ? options.datetimeFormats : { [_locale.value]: {} });
-  const _numberFormats = ref(isPlainObject(options.numberFormats) ? options.numberFormats : { [_locale.value]: {} });
+  const _messages = _ref(getLocaleMessages(_locale.value, options));
+  const _datetimeFormats = _ref(isPlainObject(options.datetimeFormats) ? options.datetimeFormats : { [_locale.value]: {} });
+  const _numberFormats = _ref(isPlainObject(options.numberFormats) ? options.numberFormats : { [_locale.value]: {} });
   let _missingWarn = __root ? __root.missingWarn : isBoolean(options.missingWarn) || isRegExp(options.missingWarn) ? options.missingWarn : true;
   let _fallbackWarn = __root ? __root.fallbackWarn : isBoolean(options.fallbackWarn) || isRegExp(options.fallbackWarn) ? options.fallbackWarn : true;
   let _fallbackRoot = __root ? __root.fallbackRoot : isBoolean(options.fallbackRoot) ? options.fallbackRoot : true;
@@ -5628,29 +5631,29 @@ export {
 
 @intlify/shared/dist/shared.mjs:
   (*!
-    * shared v9.8.0
-    * (c) 2023 kazuya kawaguchi
+    * shared v9.9.0
+    * (c) 2024 kazuya kawaguchi
     * Released under the MIT License.
     *)
 
 @intlify/message-compiler/dist/message-compiler.esm-browser.js:
   (*!
-    * message-compiler v9.8.0
-    * (c) 2023 kazuya kawaguchi
+    * message-compiler v9.9.0
+    * (c) 2024 kazuya kawaguchi
     * Released under the MIT License.
     *)
 
 @intlify/core-base/dist/core-base.mjs:
   (*!
-    * core-base v9.8.0
-    * (c) 2023 kazuya kawaguchi
+    * core-base v9.9.0
+    * (c) 2024 kazuya kawaguchi
     * Released under the MIT License.
     *)
 
 vue-i18n/dist/vue-i18n.mjs:
   (*!
-    * vue-i18n v9.8.0
-    * (c) 2023 kazuya kawaguchi
+    * vue-i18n v9.9.0
+    * (c) 2024 kazuya kawaguchi
     * Released under the MIT License.
     *)
 */

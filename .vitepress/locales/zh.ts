@@ -2,34 +2,23 @@ import { baseHelper } from '../theme/utils'
 import { socialList } from '../theme/composables/socialList'
 import type { DefaultTheme, LocaleSpecificConfig } from 'vitepress'
 import type { CustomConfig } from './types'
+import { title } from 'process'
 
 export const META_URL = 'https://github.com/Oldmemorie'
-export const META_TITLE = 'Redemption Project'
-export const META_DESCRIPTION = 'Redemption Project'
+export const META_TITLE = 'Tritium'
+export const META_DESCRIPTION = 'Tritium'
 export const META_KEYWORDS =
-  ''
+  'CuprumTurbo Scheduler的衍生版本'
 export const META_IMAGE = './阿库娅.png'
 export const LOCAL_CODE = 'zh-CN'
-export const LOCAL_BASE = '/Redemption Project/'
+export const LOCAL_BASE = ''
+
 
 export const zhConfig: LocaleSpecificConfig<
   DefaultTheme.Config & CustomConfig
 > = {
-  titleTemplate: 'Redemption Project ',
-  description: '123123',
-    head: [
-  ['link', { rel: 'icon', href: './阿库娅.png' }],
-  ['link', { rel: 'stylesheet', href: '/styles/custom.css' }],
-  ['meta', { name: 'author', content: '旧忆 残梦' }],
-  ['meta', { name: 'keywords', content: '基于著名GitHub项目uperf 进行调节，及其CPU&GPU降压调教' }],
-
-  ['meta', { name: 'HandheldFriendly', content: 'True' }],
-  ['meta', { name: 'MobileOptimized', content: '320' }],
-  ['meta', { name: 'theme-color', content: '#000000' }],
-  ['meta', { name: 'baidu_union_verify', content: '19bd8ed3f02a91e23043efdf1d823107' }],
-  ],
-  themeConfig: {
-    siteTitle: 'Redemption Project',
+    themeConfig: {
+    siteTitle: 'Tritium',
     keyword: META_KEYWORDS,
     description: META_DESCRIPTION,
     image: META_IMAGE,
@@ -45,21 +34,21 @@ export const zhConfig: LocaleSpecificConfig<
     },
     team: {
       title: '关于团队',
-      desc: 'Redemption Project的背后是一个基本来自中国的团队，以下是部分成员的个人信息。',
+      desc: 'Tritium的背后是一个基本来自中国的团队，以下是部分成员的个人信息。',
       coreMember: {
         title: '核心团队成员',
-        desc: '核心团队成员是那些积极长期参与维护一个或多个核心项目的人。 他们对Redemption Project的维护与开发做出了核心贡献。',
+        desc: '核心团队成员是那些积极长期参与维护一个或多个核心项目的人。 他们对Tritium的维护与开发做出了核心贡献。',
       },
       emeritiMember: {
         title: '名誉核心团队',
-        desc: '我们在此致敬过去曾做出过突出贡献的不再活跃的团队成员。',
+        desc: '名誉核心团队是那些即将维护自定义配置文件的人员，他们积极跟进上游并不断优化体验，',
       },
       partnerMember: {
         title: '社区伙伴',
         desc: '社区伙伴是参与到本计划的反馈&测试人员，他们为我们提供了大量的矫正数据',
       },
     },
-    socialLinks: [
+        socialLinks: [
       { icon: 'github', link: 'https://github.com/Olmemorie' },
       {
         icon: {
@@ -81,8 +70,9 @@ export const zhConfig: LocaleSpecificConfig<
       prev: '上一页',
       next: '下一页',
     },
+    
     editLink: {
-      pattern: 'https://oldmemories.github.io/Redemption Project/',
+      pattern: 'https://github.com/kongying-tavern/docs/edit/main/src/:path',
       text: '报告错误',
     },
     sidebar: baseHelper(sidebar(), LOCAL_BASE),
@@ -93,40 +83,56 @@ export const zhConfig: LocaleSpecificConfig<
 
 function nav(): DefaultTheme.NavItem[] {
   return [
-  {
-    text: '指导',
-    link: '/guide/介绍/什么是Redemption Project.md',
-    activeMatch: '/guide/'
-  },
-  {
-    text: 'FAQ',
-    link: 'FAQ/FAQ.md',
-    activeMatch: 'FAQ/FAQ.md'
-  },
-  {
-    text: '主页',
-    link: 'index.md',
-    activeMatch: '/index.md/'
-  },
- ]
-}
+	    {
+	      text: '了解更多',
+	      items: [
+	         {
+	          text: '加入我们',
+	          link: '/join.md',
+	         },
+	         {
+	          text: '了解团队',
+	          link: '/team.md',
+	        },
+	      ],
+	    },
+        {
+          text: '更新日志',
+          items: [
+            {
+              text: '更新日志',
+              link: '/日志.md',
+            },
+          ],
+        },
+        {
+          text: '法律相关',
+          items: [
+            {
+              text: '免责声明',
+              link: '/disclaimer.md',
+            },
+            {
+              text: '用户协议',
+              link: '/agreement.md',
+            },
+          ],
+        },
+      ]
+    }
 
 function footer(): CustomConfig['footer'] {
   return {
-    qrcodeTitle: '反馈群',
+    qrcodeTitle: '开发反馈群',
     qrcodeMessage: '欢迎QQ扫码联系我们',
-    qrcodeLink: 'https://qm.qq.com/cgi-bin/qm/qr?authKey=KTuDLwDt00BdCg89qwad4Y4UpXaqLp4%2Bp32fJpDGiIesphW4yBpinyf3t0fl9jrP&k=yCWwXFsMWfjsgk_E_YRbcmq50Yze9bIr&noverify=0',
+    qrcodeLink: 'https://jq.qq.com/?_wv=1027&k=nbveGrfQ',
     navigation: [
       {
         title: '关于',
         items: [
           {
-            text: '我们团队',
-            link: '/team',
-          },
-          {
-            text: '赞助鸣谢',
-            link: '/support-us',
+            text: '加入我们',
+            link: '/join',
           },
           {
             text: '友情链接',
@@ -142,10 +148,6 @@ function footer(): CustomConfig['footer'] {
             link: '/disclaimer',
           },
           {
-            text: '隐私政策',
-            link: '/privacy',
-          },
-          {
             text: '用户协议',
             link: '/agreement',
           },
@@ -157,22 +159,30 @@ function footer(): CustomConfig['footer'] {
 
 function sidebar(): DefaultTheme.SidebarItem[] {
   return {
-// This sidebar gets displayed when a user
-      // is on `guide` directory.
+    // 当用户位于 `guide` 目录时，会显示此侧边栏
       '/guide/': [
         {
-          text: '介绍',
+          text: 'Guide',
+          collapsed: false,
           items: [
-            { text: '什么是Redemption Project', link: '/guide/介绍/什么是Redemption Project.md' },
-            { text: '准备工作', link: '/guide/介绍/准备工作.md' },
+            { text: '开始', link: '/guide/start' },
+            { text: '下载', link: '/guide/download' },
+            { text: '使用', link: '/guide/use' }
           ]
-        },
-        {
-          text: '开始',
-          items: [
-            { text: '选择设备', link: '/guide/开始/开始.md' },
-              ]
-            },
+        }
       ],
+
+      // 当用户位于 `config` 目录时，会显示此侧边栏
+      '/config/': [
+        {
+          text: 'Config',
+          collapsed: false,
+          items: [
+            { text: 'Index', link: '/config/' },
+            { text: 'Three', link: '/config/three' },
+            { text: 'Four', link: '/config/four' }
+          ]
+        }
+      ]
   }
 }

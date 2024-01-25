@@ -1,70 +1,512 @@
-
 /**
- * Colors
+ * 颜色：实色
  * -------------------------------------------------------------------------- */
 
+/* 根变量 */
 :root {
-  --vp-c-indigo-1: #093B8A;
-  --vp-c-indigo-2: #093B8A;
-  --vp-c-indigo-3: #defc79;
-  --vp-c-indigo-soft: rgba(0, 108, 69 0.16);
-  --vp-font-family-base: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
-    Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', miui, 'Hiragino Sans GB',
-    'Microsoft Yahei', sans-serif;
-  --vp-c-accent: #57B2BA;
-  --vp-c-brand: #57B2BA;
-  --vp-c-text-code: #476582;
+  --vp-c-white: #ffffff;             /* 白色 */
+  --vp-c-black: #000000;             /* 黑色 */
 
-  --vp-code-block-bg: rgba(125, 125, 125, 0.04);
-  --vp-code-copy-code-bg: rgba(125, 125, 125, 0.1);
-  --vp-code-copy-code-hover-bg: rgba(125, 125, 125, 0.2);
-
-  --vp-c-disabled-bg: rgba(125, 125, 125, 0.2);
-  /* fix contrast on gray cards: used by --vp-c-text-2 */
-  --vp-c-text-light-2: rgba(56 56 56 / 70%);
-
-  --vp-sidebar-width: 295px;
-
-  --nav-c-bg: rgba(255, 255, 255, 0.7);
+  --vp-c-neutral: var(--vp-c-black); /* 中性色 */
+  --vp-c-neutral-inverse: var(--vp-c-white);  /* 中性色反色 */
 }
 
+/* 暗模式下的调整 */
 .dark {
-  --vp-code-block-bg: rgba(0, 0, 0, 0.4);
-  --vp-c-text-code: #aac8e4;
-  /* fix contrast on gray cards: check the same above (this is the default) */
-  --vp-c-text-dark-2: rgba(235, 235, 235, 0.6);
-  --nav-c-bg: rgba(30, 30, 32, 0.5);
+  --vp-c-neutral: var(--vp-c-white); /* 中性色在暗模式下的调整 */
+  --vp-c-neutral-inverse: var(--vp-c-black);  /* 中性色反色在暗模式下的调整 */
 }
 
 /**
- * Component: Code
+ * 颜色：调色板
+ *
+ * 用于强调颜色的原始颜色。这些颜色被函数性颜色引用，如“Text”、“Background”或“Brand”。
+ *
+ * 每种颜色都具有相同的颜色比例系统，包括3个不同亮度级别的实色，以及1个淡色。
+ *
+ * - `XXX-1`：主要用于有色文本的最实色。它必须满足在`XXX-soft`上使用时的对比度比。
+ *
+ * - `XXX-2`：主要用于按钮的悬停状态。
+ *
+ * - `XXX-3`：用于实色背景，如按钮的背景色。
+ *    它必须满足白色文字（#ffffff）在其上的对比度比。
+ *
+ * - `XXX-soft`：用于微妙的背景，如自定义容器或徽章。
+ *    它必须满足将`XXX-1`颜色放在其上时的对比度比。
+ *
+ *    柔和的颜色必须是半透明的 alpha 通道。这是至关重要的，
+ *    因为它允许将多个“柔和”颜色叠加在一起，以创建强调，
+ *    例如在自定义容器内嵌代码块的情况下。
  * -------------------------------------------------------------------------- */
 
 :root {
-  --vp-code-line-highlightf-color: rgba(125, 125, 125, 0.2);
-  --vp-c-brand-light: #57B2BA;
+  --vp-c-gray-1: #dddde3;           /* 灰色 1 */
+  --vp-c-gray-2: #e4e4e9;           /* 灰色 2 */
+  --vp-c-gray-3: #ebebef;           /* 灰色 3 */
+  --vp-c-gray-soft: rgba(142, 150, 170, 0.14);  /* 柔和灰色 */
+
+  --vp-c-indigo-1: #57B2BA;         /* 靛蓝 1 */
+  --vp-c-indigo-2: #57B2BA;         /* 靛蓝 2 */
+  --vp-c-indigo-3: #57B2BA;         /* 靛蓝 3 */
+  --vp-c-indigo-soft: rgba(100, 108, 255, 0.14);  /* 柔和靛蓝 */
+
+  --vp-c-purple-1: #6f42c1;         /* 紫色 1 */
+  --vp-c-purple-2: #7e4cc9;         /* 紫色 2 */
+  --vp-c-purple-3: #8e5cd9;         /* 紫色 3 */
+  --vp-c-purple-soft: rgba(159, 122, 234, 0.14);  /* 柔和紫色 */
+
+  --vp-c-green-1: #18794e;          /* 绿色 1 */
+  --vp-c-green-2: #299764;          /* 绿色 2 */
+  --vp-c-green-3: #30a46c;          /* 绿色 3 */
+  --vp-c-green-soft: rgba(16, 185, 129, 0.14);   /* 柔和绿色 */
+
+  --vp-c-yellow-1: #915930;         /* 黄色 1 */
+  --vp-c-yellow-2: #946300;         /* 黄色 2 */
+  --vp-c-yellow-3: #9f6a00;         /* 黄色 3 */
+  --vp-c-yellow-soft: rgba(234, 179, 8, 0.14);  /* 柔和黄色 */
+
+  --vp-c-red-1: #b8272c;            /* 红色 1 */
+  --vp-c-red-2: #d5393e;            /* 红色 2 */
+  --vp-c-red-3: #e0575b;            /* 红色 3 */
+  --vp-c-red-soft: rgba(244, 63, 94, 0.14);   /* 柔和红色 */
+
+  --vp-c-sponsor: #db2777;          /* 赞助商颜色 */
 }
 
+/* 暗模式下的调整 */
 .dark {
-  --vp-code-line-highlight-color: rgba(0, 0, 0, 0.5);
+  --vp-c-gray-1: #515c67;
+  --vp-c-gray-2: #414853;
+  --vp-c-gray-3: #32363f;
+  --vp-c-gray-soft: rgba(101, 117, 133, 0.16);
+
+  --vp-c-indigo-1: #a8b1ff;
+  --vp-c-indigo-2: #5c73e7;
+  --vp-c-indigo-3: #3e63dd;
+  --vp-c-indigo-soft: rgba(100, 108, 255, 0.16);
+
+  --vp-c-purple-1: #c8abfa;
+  --vp-c-purple-2: #a879e6;
+  --vp-c-purple-3: #8e5cd9;
+  --vp-c-purple-soft: rgba(159, 122, 234, 0.16);
+
+  --vp-c-green-1: #3dd68c;
+  --vp-c-green-2: #30a46c;
+  --vp-c-green-3: #298459;
+  --vp-c-green-soft: rgba(16, 185, 129, 0.16);
+
+  --vp-c-yellow-1: #f9b44e;
+  --vp-c-yellow-2: #da8b17;
+  --vp-c-yellow-3: #a46a0a;
+  --vp-c-yellow-soft: rgba(234, 179, 8, 0.16);
+
+  --vp-c-red-1: #f66f81;
+  --vp-c-red-2: #f14158;
+  --vp-c-red-3: #b62a3c;
+  --vp-c-red-soft: rgba(244, 63, 94, 0.16);
 }
 
+
 /**
- * Component: Button
+ * 颜色：背景
+ *
+ * - `bg`: 主屏幕使用的背景颜色。
+ *
+ * - `bg-alt`: 替代性的背景颜色，用于诸如“侧边栏”或“代码块”等地方。
+ *
+ * - `bg-elv`: 提升的背景颜色。这在一些“浮动”部分使用，比如“对话框”。
+ *
+ * - `bg-soft`: 用于轻微区分某些组件与页面的背景颜色。用于诸如“碳广告”或“表格”之类的组件。
  * -------------------------------------------------------------------------- */
 
 :root {
-  --vp-button-brand-bg: var(--vp-c-brand);
-  --vp-button-brand-hover-border: var(--vp-c-brand-light);
+  --vp-c-bg: #ffffff;         /* 主背景颜色 */
+  --vp-c-bg-alt: #f6f6f7;     /* 替代背景颜色，用于侧边栏或代码块等 */
+  --vp-c-bg-elv: #ffffff;     /* 提升的背景颜色，用于浮动部分，如对话框 */
+  --vp-c-bg-soft: #f6f6f7;    /* 轻微区分某些组件与页面的背景颜色，用于碳广告或表格等 */
+}
+
+/* 暗模式下的调整 */
+.dark {
+  --vp-c-bg: #1b1b1f;
+  --vp-c-bg-alt: #161618;
+  --vp-c-bg-elv: #202127;
+  --vp-c-bg-soft: #202127;
+}
+
+/**
+ * 颜色：边框
+ *
+ * - `divider`: 用于分隔线的颜色。用于同一组件内的部分划分，例如在“h2”标题上使用分隔线。
+ *
+ * - `border`: 设计用于交互组件的边框。例如，应该用于按钮轮廓。
+ *
+ * - `gutter`: 用于分隔页面中的组件。例如，头部和页面的其余部分之间的分隔。
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-c-border: #c2c2c4;     /* 边框颜色 */
+  --vp-c-divider: #e2e2e3;    /* 分隔线颜色 */
+  --vp-c-gutter: #e2e2e3;     /* 间隙颜色 */
+}
+
+/* 暗模式下的调整 */
+.dark {
+  --vp-c-border: #3c3f44;
+  --vp-c-divider: #2e2e32;
+  --vp-c-gutter: #000000;
+}
+
+/**
+ * 颜色：文本
+ *
+ * - `text-1`: 用于主要文本的颜色。
+ *
+ * - `text-2`: 用于柔和文本，例如“非活动菜单”或“信息文本”。
+ *
+ * - `text-3`: 用于微妙文本，例如“占位符”或“插入符号”。
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-c-text-1: rgba(60, 60, 67);            /* 主要文本颜色 */
+  --vp-c-text-2: rgba(60, 60, 67, 0.78);      /* 柔和文本颜色，例如非活动菜单或信息文本 */
+  --vp-c-text-3: rgba(60, 60, 67, 0.56);      /* 微妙文本颜色，例如占位符或插入符号 */
+}
+
+/* 暗模式下的调整 */
+.dark {
+  --vp-c-text-1: rgba(255, 255, 245, 0.86);
+  --vp-c-text-2: rgba(235, 235, 245, 0.6);
+  --vp-c-text-3: rgba(235, 235, 245, 0.38);
+}
+
+/**
+ * 颜色：功能
+ *
+ * - `default`: 用于纯粹的微妙指示，没有任何特殊的含义，比如菜单悬停状态的背景颜色。
+ *
+ * - `brand`: 用于主要品牌颜色，例如链接文本、具有品牌主题的按钮等。
+ *
+ * - `tip`: 用于指示有用信息。默认主题默认使用品牌颜色。
+ *
+ * - `warning`: 用于向用户指示警告。用于自定义容器、徽章等。
+ *
+ * - `danger`: 用于显示错误或对用户产生危险的消息。用于自定义容器、徽章等。
+ *
+ * 若要了解比例系统，请参阅“颜色：调色板”部分。
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-c-default-1: var(--vp-c-gray-1);    /* 默认颜色 1 */
+  --vp-c-default-2: var(--vp-c-gray-2);    /* 默认颜色 2 */
+  --vp-c-default-3: var(--vp-c-gray-3);    /* 默认颜色 3 */
+  --vp-c-default-soft: var(--vp-c-gray-soft);  /* 柔和默认颜色 */
+
+  --vp-c-brand-1: var(--vp-c-indigo-1);   /* 品牌颜色 1 */
+  --vp-c-brand-2: var(--vp-c-indigo-2);   /* 品牌颜色 2 */
+  --vp-c-brand-3: var(--vp-c-indigo-3);   /* 品牌颜色 3 */
+  --vp-c-brand-soft: var(--vp-c-indigo-soft);  /* 柔和品牌颜色 */
+
+  /* 不推荐使用: 请使用 `--vp-c-brand-1` 代替。 */
+  --vp-c-brand: var(--vp-c-brand-1);
+
+  --vp-c-tip-1: var(--vp-c-brand-1);     /* 提示颜色 1 */
+  --vp-c-tip-2: var(--vp-c-brand-2);     /* 提示颜色 2 */
+  --vp-c-tip-3: var(--vp-c-brand-3);     /* 提示颜色 3 */
+  --vp-c-tip-soft: var(--vp-c-brand-soft);  /* 柔和提示颜色 */
+
+  --vp-c-note-1: var(--vp-c-brand-1);    /* 注意颜色 1 */
+  --vp-c-note-2: var(--vp-c-brand-2);    /* 注意颜色 2 */
+  --vp-c-note-3: var(--vp-c-brand-3);    /* 注意颜色 3 */
+  --vp-c-note-soft: var(--vp-c-brand-soft);  /* 柔和注意颜色 */
+
+  --vp-c-success-1: var(--vp-c-green-1); /* 成功颜色 1 */
+  --vp-c-success-2: var(--vp-c-green-2); /* 成功颜色 2 */
+  --vp-c-success-3: var(--vp-c-green-3); /* 成功颜色 3 */
+  --vp-c-success-soft: var(--vp-c-green-soft);  /* 柔和成功颜色 */
+
+  --vp-c-important-1: var(--vp-c-purple-1);   /* 重要颜色 1 */
+  --vp-c-important-2: var(--vp-c-purple-2);   /* 重要颜色 2 */
+  --vp-c-important-3: var(--vp-c-purple-3);   /* 重要颜色 3 */
+  --vp-c-important-soft: var(--vp-c-purple-soft);  /* 柔和重要颜色 */
+
+  --vp-c-warning-1: var(--vp-c-yellow-1);    /* 警告颜色 1 */
+  --vp-c-warning-2: var(--vp-c-yellow-2);    /* 警告颜色 2 */
+  --vp-c-warning-3: var(--vp-c-yellow-3);    /* 警告颜色 3 */
+  --vp-c-warning-soft: var(--vp-c-yellow-soft);  /* 柔和警告颜色 */
+
+  --vp-c-danger-1: var(--vp-c-red-1);   /* 危险颜色 1 */
+  --vp-c-danger-2: var(--vp-c-red-2);   /* 危险颜色 2 */
+  --vp-c-danger-3: var(--vp-c-red-3);   /* 危险颜色 3 */
+  --vp-c-danger-soft: var(--vp-c-red-soft);  /* 柔和危险颜色 */
+
+  --vp-c-caution-1: var(--vp-c-red-1);    /* 注意颜色 1 */
+  --vp-c-caution-2: var(--vp-c-red-2);    /* 注意颜色 2 */
+  --vp-c-caution-3: var(--vp-c-red-3);    /* 注意颜色 3 */
+  --vp-c-caution-soft: var(--vp-c-red-soft);  /* 柔和注意颜色 */
+}
+
+/**
+ * 字体
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-font-family-base: 'Chinese Quotes', 'Inter var', 'Inter', ui-sans-serif,
+    system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Helvetica, Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --vp-font-family-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Monaco,
+    Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
+
+/**
+ * 阴影
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --vp-shadow-2: 0 3px 12px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.07);
+  --vp-shadow-3: 0 12px 32px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.08);
+  --vp-shadow-4: 0 14px 44px rgba(0, 0, 0, 0.12), 0 3px 9px rgba(0, 0, 0, 0.12);
+  --vp-shadow-5: 0 18px 56px rgba(0, 0, 0, 0.16), 0 4px 12px rgba(0, 0, 0, 0.16);
+}
+
+/**
+ * Z 索引
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-z-index-footer: 10;
+  --vp-z-index-local-nav: 20;
+  --vp-z-index-nav: 30;
+  --vp-z-index-layout-top: 40;
+  --vp-z-index-backdrop: 50;
+  --vp-z-index-sidebar: 60;
+}
+
+@media (min-width: 960px) {
+  :root {
+    --vp-z-index-sidebar: 25;
+  }
+}
+/**
+ * 图标
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-icon-copy: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' height='20' width='20' stroke='rgba(128,128,128,1)' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2'/%3E%3C/svg%3E");
+  --vp-icon-copied: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' height='20' width='20' stroke='rgba(128,128,128,1)' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2m-6 9 2 2 4-4'/%3E%3C/svg%3E");
+}
+
+/**
+ * 布局
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-layout-max-width: 1440px;
+}
+
+/**
+ * 组件：页内链接
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-header-anchor-symbol: '#';
+}
+
+/**
+ * 组件：代码
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-code-line-height: 1.7;
+  --vp-code-font-size: 0.875em;
+  --vp-code-color: var(--vp-c-brand-1);
+  --vp-code-link-color: var(--vp-c-brand-1);
+  --vp-code-link-hover-color: var(--vp-c-brand-2);
+  --vp-code-bg: var(--vp-c-default-soft);
+
+  --vp-code-block-color: var(--vp-c-text-2);
+  --vp-code-block-bg: var(--vp-c-bg-alt);
+  --vp-code-block-divider-color: var(--vp-c-gutter);
+
+  --vp-code-lang-color: var(--vp-c-text-3);
+
+  --vp-code-line-highlight-color: var(--vp-c-default-soft);
+  --vp-code-line-number-color: var(--vp-c-text-3);
+
+  --vp-code-line-diff-add-color: var(--vp-c-success-soft);
+  --vp-code-line-diff-add-symbol-color: var(--vp-c-success-1);
+
+  --vp-code-line-diff-remove-color: var(--vp-c-danger-soft);
+  --vp-code-line-diff-remove-symbol-color: var(--vp-c-danger-1);
+
+  --vp-code-line-warning-color: var(--vp-c-warning-soft);
+  --vp-code-line-error-color: var(--vp-c-danger-soft);
+
+  --vp-code-copy-code-border-color: var(--vp-c-divider);
+  --vp-code-copy-code-bg: var(--vp-c-bg-soft);
+  --vp-code-copy-code-hover-border-color: var(--vp-c-divider);
+  --vp-code-copy-code-hover-bg: var(--vp-c-bg);
+  --vp-code-copy-code-active-text: var(--vp-c-text-2);
+  --vp-code-copy-copied-text-content: '已复制';
+
+  --vp-code-tab-divider: var(--vp-code-block-divider-color);
+  --vp-code-tab-text-color: var(--vp-c-text-2);
+  --vp-code-tab-bg: var(--vp-code-block-bg);
+  --vp-code-tab-hover-text-color: var(--vp-c-text-1);
+  --vp-code-tab-active-text-color: var(--vp-c-text-1);
+  --vp-code-tab-active-bar-color: var(--vp-c-brand-1);
+}
+
+/**
+ * 组件：按钮
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-button-brand-border: transparent;
+  --vp-button-brand-text: var(--vp-c-white);
+  --vp-button-brand-bg: var(--vp-c-brand-3);
+  --vp-button-brand-hover-border: transparent;
   --vp-button-brand-hover-text: var(--vp-c-white);
-  --vp-button-brand-hover-bg: var(--vp-c-brand-light);
-  --vp-button-brand-active-border: var(--vp-c-brand-light);
+  --vp-button-brand-hover-bg: var(--vp-c-brand-2);
+  --vp-button-brand-active-border: transparent;
   --vp-button-brand-active-text: var(--vp-c-white);
-  --vp-button-brand-active-bg: var(--vp-button-brand-bg);
+  --vp-button-brand-active-bg: var(--vp-c-brand-1);
+
+  --vp-button-alt-border: transparent;
+  --vp-button-alt-text: var(--vp-c-text-1);
+  --vp-button-alt-bg: var(--vp-c-default-3);
+  --vp-button-alt-hover-border: transparent;
+  --vp-button-alt-hover-text: var(--vp-c-text-1);
+  --vp-button-alt-hover-bg: var(--vp-c-default-2);
+  --vp-button-alt-active-border: transparent;
+  --vp-button-alt-active-text: var(--vp-c-text-1);
+  --vp-button-alt-active-bg: var(--vp-c-default-1);
+
+  --vp-button-sponsor-border: var(--vp-c-text-2);
+  --vp-button-sponsor-text: var(--vp-c-text-2);
+  --vp-button-sponsor-bg: transparent;
+  --vp-button-sponsor-hover-border: var(--vp-c-sponsor);
+  --vp-button-sponsor-hover-text: var(--vp-c-sponsor);
+  --vp-button-sponsor-hover-bg: transparent;
+  --vp-button-sponsor-active-border: var(--vp-c-sponsor);
+  --vp-button-sponsor-active-text: var(--vp-c-sponsor);
+  --vp-button-sponsor-active-bg: transparent;
 }
 
 /**
- * Component: Home
+ * 组件：自定义块
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-custom-block-font-size: 14px;
+  --vp-custom-block-code-font-size: 13px;
+
+  --vp-custom-block-info-border: transparent;
+  --vp-custom-block-info-text: var(--vp-c-text-1);
+  --vp-custom-block-info-bg: var(--vp-c-default-soft);
+  --vp-custom-block-info-code-bg: var(--vp-c-default-soft);
+
+  --vp-custom-block-note-border: transparent;
+  --vp-custom-block-note-text: var(--vp-c-text-1);
+  --vp-custom-block-note-bg: var(--vp-c-default-soft);
+  --vp-custom-block-note-code-bg: var(--vp-c-default-soft);
+
+  --vp-custom-block-tip-border: transparent;
+  --vp-custom-block-tip-text: var(--vp-c-text-1);
+  --vp-custom-block-tip-bg: var(--vp-c-tip-soft);
+  --vp-custom-block-tip-code-bg: var(--vp-c-tip-soft);
+
+  --vp-custom-block-important-border: transparent;
+  --vp-custom-block-important-text: var(--vp-c-text-1);
+  --vp-custom-block-important-bg: var(--vp-c-important-soft);
+  --vp-custom-block-important-code-bg: var(--vp-c-important-soft);
+
+  --vp-custom-block-warning-border: transparent;
+  --vp-custom-block-warning-text: var(--vp-c-text-1);
+  --vp-custom-block-warning-bg: var(--vp-c-warning-soft);
+  --vp-custom-block-warning-code-bg: var(--vp-c-warning-soft);
+
+  --vp-custom-block-danger-border: transparent;
+  --vp-custom-block-danger-text: var(--vp-c-text-1);
+  --vp-custom-block-danger-bg: var(--vp-c-danger-soft);
+  --vp-custom-block-danger-code-bg: var(--vp-c-danger-soft);
+
+  --vp-custom-block-caution-border: transparent;
+  --vp-custom-block-caution-text: var(--vp-c-text-1);
+  --vp-custom-block-caution-bg: var(--vp-c-caution-soft);
+  --vp-custom-block-caution-code-bg: var(--vp-c-caution-soft);
+
+  --vp-custom-block-details-border: var(--vp-custom-block-info-border);
+  --vp-custom-block-details-text: var(--vp-custom-block-info-text);
+  --vp-custom-block-details-bg: var(--vp-custom-block-info-bg);
+  --vp-custom-block-details-code-bg: var(--vp-custom-block-info-code-bg);
+}
+
+/**
+ * 组件：输入框
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-input-border-color: var(--vp-c-border);
+  --vp-input-bg-color: var(--vp-c-bg-alt);
+
+  --vp-input-switch-bg-color: var(--vp-c-default-soft);
+}
+
+/**
+ * 组件：导航栏
+ * -------------------------------------------------------------------------- */
+
+/* 导航栏组件的变量 */
+:root {
+  --vp-nav-height: 64px;               /* 导航栏的高度 */
+  --vp-nav-bg-color: var(--vp-c-bg);   /* 导航栏的背景颜色 */
+  --vp-nav-screen-bg-color: var(--vp-c-bg);  /* 导航屏幕的背景颜色 */
+  --vp-nav-logo-height: 24px;          /* 导航栏 Logo 的高度 */
+}
+
+/* 隐藏导航栏类 */
+.hide-nav {
+  --vp-nav-height: 0px;   /* 如果导航栏隐藏，将其高度设为0 */
+}
+
+/* 当导航栏隐藏时调整 VPSidebar 的高度 */
+.hide-nav .VPSidebar {
+  --vp-nav-height: 22px;  /* 导航栏隐藏时 VPSidebar 的调整高度 */
+}
+
+/**
+ * 组件：本地导航栏
+ * -------------------------------------------------------------------------- */
+
+/* 本地导航栏组件的变量 */
+:root {
+  --vp-local-nav-bg-color: var(--vp-c-bg);  /* 本地导航栏的背景颜色 */
+}
+
+/**
+ * 组件：侧边栏
+ * -------------------------------------------------------------------------- */
+
+/* 侧边栏组件的变量 */
+:root {
+  --vp-sidebar-width: 40px;                 /* 侧边栏的宽度 */
+  --vp-sidebar-bg-color: var(--vp-c-bg-alt); /* 侧边栏的背景颜色 */
+}
+
+/**
+ * 颜色背景
+ * -------------------------------------------------------------------------- */
+
+/* 背景组件的变量 */
+:root {
+  --vp-backdrop-bg-color: rgba(0, 0, 0, 0.6);  /* 背景的带透明度的颜色 */
+}
+
+/**
+ * 组件：主页
  * -------------------------------------------------------------------------- */
 
 :root {
@@ -81,6 +523,59 @@
   --vp-layout-top-height: 0.1px;
 }
 
+
+
+
+/**
+ * 组件：徽章
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-badge-info-border: transparent;
+  --vp-badge-info-text: var(--vp-c-text-2);
+  --vp-badge-info-bg: var(--vp-c-default-soft);
+
+  --vp-badge-tip-border: transparent;
+  --vp-badge-tip-text: var(--vp-c-tip-1);
+  --vp-badge-tip-bg: var(--vp-c-tip-soft);
+
+  --vp-badge-warning-border: transparent;
+  --vp-badge-warning-text: var(--vp-c-warning-1);
+  --vp-badge-warning-bg: var(--vp-c-warning-soft);
+
+  --vp-badge-danger-border: transparent;
+  --vp-badge-danger-text: var(--vp-c-danger-1);
+  --vp-badge-danger-bg: var(--vp-c-danger-soft);
+}
+
+/**
+ * 组件：碳排广告
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-carbon-ads-text-color: var(--vp-c-text-1);
+  --vp-carbon-ads-poweredby-color: var(--vp-c-text-2);
+  --vp-carbon-ads-bg-color: var(--vp-c-bg-soft);
+  --vp-carbon-ads-hover-text-color: var(--vp-c-brand-1);
+  --vp-carbon-ads-hover-poweredby-color: var(--vp-c-text-1);
+}
+
+/**
+ * 组件：本地搜索
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-local-search-bg: var(--vp-c-bg);
+  --vp-local-search-result-bg: var(--vp-c-bg);
+  --vp-local-search-result-border: var(--vp-c-divider);
+  --vp-local-search-result-selected-bg: var(--vp-c-bg);
+  --vp-local-search-result-selected-border: var(--vp-c-brand-1);
+  --vp-local-search-highlight-bg: var(--vp-c-brand-1);
+  --vp-local-search-highlight-text: var(--vp-c-neutral-inverse);
+}
+
+
+
 @media (min-width: 1200px) {
   :root {
     --vp-home-hero-image-filter: blur(120px);
@@ -94,7 +589,7 @@
 }
 @font-face {
   font-family: '原神';
-  src: url('/fonts/原神') format('WOFF');
+  src: url('/fonts/zh-cn-min.woff') format('WOFF');
   
   /* 添加其他格式 */
 }
