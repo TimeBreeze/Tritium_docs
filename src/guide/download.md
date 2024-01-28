@@ -1,12 +1,17 @@
 ---
 title: 下载配置
 layout: doc
-titleTemplate: Tritium_docs
-banner: 开发中页面，仅预览
 ---
 
 
-# 下载cutoolbox导入使用
+# 下载配置文件并cutoolbox导入使用<Badge type="tip" text="推荐" />
+
+### Title <Badge type="info" text="default" />
+### Title <Badge type="tip" text="^1.9.0" />
+### Title <Badge type="warning" text="beta" />
+### Title <Badge type="danger" text="caution" />
+
+
 
 可选择下方任意方式下载
 

@@ -1,4 +1,5 @@
 {
+  "name": "Oldmemorie",
   "private": "true",
   "license": "MIT",
   "type": "module",
@@ -16,7 +17,8 @@
     "lint:prettier": "prettier --check .",
     "lint:zh": "zhlint 'docs/**/*.md'",
     "serve": "vitepress serve --base /Tritium_docs/",
-    "site:preview": "vitepress build --outDir _dist"
+    "site:preview*": "vitepress build --outDir _dist"
+    "preview": "vitepress preview "
   },
   "lint-staged": {
     "*.{js,ts,vue}": [
@@ -113,6 +115,7 @@
     "tsconfig-vuepress": "^4.5.0",
     "vite-plugin-inspect": "^0.8.2",
     "vitepress-plugin-awesome-musicplayer": "^1.0.4",
+    "vitepress-plugin-comment-with-giscus": "^1.1.12",
     "vue": "^3.4.15",
     "zhlint": "^0.7.3"
   },

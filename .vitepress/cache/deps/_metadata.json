@@ -1,71 +1,77 @@
 {
-  "hash": "24fbf4e7",
+  "hash": "b37c553a",
   "configHash": "4ddcc80a",
-  "lockfileHash": "ed02e8f0",
-  "browserHash": "73fcbb2c",
+  "lockfileHash": "f4eaa387",
+  "browserHash": "4871a00f",
   "optimized": {
     "vue": {
       "src": "../../../node_modules/.pnpm/vue@3.4.15_typescript@5.3.3/node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "4e22d23a",
+      "fileHash": "3975d8dd",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../node_modules/.pnpm/@vue+devtools-api@6.5.1/node_modules/@vue/devtools-api/lib/esm/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "f507da6f",
+      "fileHash": "cdf8d99f",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../node_modules/.pnpm/@vueuse+core@10.7.2_vue@3.4.15/node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "ce3c93be",
+      "fileHash": "12e6a739",
       "needsInterop": false
     },
     "vitepress > @vueuse/integrations/useFocusTrap": {
       "src": "../../../node_modules/.pnpm/@vueuse+integrations@10.7.2_focus-trap@7.5.4_qrcode@1.5.3_vue@3.4.15/node_modules/@vueuse/integrations/useFocusTrap.mjs",
       "file": "vitepress___@vueuse_integrations_useFocusTrap.js",
-      "fileHash": "778e91f3",
+      "fileHash": "3d9c82e9",
       "needsInterop": false
     },
     "vitepress > mark.js/src/vanilla.js": {
       "src": "../../../node_modules/.pnpm/mark.js@8.11.1/node_modules/mark.js/src/vanilla.js",
       "file": "vitepress___mark__js_src_vanilla__js.js",
-      "fileHash": "65b62b0f",
+      "fileHash": "9e374265",
       "needsInterop": false
     },
     "vitepress > minisearch": {
       "src": "../../../node_modules/.pnpm/minisearch@6.3.0/node_modules/minisearch/dist/es/index.js",
       "file": "vitepress___minisearch.js",
-      "fileHash": "e0850e3e",
+      "fileHash": "6800a139",
       "needsInterop": false
     },
     "medium-zoom": {
       "src": "../../../node_modules/.pnpm/medium-zoom@1.1.0/node_modules/medium-zoom/dist/medium-zoom.esm.js",
       "file": "medium-zoom.js",
-      "fileHash": "f0131655",
+      "fileHash": "1379a7f4",
       "needsInterop": false
     },
     "vue-i18n": {
       "src": "../../../node_modules/.pnpm/vue-i18n@9.9.0_vue@3.4.15/node_modules/vue-i18n/dist/vue-i18n.mjs",
       "file": "vue-i18n.js",
-      "fileHash": "472b2510",
+      "fileHash": "2f1adc2b",
+      "needsInterop": false
+    },
+    "vitepress-plugin-comment-with-giscus": {
+      "src": "../../../node_modules/.pnpm/vitepress-plugin-comment-with-giscus@1.1.12_vue@3.4.15/node_modules/vitepress-plugin-comment-with-giscus/lib/giscus.js",
+      "file": "vitepress-plugin-comment-with-giscus.js",
+      "fileHash": "bc44d3bd",
       "needsInterop": false
     },
     "@vueuse/integrations/useQRCode": {
       "src": "../../../node_modules/.pnpm/@vueuse+integrations@10.7.2_focus-trap@7.5.4_qrcode@1.5.3_vue@3.4.15/node_modules/@vueuse/integrations/useQRCode.mjs",
       "file": "@vueuse_integrations_useQRCode.js",
-      "fileHash": "58d3d8b3",
-      "needsInterop": false
-    },
-    "vitepress-plugin-awesome-musicplayer": {
-      "src": "../../../node_modules/.pnpm/vitepress-plugin-awesome-musicplayer@1.0.4_less@4.2.0/node_modules/vitepress-plugin-awesome-musicplayer/index.js",
-      "file": "vitepress-plugin-awesome-musicplayer.js",
-      "fileHash": "bf9dd227",
+      "fileHash": "ea816c04",
       "needsInterop": false
     }
   },
   "chunks": {
+    "giscus-aTimukGI-6LXREGPP": {
+      "file": "giscus-aTimukGI-6LXREGPP.js"
+    },
+    "chunk-JILBLBFW": {
+      "file": "chunk-JILBLBFW.js"
+    },
     "chunk-NDE3J227": {
       "file": "chunk-NDE3J227.js"
     },
@@ -74,9 +80,6 @@
     },
     "chunk-YP6MUCOV": {
       "file": "chunk-YP6MUCOV.js"
-    },
-    "chunk-JILBLBFW": {
-      "file": "chunk-JILBLBFW.js"
     },
     "chunk-LQ2VYIYD": {
       "file": "chunk-LQ2VYIYD.js"

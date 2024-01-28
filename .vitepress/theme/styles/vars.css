@@ -505,6 +505,52 @@
   --vp-backdrop-bg-color: rgba(0, 0, 0, 0.6);  /* 背景的带透明度的颜色 */
 }
 
+/* 组件: 主页 */
+/**
+ * Component: Home
+ * -------------------------------------------------------------------------- */
+
+:root {
+  /* 主页英雄名字颜色 */
+  --vp-home-hero-name-color: transparent;
+  /* 主页英雄名字背景 */
+  --vp-home-hero-name-background: -webkit-linear-gradient(
+    120deg,
+    var(--vp-c-brand-1) 30%,
+    var(--vp-c-brand-next)
+  );
+  /* 主页英雄图片背景 */
+  --vp-home-hero-image-background-image: linear-gradient(
+    -45deg,
+    var(--vp-c-brand-1) 30%,
+    var(--vp-c-brand-next)
+  );
+  /* 主页英雄图片滤镜 */
+  --vp-home-hero-image-filter: blur(200px);
+}
+
+@media (min-width: 640px) {
+  /* 当屏幕宽度至少为 640px 时 */
+  :root {
+    /* 增加图片滤镜 */
+    --vp-home-hero-image-filter: blur(300px);
+  }
+}
+
+@media (min-width: 960px) {
+  /* 当屏幕宽度至少为 960px 时 */
+  :root {
+    /* 增加图片滤镜 */
+    --vp-home-hero-image-filter: blur(200px);
+  }
+}
+
+/* Safari 和 Firefox 浏览器对渐变和滤镜的性能表现很差 */
+.browser-safari, .browser-firefox {
+  /* 隐藏背景图片和滤镜 */
+  --vp-home-hero-image-background-image: transparent;
+  --vp-home-hero-image-filter: '';
+}
 /**
  * 组件：主页
  * -------------------------------------------------------------------------- */
@@ -529,25 +575,6 @@
 /**
  * 组件：徽章
  * -------------------------------------------------------------------------- */
-
-:root {
-  --vp-badge-info-border: transparent;
-  --vp-badge-info-text: var(--vp-c-text-2);
-  --vp-badge-info-bg: var(--vp-c-default-soft);
-
-  --vp-badge-tip-border: transparent;
-  --vp-badge-tip-text: var(--vp-c-tip-1);
-  --vp-badge-tip-bg: var(--vp-c-tip-soft);
-
-  --vp-badge-warning-border: transparent;
-  --vp-badge-warning-text: var(--vp-c-warning-1);
-  --vp-badge-warning-bg: var(--vp-c-warning-soft);
-
-  --vp-badge-danger-border: transparent;
-  --vp-badge-danger-text: var(--vp-c-danger-1);
-  --vp-badge-danger-bg: var(--vp-c-danger-soft);
-}
-
 /**
  * 组件：碳排广告
  * -------------------------------------------------------------------------- */
@@ -587,14 +614,4 @@
     --vp-home-hero-image-filter: blur(160px);
   }
 }
-@font-face {
-  font-family: '原神';
-  src: url('/fonts/zh-cn-min.woff') format('WOFF');
-  
-  /* 添加其他格式 */
-}
 
-body {
-  font-family: '原神', sans-serif;
-  
-}

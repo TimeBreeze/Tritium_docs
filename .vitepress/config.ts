@@ -10,37 +10,13 @@ import { imgSize, obsidianImageSize } from '@mdit/plugin-img-size'
 import { mark } from '@mdit/plugin-mark'
 import { sub } from '@mdit/plugin-sub'
 import { sup } from '@mdit/plugin-sup'
-// .vitepress/config.ts or .vitepress/config.js
+
+
 import timeline from "vitepress-markdown-timeline"
 
 
-import { zhConfig } from './locales/zh'
+import { zhConfig } from './config/zh'
 
-export const isProd = process.env.NODE_ENV === 'production'
-export const commitRef = process.env.COMMIT_REF?.slice(0, 8) || 'dev'
-export const productionHead: HeadConfig[] = [
-  [
-    'script',
-    {
-      id: 'clarity-script',
-    },
-    `
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "gx0jeyqvg5")`,
-  ],
-  [
-    'script',
-    {
-      id: 'application-json',
-      type: 'application/ld+json',
-    },
-    `
-    {"@context":"https://schema.org","@type":"WebPage","name":Kongying Tavern Genshin Interactive Map"}`,
-  ],
-]
 
 export default defineConfig({
   base: '/Tritium_docs/',

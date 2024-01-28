@@ -2,7 +2,6 @@
 title: 更新日志
 layout: doc
 titleTemplate: Tritium_docs
-banner: 开发中页面，仅预览
 ---
 <div align="center">
 
