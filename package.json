@@ -18,7 +18,6 @@
     "lint:zh": "zhlint 'docs/**/*.md'",
     "serve": "vitepress serve --base /Tritium_docs/",
     "site:preview*": "vitepress build --outDir _dist"
-    "preview": "vitepress preview "
   },
   "lint-staged": {
     "*.{js,ts,vue}": [
