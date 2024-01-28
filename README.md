@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ### 贡献
 
 本站点使用 [VitePress](https://github.com/vuejs/vitepress) 构建。站点内容以 Markdown 格式编写，位于 `src` 目录下。对于简单的编辑，您可以直接在 GitHub 上编辑文件并生成 Pull Request。
@@ -15,6 +16,8 @@ pnpm  dev
 ## 编辑内容
 
 - 参阅 VitePress 文档中支持的 [Markdown 扩展](https://vitepress.vuejs.org/guide/markdown) 和在 Markdown 中 [使用 Vue 语法的能力](https://vitepress.vuejs.org/guide/using-vue)。
+=======
+>>>>>>> refs/remotes/origin/main
 
 
 ## License
