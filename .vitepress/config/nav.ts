@@ -1,9 +1,6 @@
-// nav.ts
+import type { DefaultTheme } from 'vitepress';
 
-import type { DefaultTheme } from 'vitepress'
-
-export function nav(): DefaultTheme.NavItem[] {
-  return [
+export const nav: DefaultTheme.Config['nav'] = [
     {
       text: '了解更多',
       items: [
@@ -42,5 +39,4 @@ export function nav(): DefaultTheme.NavItem[] {
      {  text: 'CuprumTurbo-Scheduler',   link: 'https://github.com/chenzyadb/CuprumTurbo-Scheduler',  },
      {  text: 'apodidae',   link: 'https://apodidae.nalanyinyun.top/',  },
      {  text: '关于文档',   link: '/about.md',  },
-  ]
-}
+];

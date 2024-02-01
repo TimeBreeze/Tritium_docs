@@ -1,9 +1,7 @@
 // sidebar.ts
+import type { DefaultTheme } from 'vitepress';
 
-import type { DefaultTheme } from 'vitepress'
-
-export function sidebar(): DefaultTheme.SidebarItem[] {
-  return {
+export const sidebar: DefaultTheme.Config['sidebar'] = {
     '/guide/': [
       {
         text: 'Guide',
@@ -26,5 +24,4 @@ export function sidebar(): DefaultTheme.SidebarItem[] {
         ]
       }
     ]
-  }
 }

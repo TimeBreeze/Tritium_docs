@@ -39,7 +39,7 @@ defineProps<{
 }
 
 .container {
-  border-top: 1px solid var(--vp-c-divider-light);
+  border-top: 1px solid var(--vt-c-divider-light);
   padding-top: 24px;
 }
 
@@ -61,7 +61,7 @@ defineProps<{
 @media (min-width: 768px) {
   .info {
     position: sticky;
-    top: calc(var(--vp-layout-top-height, 0px) + 32px);
+    top: calc(var(--vt-banner-height, 0px) + 32px);
     left: 0;
     padding: 0 24px 0 0;
     width: 256px;
@@ -74,7 +74,7 @@ defineProps<{
 
 @media (min-width: 960px) {
   .info {
-    top: calc(var(--vp-layout-top-height, 0px) + 88px);
+    top: calc(var(--vt-banner-height, 0px) + 88px);
     padding: 0 64px 0 0;
     width: 384px;
   }
@@ -94,7 +94,7 @@ defineProps<{
   line-height: 24px;
   font-size: 14px;
   font-weight: 500;
-  color: var(--vp-c-text-2);
+  color: var(--vt-c-text-2);
 }
 
 .members {

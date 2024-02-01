@@ -10,9 +10,6 @@ titleTemplate: Tritium_docs
 </div>
 
 
-<script setup>
-import CustomComponent from '../../.vitepress/theme/components/Badge.vue'
-</script>
 
 
 ### Title <Badge type="info" text="default" />
