@@ -1,4 +1,4 @@
-const site = 'https://blog.charles7c.top';
+const site = 'https://tritium.nightrainmilkyway.cn';
 
 export const metaData = {
   lang: 'zh-CN',
