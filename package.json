@@ -1,10 +1,10 @@
 {
-    "name": "Tritium_docs",
-    "description": "Tritium_docs",
-    "author": "Oldmemorie",
-    "license": "MIT",
-    "private": true,
-    "type": "module",
+	"name": "Tritium_docs",
+	"description": "Tritium_docs",
+	"author": "Oldmemorie",
+	"license": "MIT",
+	"private": true,
+	"type": "module",
 	"scripts": {
 		"dev": "vitepress dev --base /Tritium_docs/ --port 1999",
 		"build": "vitepress build --base /Tritium_docs/ ",
@@ -15,7 +15,8 @@
 		"@vue/theme": "^2.2.5",
 		"dynamics.js": "^1.1.5",
 		"gsap": "^3.9.0",
-		"vitepress": "1.0.0-rc.40"
+		"vitepress": "1.0.0-rc.40",
+		"vue-amazing-ui": "^0.1.32"
 	},
 	"devDependencies": {
 		"fast-glob": "^3.3.2",
