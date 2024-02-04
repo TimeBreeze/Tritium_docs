@@ -6,9 +6,9 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"dev": "vitepress dev --base /Tritium_docs/ --port 1999",
-		"build": "vitepress build --base /Tritium_docs/ ",
-		"preview": "vitepress preview --base /Tritium_docs/ "
+		"dev": "vitepress dev  --port 1999 ",
+		"build": "vitepress build ",
+		"preview": "vitepress preview "
 	},
 	"dependencies": {
 		"@vue/repl": "^3.0.0",
