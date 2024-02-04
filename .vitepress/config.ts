@@ -4,15 +4,8 @@ import { head } from './config/head';
 import { markdown } from './config/markdown';
 import { themeConfig } from './config/theme';
 import { createApp } from 'vue'
-import App from './App.vue'
 
-import VueAmazingUI from 'vue-amazing-ui'
-import 'vue-amazing-ui/css'
 
-const app = createApp(App)
-app.use(VueAmazingUI)
-
-app.mount('#app')
 
 export
 default defineConfig({
