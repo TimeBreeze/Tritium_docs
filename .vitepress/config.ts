@@ -13,7 +13,7 @@ default defineConfig({
     title: "Tritium_docs",
     description: "A VitePress Site",
 
-    base: '/Tritium_docs/',
+    // base: '/Tritium_docs/',
     lastUpdated: true,
     ignoreDeadLinks: true,
     srcDir: 'src',
