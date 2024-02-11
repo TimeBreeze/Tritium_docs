@@ -1,2 +1,16 @@
 [
+ {   "gender": 1,
+		"location": "China",
+		"name": "忘渐",
+		"qq": 2362958303,
+		"title": "Tritium - docs",
+        "languages": [ "Chinese"],
+		"company": "往初见亦随心，愿初见似随心",
+		"companyLink": "https://github.com/shuerchi",
+		"socials": {
+			"github": "shuerchi",
+	        "coolapk": "4172193"
+			
+		}
+ }
 ]
