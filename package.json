@@ -25,8 +25,12 @@
 		"markdown-it": "^14.0.0",
 		"markdown-it-footnote": "^4.0.0",
 		"markdown-it-mathjax3": "^4.3.2",
+		"medium-zoom": "^1.1.0",
 		"sass": "^1.70.0",
 		"vitepress": "1.0.0-rc.40",
+		"vitepress-markdown-timeline": "^1.2.1",
+		"vitepress-plugin-comment-with-giscus": "^1.1.12",
+		"vitepress-plugin-google-analytics": "^1.0.2",
 		"vue": "^3.4.15"
 	}
 }

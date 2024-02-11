@@ -2,9 +2,9 @@ import type { HeadConfig } from 'vitepress';
 import { metaData } from './constants';
 
 export const head: HeadConfig[] = [
-  ['link', { rel: 'icon', href: '/favicon.ico' }],
-  ['meta', { name: 'author', content: 'Charles7c' }],
-  ['meta', { name: 'keywords', content: '查尔斯的知识库, 知识库, 博客, Charles7c' }],
+  ['link', { rel: 'icon', href: '/阿库娅.png' }],
+  ['meta', { name: 'author', content: 'Tritium' }],
+  ['meta', { name: 'keywords', content: 'CuprumTurbo Scheduler的衍生版本' }],
 
   ['meta', { name: 'HandheldFriendly', content: 'True' }],
   ['meta', { name: 'MobileOptimized', content: '320' }],

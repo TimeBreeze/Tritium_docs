@@ -19,7 +19,7 @@ export const nav: DefaultTheme.Config['nav'] = [
       items: [
         {
           text: '更新日志',
-          link: '/日志.md',
+          link: '/log.md',
         },
       ],
     },
@@ -37,6 +37,5 @@ export const nav: DefaultTheme.Config['nav'] = [
       ],
     },
      {  text: 'CuprumTurbo-Scheduler',   link: 'https://github.com/chenzyadb/CuprumTurbo-Scheduler',  },
-     {  text: 'apodidae',   link: 'https://apodidae.nalanyinyun.top/',  },
      {  text: '关于文档',   link: '/about.md',  },
 ];

@@ -7,7 +7,7 @@ titleTemplate: Tritium_docs
 
 <div align="center">
 
-#  什么是Tritium
+#  什么是Tritium🤔
 
 </div>
 

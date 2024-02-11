@@ -11,16 +11,17 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
           { text: '下载', link: '/guide/download' },
           { text: '使用', link: '/guide/use' }
         ]
-      }
-    ],
-    '/config/': [
+      },
       {
-        text: 'Config',
+        text: 'Customize',
         collapsed: false,
         items: [
-          { text: 'Index', link: '/config/' },
-          { text: 'Three', link: '/config/three' },
-          { text: 'Four', link: '/config/four' }
+          { text: '自定义开发', link: '/guide/Customize.md' },
+          { text: 'JSON配置模块', link: '/guide/Json.md' },
+          { text: 'CPU配置模块', link: '/guide/CpuGovernor.md' },
+          { text: '线程配置模块', link: '/guide/ThreadSchedOpt.md' },
+          { text: 'GPU配置模块', link: '/guide/MtkGpuGovernor.md' },
+          { text: '文件写入配置模块', link: '/guide/FileWriter.md' }
         ]
       }
     ]

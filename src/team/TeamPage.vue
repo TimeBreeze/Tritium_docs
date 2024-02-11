@@ -44,7 +44,7 @@ shuffleMembers(membersPartnerData as Member[])
 
       <template #action>
         <VTLink
-          href="https://github.com/vuejs/governance/blob/master/Team-Charter.md"
+          href="https://github.com/TimeBreeze/Tritium"
           >Learn more about teams</VTLink
         >
       </template>
@@ -53,7 +53,7 @@ shuffleMembers(membersPartnerData as Member[])
     <TeamList :members="membersCoreData as Member[]">
       <template #title>核心团队成员</template>
       <template #lead
-        >核心团队成员是那些积极长期参与维护一个或多个核心项目的人。 他们对Tritium的维护与开发做出了核心贡献.</template
+        >核心团队成员仅仅只为chenzyadb一人。 他对Tritium的诞生以及维护与开发做出了核心贡献.</template
       >
     </TeamList>
 
