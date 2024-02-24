@@ -11,3 +11,16 @@ titleTemplate: Tritium_docs
 |name            |string |配置文件的名称     |
 |author          |string |配置文件的作者信息  |
 |configVersion   |int    |配置文件版本       |
+
+```json
+{
+  "name": "Dimensity1100/1200/1300", //名称
+  "author": "chenzyadb",//作者
+  "configVersion": 9,//版本
+   ... 
+   //其他模块
+}
+```
+::: warning 注意
+`configVersion` 字段会验证调度版本，请确定版本对应，使用最新发布版本时，应与开发者仓库中的保持一致
+:::

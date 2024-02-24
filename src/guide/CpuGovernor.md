@@ -12,10 +12,31 @@ titleTemplate: Tritium_docs
 |activeRateHz    |int    |活跃时工作频率        |
 |idleRateHz      |int    |空闲时工作频率        |
 |minFreqStep     |int    |最小频率差值          |
+：：：tip
+`enable` 字段为是否启用 
+：：：
+
+```json
+{
+"CpuGovernor": {
+    "enable": true,
+    "params": {
+      "activeRateHz": 60,
+      "idleRateHz": 30,
+      "minFreqStep": 200
+    },
+  }
+  ...//其他模块
+}
+```
+
+::: tip 提示
 
 工作频率是CPU混合调频器的重要参数, 通常Linux内核频率为300HZ,即3.33ms记录一次, 活跃时间/总时间*100即为CPU负载百分比.  
 如果工作频率过高将会导致调频器的开销增加且无法获得有效的CPU负载(例如100HZ时只能获得0% 33% 66% 100%四种负载), 过低将导致调频器无法应对瞬时负载.  
 最小频率差值为生成CPU频率表的关键参数, 设置得过小将会导致调频速度过慢,过大将会导致调频不够精细.  
+:::
+
 #### policies - 策略组    
 此项配置类型为`ArrayJson`, 即数组中的每个Json元素对应一个策略组.  
 每个策略组中的CPU频率将会同步控制, 应当与内核中每个cluster中包含的CPU对应.  
@@ -31,6 +52,36 @@ titleTemplate: Tritium_docs
 |modelPower     |int     |处于modelFreq时CPU的满载功耗(单位:mW)     |
 
 `CpuGovernor`模块设定中的所有频率都将会被取近似值, 例如CPU频率表中有`1200, 1450, 1700`三个频率, 设定频率为`1500`, 最终取值将为`1450`.  
+
+```JSON
+  "policies": [
+      {
+        "coreNum": 4,
+        "perfScale": 100,
+        "lowPowerFreq": 500,
+        "optimalFreq": 1200,
+        "modelFreq": 2000,
+        "modelPower": 360
+      },
+      {
+        "coreNum": 3,
+        "perfScale": 320,
+        "lowPowerFreq": 500,
+        "optimalFreq": 1700,
+        "modelFreq": 2600,
+        "modelPower": 1400
+      },
+      {
+        "coreNum": 1,
+        "perfScale": 320,
+        "lowPowerFreq": 700,
+        "optimalFreq": 1800,
+        "modelFreq": 2600,
+        "modelPower": 1750
+      }
+    ],
+
+```
 #### modes - 模式参数  
 |字段            |类型     |定义                         |
 |:---------------|:-------|:----------------------------|
@@ -62,5 +113,94 @@ CPU频率加速可以在特定条件触发时调高CPU频率提升积极性, 用
 `extraMargin`值用于提供额外的性能冗余, 计算公式如下: `acturalMargin = perfMargin + extraMargin`.  
 `boost`值用于夸大实际的CPU负载, 计算公式如下: `cpuLoad = cpuLoad + (100 - cpuLoad) * boost / 100`.  
 当CPU温度小于80度时将不限制最大功耗, CPU温度大于等于80度小于90度时最大功耗限制在5000mW, CPU温度大于等于90度时最大功耗限制在4000mW.
-### ThreadSchedOpt - 线程调度优化  
-> 此模块通过智能分类线程来实现较为合理的线程调度策略  
+
+### 例如
+
+```JSON {9,3}
+"modes": {
+        "powersave": {
+        "powerLimit": 3000,
+        "perfMargin": [
+          10,
+          10,
+          10
+         ],
+        "upRateLatency": 800,
+        "overHeatTemp": 80,
+        
+       ...
+}
+
+
+```
+
+::: warning
+当CPU温度小于80度时将不限制最大功耗, CPU温度大于等于80度时最大功耗限制在3000mW, 
+:::
+
+
+```JSON 
+"modes": {
+        "powersave": {
+        "powerLimit": 2000,
+        "perfMargin": [
+          10,
+          10,
+          10
+         ],
+        "upRateLatency": 800,
+        "overHeatTemp": 80,
+        "burstCapacity": 8000,
+        "recoverTime": 2000,
+        "freqBurst": {
+          "none": {
+            "durationTime": 0,
+            "lowLatency": false,
+            "extraMargin": 0,
+            "boost": 0
+          },
+          "tap": {
+            "durationTime": 200,
+            "lowLatency": false,
+            "extraMargin": 10,
+            "boost": 0
+          },
+          "swipe": {
+            "durationTime": 100,
+            "lowLatency": false,
+            "extraMargin": 10,
+            "boost": 10
+          },
+          "gesture": {
+            "durationTime": 200,
+            "lowLatency": false,
+            "extraMargin": 20,
+            "boost": 20
+          },
+          "heavyload": {
+            "durationTime": 1000,
+            "lowLatency": false,
+            "extraMargin": 20,
+            "boost": 0
+          },
+          "jank": {
+            "durationTime": 100,
+            "lowLatency": true,
+            "extraMargin": 0,
+            "boost": 40
+          },
+          "bigJank": {
+            "durationTime": 200,
+            "lowLatency": true,
+            "extraMargin": 0,
+            "boost": 60
+          }
+        }
+      },
+      "balance"，
+      "performance",
+      "fast",
+}
+
+
+```

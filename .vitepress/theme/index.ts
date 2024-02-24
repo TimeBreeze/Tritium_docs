@@ -11,6 +11,8 @@ import { onMounted, watch, nextTick } from 'vue';
 import { useData , useRoute } from 'vitepress';
 import giscusTalk from 'vitepress-plugin-comment-with-giscus';
 import Card from '../theme/components/Card'
+// 只需添加以下一行代码，引入时间线样式
+import "vitepress-markdown-timeline/dist/theme/index.css";
 
 export default {
   extends: DefaultTheme,

@@ -19,4 +19,46 @@ titleTemplate: Tritium_docs
 |字段            |类型    |定义                      |
 |:---------------|:-------|:------------------------|
 |path            |string  |写入的目标地址            |
-|text            |string  |需要写入的文本            | 
+|text            |string  |需要写入的文本     | 
+
+## 举个例子
+::: tip
+当某个节点写入文本时，`path` 应该是绝对路径，而不是相对路径，例如下面，目标路径为`/dev/cpuset/restricted/cpus`，写入的文本是 `0-3`
+:::
+
+```json {7,8}
+
+"FileWriter": {
+    "enable": true,
+    "scenes": {
+      "init": [
+        {
+          "path": "/dev/cpuset/restricted/cpus",
+          "text": "0-3"
+        },
+        {
+          "path": "/dev/cpuset/system-background/cpus",
+          "text": "0-3"
+        },
+        {
+          "path": "/dev/cpuset/background/cpus",
+          "text": "0-3"
+        },
+        {
+          "path": "/dev/cpuset/foreground/cpus",
+          "text": "0-7"
+        },
+        {
+          "path": "/dev/cpuset/top-app/cpus",
+          "text": "0-7"
+        }
+      ],
+      "screenOn": [],
+      "screenOff": [],
+      "powersaveMode": [],
+      "balanceMode": [],
+      "performanceMode": [],
+      "fastMode": []
+    }
+  }
+```

@@ -26,3 +26,45 @@ titleTemplate: Tritium_docs
 当GPU负载大于`upRateThres`时提升频率, 当GPU负载减少的差值大于`downRateDiff`时降低频率.  
 例如: 设置`upRateThres=90, downRateDiff=10`, 当GPU负载为`75`时降低GPU频率, 当GPU负载为`85`时GPU频率不变,当GPU负载为`95`时提升GPU频率.  
 `upRateThres`的值越小升频越积极, `downRateDiff`的值越大降频越缓慢, `downRateDiff`的值不得大于`upRateThres`.  
+
+```json
+
+"MtkGpuGovernor": {
+    "enable": true,
+    "params": {
+      "activeRateHz": 60,
+      "idleRateHz": 30,
+      "preferredFreq": [
+        540,
+        660,
+        770
+      ]
+    },
+    "modes": {
+      "powersave": {
+        "maxFreq": 540,
+        "minFreq": 0,
+        "upRateThres": 90,
+        "downRateDiff": 10
+      },
+      "balance": {
+        "maxFreq": 660,
+        "minFreq": 0,
+        "upRateThres": 80,
+        "downRateDiff": 10
+      },
+      "performance": {
+        "maxFreq": 770,
+        "minFreq": 0,
+        "upRateThres": 70,
+        "downRateDiff": 10
+      },
+      "fast": {
+        "maxFreq": 890,
+        "minFreq": 0,
+        "upRateThres": 70,
+        "downRateDiff": 20
+      }
+    }
+  },
+```
