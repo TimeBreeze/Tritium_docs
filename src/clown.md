@@ -5,6 +5,12 @@ titleTemplate: Tritium_docs
 
 # 如你所见我们会记录一些🤡
 
+::: timeline 2024-02-29
+* 4年一次，难得
+![20240301001030894](https://cdn.jsdelivr.net/gh/NightRainMilkyWay/PicPlus@main/2024/03/01/20240301001030894.png)
+### 我的自由
+:::
+
 ::: timeline 2024-02-21
 - ### 反差
 ![20240225022902036](https://cdn.jsdelivr.net/gh/NightRainMilkyWay/PicPlus@main/2024/02/25/20240225022902036.png)

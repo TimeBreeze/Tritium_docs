@@ -7,14 +7,11 @@ titleTemplate: Tritium_docs
 ### CpuGovernor - CPU混合调频器  
 > 此模块通过在各种不同场景下选择合适的CPU频率以改善使用体验.  
 #### params - 调频器参数  
-|字段             |类型   |定义                 |
-|:---------------|:------|:-------------------|
-|activeRateHz    |int    |活跃时工作频率        |
-|idleRateHz      |int    |空闲时工作频率        |
-|minFreqStep     |int    |最小频率差值          |
-：：：tip
+
+
+:::tip
 `enable` 字段为是否启用 
-：：：
+:::
 
 ```json
 {
