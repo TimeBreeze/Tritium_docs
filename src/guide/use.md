@@ -20,10 +20,10 @@ titleTemplate: Tritium_docs
 - 5.请务必安装CuJankDetector模块
  
 ## 使用方法1 -app导入
-![](https://cdn.jsdelivr.net/gh/NightRainMilkyWay/PicPlus@main/2024/02/11/ResizedImage_2024-02-11_18-52-03_8500.png)
+![](/img/ResizedImage_2024-02-11_18-52-03_8500.png)
 
 ## 使用方法2 -模块刷入
 
-![](https://cdn.jsdelivr.net/gh/NightRainMilkyWay/PicPlus@main/2024/02/11/ResizedImage_2024-02-11_18-42-00_2162.png)
+![](/img/ResizedImage_2024-02-11_18-52-03_8500.png)
 
 
