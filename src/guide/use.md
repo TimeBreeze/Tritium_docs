@@ -24,6 +24,4 @@ titleTemplate: Tritium_docs
 
 ## 使用方法2 -模块刷入
 
-![](/img/ResizedImage_2024-02-11_18-52-03_8500.png)
-
-
+![](/img/ResizedImage_2024-02-11_18-42-00_2162.png)
