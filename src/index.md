@@ -32,7 +32,7 @@ features:
   - icon: 
       src: /img/svg/home/智能优化.svg
     title: 极致优化
-    details: 足以完全吊打官方调度，省电&性能兼得，针对不同场景合理分配性能余量
+    details: 省电&性能兼得，针对不同场景合理分配性能余量
   - icon:
       src: /img/svg/home/icon_实时更新.svg
     title:  长期更新
