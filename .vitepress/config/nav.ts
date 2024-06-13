@@ -35,7 +35,5 @@ export const nav: DefaultTheme.Config['nav'] = [
           link: '/agreement.md',
         },
       ],
-    },
-     {  text: 'CuprumTurbo-Scheduler',   link: 'https://github.com/chenzyadb/CuprumTurbo-Scheduler',  },
-     {  text: '关于文档',   link: '/about.md',  },
+    }
 ];

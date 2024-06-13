@@ -4,7 +4,8 @@ import { metaData } from './constants';
 export const head: HeadConfig[] = [
   ['link', { rel: 'icon', href: '/阿库娅.png' }],
   ['meta', { name: 'author', content: 'Tritium' }],
-  ['meta', { name: 'keywords', content: 'CuprumTurbo Scheduler的衍生版本' }],
+  ['meta', { name: 'keywords', content: 'ct调度,Tritium调度,调度，性能 ' }],
+  ['meta', { name: 'description', content: '一个简单可靠的性能调度,A Simple and Reliable Performance Scheduler.' }],
 
   ['meta', { name: 'HandheldFriendly', content: 'True' }],
   ['meta', { name: 'MobileOptimized', content: '320' }],
