@@ -1,0 +1,181 @@
+{
+  "main": {
+    "id": "6b5ef845fb1f858e",
+    "type": "split",
+    "children": [
+      {
+        "id": "389cc4b3f811026e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d6bc47d5f16c8a7b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "log.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "a6d65f30efc026fe",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "aacc0223507cc22a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "team.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "1fea04ca78ac29e3",
+    "type": "split",
+    "children": [
+      {
+        "id": "d2455e6435db1e26",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a3af89881ddf3273",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "d38275df47a642a6",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "1555f0e1ca5dab80",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "73cc9a2e7fb74ea8",
+    "type": "split",
+    "children": [
+      {
+        "id": "38c5c44c57f4e61e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "682ba2372210affe",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "team.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "0ed03492224f31df",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "team.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "a90212ca325c2026",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "0928017c5e7f7364",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "team.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "aacc0223507cc22a",
+  "lastOpenFiles": [
+    "md-enhance-guide.md",
+    "log.md",
+    "guide/download.md",
+    "join.md",
+    "clown.md",
+    "guide/CpuGovernor.md",
+    "guide/Customize.md",
+    "guide/Json.md",
+    "guide/FileWriter.md",
+    "guide/use.md",
+    "guide/ThreadSchedOpt.md"
+  ]
+}

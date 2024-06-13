@@ -18,11 +18,6 @@ layout: doc
 下载链接🔗 
 
 Tritium
-- [蓝奏云](https://sunio.lanzouw.com/ir9jy1qvrhtc)
 
-- [GitHub](https://github.com/TimeBreeze/Tritium/releases/tag/V3.2.2)
-
-Tritium Fiage 
-
-- [蓝奏云](https://wwz.lanzouj.com/iaTRB1qw3l7g)
+- [GitHub](https://github.com/TimeBreeze/Tritium/releases)
 

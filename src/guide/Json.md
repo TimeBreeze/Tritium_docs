@@ -16,7 +16,7 @@ titleTemplate: Tritium_docs
 {
   "name": "Dimensity1100/1200/1300", //名称
   "author": "chenzyadb",//作者
-  "configVersion": 9,//版本
+  "configVersion": 10,//版本
    ... 
    //其他模块
 }

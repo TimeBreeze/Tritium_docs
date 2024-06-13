@@ -20,7 +20,8 @@ titleTemplate: Tritium_docs
     "params": {
       "activeRateHz": 60,
       "idleRateHz": 30,
-      "minFreqStep": 200
+      "activeDelay": 2000,
+      "minFreqStep": 200
     },
   }
   ...//其他模块
