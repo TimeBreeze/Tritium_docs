@@ -1,6 +1,9 @@
-// node_modules/.pnpm/vitepress@1.2.3_@algolia+client-search@4.22.1_async-validator@4.2.5_markdown-it-mathjax3@4.3._ngys76hre7wccwmyau7iaewgw4/node_modules/vitepress/lib/vue-demi.mjs
+// node_modules/.pnpm/vitepress@1.3.4_@algolia+client-search@4.22.1_async-validator@4.2.5_markdown-it-mathjax3@4.3._aqvqnrgfy5orn2i3qdzzfgmrya/node_modules/vitepress/lib/vue-demi.mjs
 var isVue2 = false;
 var isVue3 = true;
+var Vue2 = void 0;
+function install() {
+}
 function set(target, key, val) {
   if (Array.isArray(target)) {
     target.length = Math.max(target.length, key);
@@ -21,6 +24,8 @@ function del(target, key) {
 export {
   isVue2,
   isVue3,
+  Vue2,
+  install,
   set,
   del
 };
@@ -33,4 +38,4 @@ vitepress/lib/vue-demi.mjs:
    * @license MIT
    *)
 */
-//# sourceMappingURL=chunk-JPCIPPKJ.js.map
+//# sourceMappingURL=chunk-VC77R4OA.js.map

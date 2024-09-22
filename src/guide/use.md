@@ -18,10 +18,16 @@ titleTemplate: Tritium_docs
 - 3.使用模块的就没有必要安装软件
 - 4.模块是由scene控制，scene需要关闭核心分配
 - 5.请务必安装CuJankDetector模块
- 
+
 ## 使用方法1 -app导入
-![](/img/ResizedImage_2024-02-11_18-52-03_8500.png)
+![](https://tritium.nightrainmilkyway.cn/img/ResizedImage_2024-02-11_18-52-03_8500.png)
 
 ## 使用方法2 -模块刷入
 
-![](/img/ResizedImage_2024-02-11_18-42-00_2162.png)
+![](https://tritium.nightrainmilkyway.cn/img/ResizedImage_2024-02-11_18-42-00_2162.png)
+
+### 检查日志
+- 如果为`APP`导入使用，即可在APP内查看日志
+- 如果为模块，则CuprumTurbo Scheduler日志输出路径为`/storage/emulated/0/Android/ct/scheduler.log`
+
+出现`Daemon Running`即为调度正常运行
