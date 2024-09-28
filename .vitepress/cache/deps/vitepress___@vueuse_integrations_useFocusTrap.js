@@ -3,14 +3,12 @@ import {
   toValue,
   tryOnScopeDispose,
   unrefElement
-} from "./chunk-NGGMA7U5.js";
-import "./chunk-VC77R4OA.js";
+} from "./chunk-NK5KUYEJ.js";
 import {
   computed,
   ref,
   watch
-} from "./chunk-SU6KJ3QH.js";
-import "./chunk-PZ5AY32C.js";
+} from "./chunk-KE5SJ5CQ.js";
 
 // node_modules/.pnpm/tabbable@6.2.0/node_modules/tabbable/dist/index.esm.js
 var candidateSelectors = ["input:not([inert])", "select:not([inert])", "textarea:not([inert])", "a[href]:not([inert])", "button:not([inert])", "[tabindex]:not(slot):not([inert])", "audio[controls]:not([inert])", "video[controls]:not([inert])", '[contenteditable]:not([contenteditable="false"]):not([inert])', "details>summary:first-of-type:not([inert])", "details:not([inert])"];
@@ -1023,7 +1021,7 @@ var createFocusTrap = function createFocusTrap2(elements, userOptions) {
   return trap;
 };
 
-// node_modules/.pnpm/@vueuse+integrations@11.1.0_async-validator@4.2.5_focus-trap@7.5.4_qrcode@1.5.4_vue@3.5.8/node_modules/@vueuse/integrations/useFocusTrap.mjs
+// node_modules/.pnpm/@vueuse+integrations@11.1.0_async-validator@4.2.5_focus-trap@7.5.4_qrcode@1.5.4_vue@3.5.10/node_modules/@vueuse/integrations/useFocusTrap.mjs
 function useFocusTrap(target, options = {}) {
   let trap;
   const { immediate, ...focusTrapOptions } = options;
