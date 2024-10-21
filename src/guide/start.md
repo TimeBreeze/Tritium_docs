@@ -7,7 +7,7 @@ titleTemplate: Tritium_docs
 
 <div align="center">
 
-#  什么是Tritium🤔
+#  ✨什么是Tritium🤔
 
 </div>
 
@@ -26,7 +26,7 @@ Tritium调度是CuprumTurbo Scheduler的衍生版本，保留了大部分原有�
 #### [免责声明](/disclaimer.md)
 #### [用户协议](/agreement.md)
 
-### 我该如何选择🤔？
+### ✨我该如何选择🤔？
 根据个人喜好需求选择即可，当然你也可以选择
 - [CuprumTurbo Scheduler](https://github.com/chenzyadb/CuprumTurbo-Scheduler)
 - [apodidae](https://apodidae.nalanyinyun.top/)

@@ -14,6 +14,17 @@ titleTemplate: Tritium_docs
 
 ## 日志[🥰🥰]
 
+::: timeline 2023-12-24
+
+### [Tritium_V4.6.3](https://github.com/TimeBreeze/Tritium/releases/tag/V4.6.3)
+更新日志:
+
+    优化 均衡模式功耗
+    优化 均衡模式流畅度
+    改进 降低均衡模式点击延迟
+    改进 均衡模式掉帧监测效果
+
+:::
 ::: timeline 2024-06-13
 [Tritium V4.0.0 正式版](https://github.com/TimeBreeze/Tritium/releases/tag/V4.0.0) [Latest](https://github.com/TimeBreeze/Tritium/releases/latest)
 

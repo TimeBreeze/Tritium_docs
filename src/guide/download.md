@@ -19,5 +19,6 @@ layout: doc
 
 Tritium
 
-- [GitHub](https://github.com/TimeBreeze/Tritium/releases)
+## - [GitHub](https://github.com/TimeBreeze/Tritium/releases)
+## - [蓝奏云](https://wwa.lanzoui.com/b00zv0w0e)
 
