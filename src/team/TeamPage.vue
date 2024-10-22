@@ -38,7 +38,7 @@ shuffleMembers(membersPartnerData as Member[])
     <TeamHero>
       <template #title>关于团队</template>
       <template #lead
-        >Tritium的背后是一个基本来自中国的团队，以下是部分成员的个人信息
+        >Tritium的背后是一个基本来自中国的开源社区，他们为Tritium的诞生与维护做出了巨大贡献,以下是部分成员的个人信息
         <span class="nowrap">featured below.</span></template
       >
 
@@ -51,16 +51,16 @@ shuffleMembers(membersPartnerData as Member[])
     </TeamHero>
 
     <TeamList :members="membersCoreData as Member[]">
-      <template #title>核心团队成员</template>
+      <template #title>核心开发成员</template>
       <template #lead
-        >核心团队成员仅仅只为chenzyadb一人。 他对Tritium的诞生以及维护与开发做出了核心贡献.</template
+        >我们感谢chenzyadb的项目开发， 他对Tritium的诞生以及上游维护与开发做出了核心贡献.</template
       >
     </TeamList>
 
     <TeamList :members="membersEmeritiData as Member[]">
-      <template #title>名誉核心团队</template>
+      <template #title>社区维护伙伴</template>
       <template #lead
-        >名誉核心团队是那些即将维护自定义配置文件的人员，他们积极跟进上游并不断优化体验.</template
+        >区维护伙伴是那些即将维护或分享自定义配置文件的人员，他们积极跟进上游并不断优化体验.乐于积极分享</template
       >
     </TeamList>
 

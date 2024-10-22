@@ -13,7 +13,7 @@ titleTemplate: Tritium_docs
 `enable` 字段为是否启用 
 :::
 
-```json
+```json{3,5-6}
 {
 "CpuGovernor": {
     "enable": true,
@@ -51,7 +51,7 @@ titleTemplate: Tritium_docs
 
 `CpuGovernor`模块设定中的所有频率都将会被取近似值, 例如CPU频率表中有`1200, 1450, 1700`三个频率, 设定频率为`1500`, 最终取值将为`1450`.  
 
-```JSON
+```JSON{3-8}
   "policies": [
       {
         "coreNum": 4,
@@ -195,7 +195,7 @@ CPU频率加速可以在特定条件触发时调高CPU频率提升积极性, 用
           }
         }
       },
-      "balance"，
+      "balance",
       "performance",
       "fast",
 }

@@ -54,9 +54,6 @@ features:
       src: /img/svg/home/接入简单.svg
     title: 接入简单
     details: 只需作为magisk或kernelsu模块刷入即可
-    
-   
-
 
 ---
         

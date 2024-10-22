@@ -12,7 +12,7 @@ titleTemplate: Tritium_docs
 |author          |string |配置文件的作者信息  |
 |configVersion   |int    |配置文件版本       |
 
-```json
+```json{4}
 {
   "name": "Dimensity1100/1200/1300", //名称
   "author": "chenzyadb",//作者
