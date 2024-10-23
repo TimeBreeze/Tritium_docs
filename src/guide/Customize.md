@@ -5,7 +5,7 @@ titleTemplate: Tritium_docs
 ---
 
 
-## CuprumTurbo V18 自定义配置开发文档 
+## CuprumTurbo V19 自定义配置开发文档 
 > *本文档来自于上游开发者*我们只是对其字段进行通俗理解，当然我们不可能比开发者更懂这些参数
 
 ## 导航
