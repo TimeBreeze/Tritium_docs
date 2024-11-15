@@ -19,8 +19,14 @@ layout: doc
 如果您有兴趣参与本项目的开发和维护，欢迎[加入我们](../join.md)参与其中~
 
 ::: danger
-模块和app是2种不同的选择，`Magisk 模块`和 `Cutoolbox `只能使用其中一种 ,config.zip为APP导入方式，需要解压后导入app使用，模块刷入需要下载模块刷入即可(建议一并下载附加模块)
+模块和app是2种不同的选择，`Magisk 模块`和 `Cutoolbox `以及`Tritium box`只能使用其中一种 ,config.zip为APP导入方式，需要解压后导入app使用，模块刷入需要下载模块刷入即可(建议一并下载附加模块) APP则无需单独下载，只需要打开开关就能将`附加模块`输出到`download`文件夹下，方便定位
 :::
+
+## 相关协议 
+#### [免责声明](/disclaimer.md)
+#### [用户协议](/agreement.md)
+#### [Apache-2.0 license](https://github.com/NightRainMilkyWay/Tritium/blob/main/LICENSE)
+
 ## 下载配置文件或模块刷入使用(建议一并安装附加模块)
 
 ![GitHub all releases](https://img.shields.io/github/downloads/TimeBreeze/Tritium/total?style=for-the-badg)
@@ -43,7 +49,7 @@ layout: doc
 
 ## 下载Tritium box
 :::tip
-适合小白新手使用，开箱即用，注意授予`自启动和root权限`
+适合小白新手使用，开箱即用，注意授予`自启动和root权限`(建议新手使用，尤其是不会刷模块)
 :::
 ![GitHub all releases](https://img.shields.io/github/downloads/TimeBreeze/Tritium/total?style=for-the-badg)
 

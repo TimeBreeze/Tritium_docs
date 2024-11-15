@@ -10,7 +10,7 @@ export const themeConfig: DefaultTheme.Config = {
   nav,
   sidebar,
   
-  logo: '/阿库娅.png',
+  logo: '/logo.png',
   outline: {
     level: 'deep', // 右侧大纲标题层级
     label: '目录', // 右侧大纲标题文本配置
