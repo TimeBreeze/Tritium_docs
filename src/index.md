@@ -23,9 +23,8 @@ hero:
       text: 加入我们
       link: https://qm.qq.com/q/kkBufFwfeM
     - theme: alt
-      text: 乐子记录
-      link: /clown.md
-  
+      text: 管方内核刷写
+      link: /FAQ/kernel.md
    
       
 features:

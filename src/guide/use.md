@@ -19,10 +19,6 @@ titleTemplate: Tritium_docs
 - 5.请务必安装`CuJankDetector`附加模块，保证调度的体验
 - 6.请务必仔细阅读本文档
 
-## 相关协议 
-#### [免责声明](/disclaimer.md)
-#### [用户协议](/agreement.md)
-#### [Apache-2.0 license](https://github.com/NightRainMilkyWay/Tritium/blob/main/LICENSE)
 
 
 ::: danger
