@@ -22,6 +22,11 @@ titleTemplate: Tritium_docs
 |path            |string  |写入的目标地址            |
 |text            |string  |需要写入的文本            | 
 
+:::tip
+`path`字段为写入的目标地址, 例如`/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq`.
+`text`字段为需要写入的文本, 例如`2000000`.
+:::
+
 #### hints - 场景触发器  
 触发条件包含`tap` `swipe` `gesture` `heavyload` `jank` `bigJank`,分别在 点击屏幕 滑动屏幕 手势操作 重负载 掉帧 严重掉帧 时触发.  
 触发的优先级为`none` < `tap` < `swipe` < `gesture` < `heavyload` < `jank` < `bigJank`, 当更高优先级的加速触发时将覆盖低优先级的加速.  
@@ -53,6 +58,15 @@ titleTemplate: Tritium_docs
 |actionDelay      |int     |活动工作频率      |
 |matchRule  |null  | null   |
 
+```json{3-5}
+  "Thermal": {
+    "params": {
+      "interval": 1000,
+      "actionDelay": 1000,
+      "matchRule": null
+    },
+```
+
 #### modes - 调频器参数  
 |字段             |类型    |定义                     |
 |:---------------|:-------|:-----------------------|
@@ -62,4 +76,40 @@ titleTemplate: Tritium_docs
 |devfreq.ddr.max_freq      |int     |ddr频率余量上限    |
 |devfreq.gpu.max_freq    |int     |GPU频率余量上限            |
 
-过热温度为触发调频器温度控制的阈值,当temp设置为-1时则代表忽略过热温度，例如temp设置为80时则表示当CPU温度超过80°C时将触发该字段所包含的变量
+:::tip
+过热温度为触发调频器温度控制的阈值,当`temp`设置为`-1`时则代表忽略过热温度，例如temp设置为`80`时则表示当CPU温度超过`80°C`时将触发该字段所包含的变量,当超过90°C时将触发下一个字段.
+:::
+```json{5,7-10,14}
+ "modes": {
+      "powersave": {
+        "actions": [
+          {
+            "temp": -1, 
+            "setProperty": [
+              {"name": "cpu.max_power", "value": 8000},
+              {"name": "mtk_gpu.max_freq", "value": 600},
+              {"name": "devfreq.ddr.max_freq", "value": 10000},
+              {"name": "devfreq.gpu.max_freq", "value": 10000}
+            ]
+          },
+          {
+            "temp": 80, 
+            "setProperty": [
+              {"name": "cpu.max_power", "value": 5000},
+              {"name": "mtk_gpu.max_freq", "value": 500},
+              {"name": "devfreq.ddr.max_freq", "value": 10000},
+              {"name": "devfreq.gpu.max_freq", "value": 10000}
+            ]
+          },
+          {
+            "temp": 90, 
+            "setProperty": [
+              {"name": "cpu.max_power", "value": 2000},
+              {"name": "mtk_gpu.max_freq", "value": 500},
+              {"name": "devfreq.ddr.max_freq", "value": 10000},
+              {"name": "devfreq.gpu.max_freq", "value": 10000}
+            ]
+          }
+        ]
+      },
+```

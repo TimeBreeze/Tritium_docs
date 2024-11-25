@@ -41,7 +41,7 @@ titleTemplate: Tritium_docs
 ~~例如: 设置`upRateThres=90, downRateDiff=10`, 当GPU负载为`75`时降低GPU频率, 当GPU负载为`85`时GPU频率不变,当GPU负载为`95`时提升GPU频率.~~
 ~~`upRateThres`的值越小升频越积极, `downRateDiff`的值越大降频越缓慢, `downRateDiff`的值不得大于`upRateThres`.~~
 
-```json
+```json{4-5,8-10,14-16}
   "MtkGpuGovernor": {
     "enable": true,
     "params": {
