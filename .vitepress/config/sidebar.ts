@@ -21,7 +21,7 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
           { text: 'CPU配置模块', link: '/guide/CpuGovernor.md' },
           { text: '线程配置模块', link: '/guide/ThreadSchedOpt.md' },
           { text: 'GPU配置模块', link: '/guide/MtkGpuGovernor.md' },
-          { text: '文件写入配置模块', link: '/guide/FileWriter.md' }
+          { text: '场景触写入模块', link: '/guide/Trigger.md' }
         ]
       }
     ]

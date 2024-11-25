@@ -8,62 +8,71 @@ titleTemplate: Tritium_docs
 #### params - 调频器参数  
 |字段             |类型    |定义                     |
 |:---------------|:-------|:-----------------------|
-|activeRateHz    |int     |活跃时工作频率            |
-|idleRateHz      |int     |空闲时工作频率            |
-|preferredFreq   |ArrayInt|偏好GPU频率(单位:MHz)     |
+|baseRateHz    |int     |基准工作频率            |
+|burstRateHz      |int     |突发工作频率      |
 
-当GPU负载为0时调频器按照`idleRateHz`频率工作, 当负载非0时调频器按照`activeRateHz`频率工作.  
+当GPU负载为0时调频器按照`baseRateHz`频率工作, 当负载非0时调频器按照`burstRateHz`频率工作.  
 由于联发科内核提供的GPU频率数量过多, 此调频器将只会选取部分GPU频率,具体信息请查看调度日志.  
-`preferredFreq`为偏好的GPU频率, 调度选取GPU频率时将优先考虑这些频率.  
+
+#### voltAdjust  - 电压调整
+```
+"voltAdjust": {
+      "minVolt": 0,
+      "maxVolt": 100000,
+      "voltOffset": 0
+    },
+    ...
+```
+|字段             |类型    |定义                     |
+|:---------------|:-------|:------------------------|
+|minVolt         |int     |最低电压(单位:uV)         |
+|maxVolt         |int     |最高电压(单位:uV)         |
+|voltOffset      |int     |电压偏移值(单位:uV)       |
+
+**`此功能仅用于适配某些默认电压表不可用的设备, 不建议在通用的配置文件中调整此项参数, 可能导致死机甚至烧毁硬件.`**
 #### modes - 模式参数 
 |字段            |类型    |定义                      |
 |:---------------|:-------|:------------------------|
-|maxFreq         |int     |GPU频率上限(单位:MHz)     |
-|minFreq         |int     |GPU频率下限(单位:MHz)     |
-|upRateThres     |int     |GPU升频阈值(范围:0-100)   |
-|downRateDiff    |int     |GPU降频差值(范围:0-100)   |
+|margin         |ArrayInt   |GPU性能冗余(范围:0-100)     |
+|upRateDelay         |int     |GPU升频延迟(单位:ms)     |
+|downRateDelay     |int     |GPU降频延迟(单位:ms)   |
 
-当GPU负载大于`upRateThres`时提升频率, 当GPU负载减少的差值大于`downRateDiff`时降低频率.  
-例如: 设置`upRateThres=90, downRateDiff=10`, 当GPU负载为`75`时降低GPU频率, 当GPU负载为`85`时GPU频率不变,当GPU负载为`95`时提升GPU频率.  
-`upRateThres`的值越小升频越积极, `downRateDiff`的值越大降频越缓慢, `downRateDiff`的值不得大于`upRateThres`.  
+~~当GPU负载大于`upRateThres`时提升频率, 当GPU负载减少的差值大于`downRateDiff`时降低频率.~~
+~~例如: 设置`upRateThres=90, downRateDiff=10`, 当GPU负载为`75`时降低GPU频率, 当GPU负载为`85`时GPU频率不变,当GPU负载为`95`时提升GPU频率.~~
+~~`upRateThres`的值越小升频越积极, `downRateDiff`的值越大降频越缓慢, `downRateDiff`的值不得大于`upRateThres`.~~
 
 ```json
-
-"MtkGpuGovernor": {
+  "MtkGpuGovernor": {
     "enable": true,
     "params": {
-      "activeRateHz": 60,
-      "idleRateHz": 30,
-      "preferredFreq": [
-        540,
-        660,
-        770
-      ]
+      "baseRateHz": 20,
+      "burstRateHz": 40
+    },
+    "voltAdjust": {
+      "minVolt": 0,
+      "maxVolt": 100000,
+      "voltOffset": 0
     },
     "modes": {
       "powersave": {
-        "maxFreq": 540,
-        "minFreq": 0,
-        "upRateThres": 90,
-        "downRateDiff": 10
+        "margin": 10,
+        "upRateDelay": 50,
+        "downRateDelay": 50
       },
       "balance": {
-        "maxFreq": 660,
-        "minFreq": 0,
-        "upRateThres": 80,
-        "downRateDiff": 10
+        "margin": 20,
+        "upRateDelay": 50,
+        "downRateDelay": 50
       },
       "performance": {
-        "maxFreq": 770,
-        "minFreq": 0,
-        "upRateThres": 70,
-        "downRateDiff": 10
+        "margin": 30,
+        "upRateDelay": 0,
+        "downRateDelay": 50
       },
       "fast": {
-        "maxFreq": 890,
-        "minFreq": 0,
-        "upRateThres": 70,
-        "downRateDiff": 20
+        "margin": 30,
+        "upRateDelay": 0,
+        "downRateDelay": 50
       }
     }
   },

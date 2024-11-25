@@ -7,6 +7,12 @@ titleTemplate: Tritium_docs
 ### CpuGovernor - CPU混合调频器  
 > 此模块通过在各种不同场景下选择合适的CPU频率以改善使用体验.  
 #### params - 调频器参数  
+|字段             |类型   |定义                 |
+|:---------------|:------|:--------------------|
+|maxRateHz    |int    |工作频率上限        |
+|minRateHz      |int    |工作频率下限       |
+|activeDelay     |int    |活跃状态延迟          |
+|FreqStep     |int    |频率差值          |
 
 
 :::tip
@@ -18,10 +24,10 @@ titleTemplate: Tritium_docs
 "CpuGovernor": {
     "enable": true,
     "params": {
-      "activeRateHz": 60,
-      "idleRateHz": 30,
+      "maxRateHz": 100,
+      "minRateHz": 20,
       "activeDelay": 2000,
-      "minFreqStep": 200
+      "freqStep": 200
     },
   }
   ...//其他模块
@@ -40,11 +46,13 @@ titleTemplate: Tritium_docs
 每个策略组中的CPU频率将会同步控制, 应当与内核中每个cluster中包含的CPU对应.  
 由于是按照数组的序号来为策略组编号的, 所以策略组的排序应与cluster的排序一致.  
 例如SDM845为4+4设计, 即`policy0: CPU0-3; policy1: CPU4-7`.  
+
 |字段            |类型    |定义                                    |
 |:--------------|:-------|:---------------------------------------|
 |coreNum        |int     |策略组中包含的CPU核心数量                 |
-|perfScale      |int     |CPU相对同频算力值                        |
+|perfRatio      |int     |CPU相对同频算力值                        |
 |lowPowerFreq   |int     |CPU功耗最低频率(单位:MHz)                |
+|modelType     |int     |策略组核心类型    |
 |optimalFreq    |int     |CPU最优频率(单位:MHz)                    |
 |modelFreq      |int     |用于生成CPU功耗模型的CPU频率(单位:MHz)     |
 |modelPower     |int     |处于modelFreq时CPU的满载功耗(单位:mW)     |
@@ -52,30 +60,33 @@ titleTemplate: Tritium_docs
 `CpuGovernor`模块设定中的所有频率都将会被取近似值, 例如CPU频率表中有`1200, 1450, 1700`三个频率, 设定频率为`1500`, 最终取值将为`1450`.  
 
 ```JSON{3-8}
-  "policies": [
+    "policies": [
       {
         "coreNum": 4,
-        "perfScale": 100,
-        "lowPowerFreq": 500,
-        "optimalFreq": 1200,
+        "perfRatio": 100,
+        "lowPowerFreq": 600,
+        "optimalFreq": 1600,
+        "modelType": "little-core",
         "modelFreq": 2000,
-        "modelPower": 360
+        "modelPower": 320
       },
       {
         "coreNum": 3,
-        "perfScale": 320,
-        "lowPowerFreq": 500,
-        "optimalFreq": 1700,
+        "perfRatio": 320,
+        "lowPowerFreq": 700,
+        "optimalFreq": 1900,
+        "modelType": "medium-core",
         "modelFreq": 2600,
-        "modelPower": 1400
+        "modelPower": 1700
       },
       {
         "coreNum": 1,
-        "perfScale": 320,
-        "lowPowerFreq": 700,
-        "optimalFreq": 1800,
+        "perfRatio": 320,
+        "lowPowerFreq": 900,
+        "optimalFreq": 2000,
+        "modelType": "medium-core",
         "modelFreq": 2600,
-        "modelPower": 1750
+        "modelPower": 1800
       }
     ],
 
@@ -84,18 +95,28 @@ titleTemplate: Tritium_docs
 |字段            |类型     |定义                         |
 |:---------------|:-------|:----------------------------|
 |powerLimit      |int     |CPU整体功耗限制(单位:mW)       |
-|perfMargin      |ArrayInt|CPU性能冗余(范围:0-100)        |
-|upRateLatency   |int     |CPU频率提升延迟(单位:ms)       |
-|overHeatTemp    |int     |过热温度(单位:°C)              |
-|burstCapacity   |int     |频率加速容量(单位:W·ms)        |
-|recoverTime     |int     |容量恢复时间(单位:ms)          |
+|multiLoadLimit|bool　|是否启用多核心负载　　　|
+|multiLoadThres|ArrayInt|多核心负载分配(范围:0-100) |
+|maxMargin      |ArrayInt|CPU性能冗余上限(范围:0-100)        |
+|maxLatency   |int     |CPU频率提升延迟上限(单位:ms)       |
+
 
 CPU整体功耗限制会影响CPU频率上限, 调频器计算的是满载功耗,不会随CPU负载变化而改变.  
-`perfMargin`使用`ArrayInt`即整数数组方式存储参数, 数组的序号对应策略组编号.  
+对于是否启用多核心负载，如果将该字段设置为`true`,`multiLoadThres`字段将会被启用，反之则不会启用
+```｛4｝
+    "modes": {
+      "powersave": {
+        "powerLimit": 3000,
+        "multiLoadLimit": true,
+        "multiLoadThres": [50, 50, 50],
+        "maxMargin": [10, 10, 10],
+          ...
+      },
+```
+`maxMargin`与`multiLoadThres`使用`ArrayInt`即整数数组方式存储参数, 数组的序号对应策略组编号.  
 CPU频率提升延迟用于降低CPU频率被提升得过高的几率, 每次升频时调频器都会根据频率提升延迟和能耗比变化判定是否需要升频.  
-过热温度为触发调频器温度控制的阈值, 当CPU温度超过该值时将限制CPU功耗在`powerLimit`以内并忽略频率加速直到温度降低.  
-当触发CPU频率加速时调频器将会忽略`powerLimit`, 如果实时功耗超过`powerLimit`就会消耗`burstCapacity`, 直到容量耗尽时恢复功耗限制.  
-当实时功耗低于功耗限制值时将会逐渐恢复`burstCapacity`, `recoverTime`即为容量从耗尽到完全恢复所需的时间.  
+
+ 
 ##### freqBurst - CPU频率加速  
 CPU频率加速可以在特定条件触发时调高CPU频率提升积极性, 用于降低部分场景下卡顿的几率.  
 |字段            |类型   |定义                         |
