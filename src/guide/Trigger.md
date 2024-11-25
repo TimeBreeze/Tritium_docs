@@ -9,13 +9,14 @@ titleTemplate: Tritium_docs
 #### scenes - 场景触发器
 当触发指定场景时将会自动向文件中写入预设的文本, 写入方式与`echo [text] > [path]`相同且效率更高, 写入单个文件的耗时通常不超过1ms.  
 支持的场景如下:  
-`init`: 调度初始化时触发, 仅执行一次.  
-`screenOn`: 屏幕点亮时触发.  
-`screenOff`: 屏幕熄灭时触发.  
-`powersaveMode`: 切换到powersave模式时触发.  
-`balanceMode`: 切换到balance模式时触发.  
-`performanceMode`: 切换到performance模式时触发.  
-`fastMode`: 切换到fast模式时触发.  
+- `init`: 调度初始化时触发, 仅执行一次.  
+- `screenOn`: 屏幕点亮时触发.  
+- `screenOff`: 屏幕熄灭时触发.  
+- `powersaveMode`: 切换到powersave模式时触发.  
+- `balanceMode`: 切换到balance模式时触发.  
+- `performanceMode`: 切换到performance模式时触发.  
+- `fastMode`: 切换到fast模式时触发.  
+
 此项配置类型为`ArrayJson`, 即数组中的每个Json元素对应一个文件写入任务.  
 |字段            |类型    |定义                      |
 |:---------------|:-------|:------------------------|
@@ -27,89 +28,78 @@ titleTemplate: Tritium_docs
 `text`字段为需要写入的文本, 例如`2000000`.
 :::
 
+```json{7}
+  "Trigger": {
+    "enable": true,
+    "scenes": {
+      "init": {
+        "setProperty": [],
+        "writeFile": [
+          {"path": "/dev/cpuset/restricted/cpus", "text": "0-3"},
+          {"path": "/dev/cpuset/system-background/cpus", "text": "0-3"},
+          {"path": "/dev/cpuset/background/cpus", "text": "0-3"},
+          {"path": "/dev/cpuset/foreground/cpus", "text": "0-7"},
+          {"path": "/dev/cpuset/top-app/cpus", "text": "0-7"}
+        ]
+      },
+      "screenOn": {
+        "setProperty": [],
+        "writeFile": []
+      },
+    
+    },
+```
 #### hints - 场景触发器  
 触发条件包含`tap` `swipe` `gesture` `heavyload` `jank` `bigJank`,分别在 点击屏幕 滑动屏幕 手势操作 重负载 掉帧 严重掉帧 时触发.  
 触发的优先级为`none` < `tap` < `swipe` < `gesture` < `heavyload` < `jank` < `bigJank`, 当更高优先级的加速触发时将覆盖低优先级的加速.  
 
 |字段            |类型    |定义                      |
 |:---------------|:-------|:------------------------|
-|durationTime            |int  |触发持续时间(单位:ms)          |
-|cpu.boost            |int  |频率加速值(范围:0-100)         |
-|cpu.extra_margin            |int  |额外性能冗余(范围:0-100)       |
-|cpu.low_latency            |bool  |是否降低延迟          |
-|mtk_gpu.min_freq            |int  |需要写入的文本            | 
-|mtk_gpu.boost            |int  |频率加速值(范围:0-100)         |
-|mtk_gpu.extra_margin            |int  |额外性能冗余(范围:0-100)              | 
-|mtk_gpu.low_latency            |bool  |是否降低延迟          |
-|devfreq.ddr.min_freq            |int  |ddr空闲频率下限        | 
-|devfreq.gpu.min_freq            |int  |gpu空闲频率下限          |
+|durationTime            |int  |触发持续时间(单位:ms)   |
+|cpu.boost               |int  |频率加速值(范围:0-100)  |
+|cpu.extra_margin        |int  |额外性能冗余(范围:0-100)|
+|cpu.low_latency         |bool |是否降低延迟            |
+|mtk_gpu.min_freq        |int  |gpu频率下限        | 
+|mtk_gpu.boost           |int  |频率加速值(范围:0-100)  |
+|mtk_gpu.extra_margin    |int  |额外性能冗余(范围:0-100) | 
+|mtk_gpu.low_latency     |bool |是否降低延迟             |
+|devfreq.ddr.min_freq    |int  |ddr空闲频率下限          | 
+|devfreq.gpu.min_freq    |int  |gpu空闲频率下限          |
 
 当要求调频器降低延迟时调频器将会以最快的速度提升CPU频率, 适用于检测到掉帧等需要迅速提升CPU频率的场景.  
 `extraMargin`值用于提供额外的性能冗余, 计算公式如下: `acturalMargin = perfMargin + extraMargin`.  
-`boost`值用于夸大实际的CPU负载, 计算公式如下: `cpuLoad = cpuLoad + (100 - cpuLoad) * boost / 100`. 
+`boost`值用于夸大实际的CPU负载, 计算公式如下: `cpuLoad = cpuLoad * freq * (1 + boost / 100)`.
 
-### Thermal温度过载保护模块
->支持在芯片过热时调整Property值以改变调度策略, 例如降低CPU的最大功耗和限制GPU的最高频率.
-
-#### params - 调频器参数  
-|字段             |类型    |定义                     |
-|:---------------|:-------|:-----------------------|
-|interval    |int     |空闲工作频率            |
-|actionDelay      |int     |活动工作频率      |
-|matchRule  |null  | null   |
-
-```json{3-5}
-  "Thermal": {
-    "params": {
-      "interval": 1000,
-      "actionDelay": 1000,
-      "matchRule": null
-    },
-```
-
-#### modes - 调频器参数  
-|字段             |类型    |定义                     |
-|:---------------|:-------|:-----------------------|
-|temp    |ArrayInt     |过热温度(范围:0-100°C)       |
-|cpu.max_power      |int     |CPU功耗上限     |
-|mtk_gpu.max_freq    |int     |GPU频率上限            |
-|devfreq.ddr.max_freq      |int     |ddr频率余量上限    |
-|devfreq.gpu.max_freq    |int     |GPU频率余量上限            |
-
-:::tip
-过热温度为触发调频器温度控制的阈值,当`temp`设置为`-1`时则代表忽略过热温度，例如temp设置为`80`时则表示当CPU温度超过`80°C`时将触发该字段所包含的变量,当超过90°C时将触发下一个字段.
+:::danger
+`mtk_gpu.min_freq`和`devfreq.ddr.min_freq`用于设置GPU和DDR的最低频率, 应与[Thermal温度过载保护模块](./Thermal.md)中字段`devfreq.ddr.max_freq`和`devfreq.gpu.max_freq`注意，max应大于min，否则可能导致意想不到的结果
 :::
-```json{5,7-10,14}
- "modes": {
-      "powersave": {
-        "actions": [
-          {
-            "temp": -1, 
+```json
+"hints": {
+      "none": {
+        "durationTime": 0,
+        "modes": {
+          "powersave": {
             "setProperty": [
-              {"name": "cpu.max_power", "value": 8000},
-              {"name": "mtk_gpu.max_freq", "value": 600},
-              {"name": "devfreq.ddr.max_freq", "value": 10000},
-              {"name": "devfreq.gpu.max_freq", "value": 10000}
-            ]
+              {"name": "cpu.boost", "value": 0},
+              {"name": "cpu.extra_margin", "value": 0},
+              {"name": "cpu.low_latency", "value": false},
+              {"name": "mtk_gpu.min_freq", "value": 0},
+              {"name": "mtk_gpu.boost", "value": 0},
+              {"name": "mtk_gpu.extra_margin", "value": 0},
+              {"name": "mtk_gpu.low_latency", "value": false},
+              {"name": "devfreq.ddr.min_freq", "value": 0},
+              {"name": "devfreq.gpu.min_freq", "value": 0}
+            ],
+            "writeFile": []
           },
-          {
-            "temp": 80, 
-            "setProperty": [
-              {"name": "cpu.max_power", "value": 5000},
-              {"name": "mtk_gpu.max_freq", "value": 500},
-              {"name": "devfreq.ddr.max_freq", "value": 10000},
-              {"name": "devfreq.gpu.max_freq", "value": 10000}
-            ]
-          },
-          {
-            "temp": 90, 
-            "setProperty": [
-              {"name": "cpu.max_power", "value": 2000},
-              {"name": "mtk_gpu.max_freq", "value": 500},
-              {"name": "devfreq.ddr.max_freq", "value": 10000},
-              {"name": "devfreq.gpu.max_freq", "value": 10000}
-            ]
-          }
-        ]
+          "balance"
+          ... // 省略其他模式
+        }
       },
+      "tap"
+      ... // 省略其他触发条件
 ```
+
+:::warning 节选自CuToolbox V8.2.0 Alpha更新日志
+[Trigger] 新增的模块, 支持在特定场景触发时调整Property值和写入文件以改变调度策略, 例如提高CPU调频器的冗余.
+:::
