@@ -25,6 +25,9 @@ hero:
     - theme: alt
       text: 官方内核刷写
       link: /FAQ/kernel.md
+    - theme: brand
+      text: 典藏
+      link: /clown.md
    
       
 features:
