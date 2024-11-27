@@ -19,9 +19,6 @@ hero:
     - theme: brand
       text: 参与者&贡献者
       link: /team.md
-    - theme: brand
-      text: 加入我们
-      link: https://qm.qq.com/q/kkBufFwfeM
     - theme: alt
       text: 官方内核刷写
       link: /FAQ/kernel.md
