@@ -49,7 +49,7 @@ layout: doc
 
 # 下载网盘
 
-- [Alist](pan.nightrain.me)
+- [Alist](https://pan.nightrain.me)
 - [Alist](https://pan.nightrainmilkyway.cn)
 ## 下载附加模块
 :::tip
