@@ -54,7 +54,7 @@ titleTemplate: Tritium_docs
 
 ## 关于附加模块
 ::: danger
-子需要在App内打开开关就能将`附加模块`输出到`download`文件夹下，方便定位
+附加模块需要在App内打开开关就能将`附加模块`输出到`download`文件夹下，方便定位
 :::
 
 ### 检查日志
