@@ -59,7 +59,7 @@ titleTemplate: Tritium_docs
 |cpu.boost               |int  |频率加速值(范围:0-100)  |
 |cpu.extra_margin        |int  |额外性能冗余(范围:0-100)|
 |cpu.low_latency         |bool |是否降低延迟            |
-|mtk_gpu.min_freq        |int  |gpu频率下限        | 
+|mtk_gpu.min_freq        |int  |gpu工作频率下限        | 
 |mtk_gpu.boost           |int  |频率加速值(范围:0-100)  |
 |mtk_gpu.extra_margin    |int  |额外性能冗余(范围:0-100) | 
 |mtk_gpu.low_latency     |bool |是否降低延迟             |
@@ -67,11 +67,16 @@ titleTemplate: Tritium_docs
 |devfreq.gpu.min_freq    |int  |gpu空闲频率下限          |
 
 当要求调频器降低延迟时调频器将会以最快的速度提升CPU频率, 适用于检测到掉帧等需要迅速提升CPU频率的场景.  
-`extraMargin`值用于提供额外的性能冗余, 计算公式如下: `acturalMargin = perfMargin + extraMargin`.  
-`boost`值用于夸大实际的CPU负载, 计算公式如下: `cpuLoad = cpuLoad * freq * (1 + boost / 100)`.
+`extraMargin`值用于提供额外的性能冗余, 计算公式如下: `acturalMargin = perfMargin + extraMargin`. `boost`值用于夸大实际的CPU负载, 计算公式如下: `cpuLoad = cpuLoad * freq * (1 + boost / 100)`.
 
+`mtk_gpu.min_freq`和`devfreq.gpu.min_freq`分别为工作和空闲频率下限, 用于设置GPU的最低工作频率和最低空闲频率.
+
+GPU空闲频率下限用于设置GPU的最低空闲频率, 例如`devfreq.gpu.min_freq`为`0`时，GPU将会在空闲时降至最低频率.
+DDR空闲频率下限用于设置DDR的最低空闲频率, 例如`devfreq.ddr.min_freq`为`0`时，DDR将会在空闲时降至最低频率.
+
+无论是GPU还是DDR的频率下限，都无法达到锁住某个频率的效果，只能在空闲时降至最低频率，(实际情况受调频器工作频率与自动选择影响，例如`devfreq.ddr.min_freq`设置为`800`，那么大概率DDR不会选择在这个频率，因为受实际负载和实际性能需求，过低的频率会导致设备卡死等意外情况)
 :::danger
-`mtk_gpu.min_freq`和`devfreq.ddr.min_freq`用于设置GPU和DDR的最低频率, 应与[Thermal温度过载保护模块](./Thermal.md)中字段`devfreq.ddr.max_freq`和`devfreq.gpu.max_freq`注意，max应大于min，否则可能导致意想不到的结果
+`mtk_gpu.min_freq`和`devfreq.ddr.min_freq`用于设置GPU和DDR的最低空闲频率, 应与[Thermal温度过载保护模块](./Thermal.md)中字段`devfreq.ddr.max_freq`和`devfreq.gpu.max_freq`注意，max应大于min，否则可能导致意想不到的结果
 :::
 ```json
 "hints": {

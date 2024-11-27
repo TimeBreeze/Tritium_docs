@@ -27,16 +27,16 @@ titleTemplate: Tritium_docs
 | 字段                 | 类型     | 定义                   |
 | :------------------- | :------- | :--------------------- |
 | temp                 | ArrayInt | 过热温度(范围:0-100°C) |
-| cpu.max_power        | int      | CPU整体功耗上限            |
-| mtk_gpu.max_freq     | int      | GPU整体频率上限            |
-| devfreq.ddr.max_freq | int      | DDR频率余量上限        |
-| devfreq.gpu.max_freq | int      | GPU频率余量上限        |
+| cpu.max_power        | int      | CPU整体功耗上限(单位:mW)             |
+| mtk_gpu.max_freq     | int      | GPU整体频率上限(单位:Mhz)            |
+| devfreq.ddr.max_freq | int      | DDR工作频率上限(单位:Mhz)         |
+| devfreq.gpu.max_freq | int      | GPU工作频率上限(单位:Mhz)         |
 
 :::tip
 过热温度为触发调频器温度控制的阈值,当`temp`设置为`-1`时则代表忽略过热温度，例如temp设置为`80`时则表示当CPU温度超过`80°C`时将触发该字段所包含的变量,当超过90°C时将触发下一个字段.并由`setProperty`字段中的`name`和`value`来设置对应的属性值.
 :::
 ::: warning
-`powerLimit`在`boost extra_margin，low_latency`为`0/false`的时候生效，但是`max_power`还是会限制功耗，max_power的功耗限制是优先级最高
+`powerLimit`在`boost extra_margin，low_latency`为`0/false`的时候生效，但是`max_power`还是会限制功耗，max_power的功耗限制是优先级高于powerLimit的，即使powerLimit设置为10000，max_power设置为5000，那么最终的功耗限制还是5000.
 :::
 
 ```json{5,14,23}

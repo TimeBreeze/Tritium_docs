@@ -14,6 +14,9 @@ titleTemplate: Tritium_docs
 |activeDelay     |int    |活跃状态延迟          |
 |FreqStep     |int    |频率差值          |
 
+> 从内核周期性采样 CPU 每个核心的负载
+> CPU 整体存在一定负载时，以maxRateHz周期上限采样 CPU 频率，提高响应速度
+> CPU 整体进入空载时，以minRateHz周期下限采样 CPU 频率，减少轮询开销
 
 :::tip
 `enable` 字段为是否启用 
@@ -44,10 +47,11 @@ titleTemplate: Tritium_docs
 :::warning 节选自CuToolbox V8.2.0 Alpha更新日志
 1. 改进调频器Timer根据不同场景自动调整工作频率的策略, 降低开销的同时允许更高的工作频率(`100HZ`).
   
-2.优化功耗模型的生成, 区分`小核/中核/大核`, 更贴近CPU满载时的真实功耗.`little-core,medium-core,big-core`
+2.优化功耗模型的生成, 区分`小核/中核/大核`, 更贴近CPU满载时的真实功耗.`little-core,medium-core,big-core`.
 :::
 
-#### policies - 策略组    
+#### policies - 策略组
+
 此项配置类型为`ArrayJson`, 即数组中的每个Json元素对应一个策略组.  
 每个策略组中的CPU频率将会同步控制, 应当与内核中每个cluster中包含的CPU对应.  
 由于是按照数组的序号来为策略组编号的, 所以策略组的排序应与cluster的排序一致.  
@@ -112,6 +116,9 @@ CPU整体功耗限制会影响CPU频率上限, 调频器计算的是满载功耗
 
 `multiLoadThres`是判断是否是单核负载, 如果丛集里一颗核心负载减去其他核心平均负载的差值达到这个值就不限制频率, 否则就限制到`optimalFreq`
 例如: SMD845为4+4设计, `multiLoadThres`为`[50, 50, 50]`, CPU0-2负载为80%, CPU3负载为20%, 该丛集频率将会被限制到将会限制`optimalFreq`频率.
+
+`maxLatency`用于降低CPU频率被提升得过高的几率, 每次升频时调频器都会根据频率提升延迟和能耗比变化判定是否需要升频，每个策略组都有一个`maxLatency`参数.用于整体控制单集群频率提升延迟.(实际延迟会按照下个频点的能耗调整，调频器的工作频率也会影响实际延迟)
+
 ```json{4,5}
      "modes": {
       "powersave": {
