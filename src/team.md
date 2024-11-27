@@ -2,7 +2,7 @@
 title: 关于团队
 layout: page
 titleTemplate: Redemption Project
-aside: false
+aside: true
 banner: 开发中页面，仅预览
 ---
 

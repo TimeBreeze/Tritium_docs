@@ -3,22 +3,26 @@
 		"location": "China",
 		"name": "NightRainMilkyWay",
 		"qq": 3293811490,
-		"title": "Tritium - docs",
-        "languages": ["English", "Chinese"],
+		"title": "Tritium",
+        "languages": ["English","Chinese","日本语"],
         "website": {
         "label": "nightrainmilkyway.cn",
         "url": "https://nightrainmilkyway.cn"
          },
-		"company": "这世界很宽容，宽容到绝对可以允许抬高三公分的枪口，也可以宽容到每个人都可以问心无愧的活着。没有人理应去要求你爱这个世界，但我由衷的希望你爱着自己",
+		"company": "梦——それは现実の続き；现実——それは梦の终わり",
 		"companyLink": "https://github.com/nightrainmilkyway",
 		"projects": [
 		    {
 				"label": "Tritium",
-				"url": "https://github.com/Suni-code/Tritium"
+				"url": "https://github.com/TimeBreeze//Tritium"
 			},
 			{
 				"label": "Tritium - docs",
-				"url": "https://github.com/nightrainmilkyway/Tritium_docs"
+				"url": "https://github.com/TimeBreeze//Tritium_docs"
+			},
+			{
+				"label": "Tritium - box",
+				"url": "https://github.com/TimeBreeze//Tritium_box"
 			}
 		],
 		"socials": {
