@@ -45,7 +45,6 @@ layout: doc
     <a href="https://github.com/TimeBreeze/Tritium/releases"><img alt="F-Droid" src="https://img.nightrainmilkyway.cn/img/202412012125310.svg" height="60"/></a>
     <a href="https://github.com/chenzyadb/CuprumTurbo-Scheduler/releases"><img alt="GitHub" src="https://img.nightrainmilkyway.cn/img/202412012125310.svg" height="60"/></a>
 </p>
-</div>
 
 
 ### 备用下载(打不开从此处获取)
@@ -57,7 +56,6 @@ layout: doc
      <a href="https://pan.nightrainmilkyway.cn"><img alt="Google Play" src="https://img.nightrainmilkyway.cn/img/202412012147430.svg" height="60"></a>
     
 </p>
-</div>
 
 
 
