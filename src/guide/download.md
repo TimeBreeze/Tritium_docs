@@ -37,25 +37,31 @@ layout: doc
 ## 下载配置` APP `| 配置文件`config.zip`或模块刷入使用(建议一并安装附加模块`jank_xxx.zip`)
 
 ### 下载 (第二个GitHub为cutolbox)
-
-</br>
-
-<p align="middle">
-    <a href="http://118.89.122.106:5244/Tritium"><img alt="Google Play" src="https://img.nightrainmilkyway.cn/img/202412012147430.svg" height="60"></a>
-    <a href="https://github.com/TimeBreeze/Tritium/releases"><img alt="F-Droid" src="https://img.nightrainmilkyway.cn/img/202412012125310.svg" height="60"/></a>
-    <a href="https://github.com/chenzyadb/CuprumTurbo-Scheduler/releases"><img alt="GitHub" src="https://img.nightrainmilkyway.cn/img/202412012125310.svg" height="60"/></a>
-</p>
+<div style="text-align: center; display: flex; justify-content: center; gap: 20px;">
+    <a href="http://118.89.122.106:5244/Tritium" target="_blank">
+        <img alt="Google Play" src="https://img.nightrainmilkyway.cn/img/202412012147430.svg" height="60">
+    </a>
+    <a href="https://github.com/TimeBreeze/Tritium/releases" target="_blank">
+        <img alt="F-Droid" src="https://img.nightrainmilkyway.cn/img/202412012125310.svg" height="60">
+    </a>
+    <a href="https://github.com/chenzyadb/CuprumTurbo-Scheduler/releases" target="_blank">
+        <img alt="GitHub" src="https://img.nightrainmilkyway.cn/img/202412012125310.svg" height="60">
+    </a>
+</div>
 
 
 ### 备用下载(打不开从此处获取)
 
-</br>
+<div style="text-align: center; display: flex; justify-content: center; gap: 20px;">
+    <a href="https://pan.nightrain.me/">
+        <img alt="Google Play" src="https://img.nightrainmilkyway.cn/img/202412012147430.svg" height="60">
+    </a>
+    <a href="https://pan.nightrainmilkyway.cn">
+        <img alt="Google Play" src="https://img.nightrainmilkyway.cn/img/202412012147430.svg" height="60">
+    </a>
+</div>
 
-<p align="middle">
-    <a href="https://pan.nightrain.me/"><img alt="Google Play" src="https://img.nightrainmilkyway.cn/img/202412012147430.svg" height="60"></a>
-     <a href="https://pan.nightrainmilkyway.cn"><img alt="Google Play" src="https://img.nightrainmilkyway.cn/img/202412012147430.svg" height="60"></a>
-    
-</p>
+
 
 
 
