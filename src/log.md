@@ -33,7 +33,9 @@ titleTemplate: Tritium_docs
 - 跟进上游更新模块文件
 
 @xianyu6556
-- 暂无
+- 适配1100/1200/888/8g1+
+- 优化省电模式
+- 性能和均衡合理分配
 
 ### 维护者:
 [@Suni-code](https://github.com/Suni-code) (Magisk_suni_Vxxx.zip)
