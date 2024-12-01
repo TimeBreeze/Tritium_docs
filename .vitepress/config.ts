@@ -24,21 +24,6 @@ default defineConfig({
     sitemap: {
         hostname: 'https://tritium.nightrainmilkyway.cn/',
     },
-
-    locales: {
-    root: {
-      label: '中文',
-      lang: 'en'
-    },
-    fr: {
-      label: 'English',
-      lang: 'fr', // 可选，将作为 `lang` 属性添加到 `html` 标签中
-      link: '/fr/guide' // 默认 /fr/ -- 显示在导航栏翻译菜单上，可以是外部的
-
-      // 其余 locale 特定属性...
-    }
-  }
-
     head, // <head>内标签配置
     markdown: markdown, // Markdown配置
     themeConfig,

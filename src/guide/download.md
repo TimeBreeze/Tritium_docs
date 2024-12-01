@@ -36,11 +36,7 @@ layout: doc
 
 ## 下载配置` APP `| 配置文件`config.zip`或模块刷入使用(建议一并安装附加模块`jank_xxx.zip`)
 
-### APP (第二个GitHub为cutolbox)
-  
-[![](https://img.nightrainmilkyway.cn/img/202412012147430.svg)](http://118.89.122.106:5244/)
-[![](https://img.nightrainmilkyway.cn/img/202412012125310.svg)](https://github.com/chenzyadb/CuprumTurbo-Scheduler/releases)
-[![](https://img.nightrainmilkyway.cn/img/202412012125310.svg)](https://github.com/TimeBreeze/Tritium/releases)
+
 
 ### 模块
 
