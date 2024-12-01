@@ -36,17 +36,28 @@ layout: doc
 
 ## 下载配置` APP `| 配置文件`config.zip`或模块刷入使用(建议一并安装附加模块`jank_xxx.zip`)
 
+### 下载 (第二个GitHub为cutolbox)
+
+</br>
+
+<p align="middle">
+    <a href="http://118.89.122.106:5244/Tritium"><img alt="Google Play" src="https://img.nightrainmilkyway.cn/img/202412012147430.svg" height="60"></a>
+    <a href="https://github.com/TimeBreeze/Tritium/releases"><img alt="F-Droid" src="https://img.nightrainmilkyway.cn/img/202412012125310.svg" height="60"/></a>
+    <a href="https://github.com/chenzyadb/CuprumTurbo-Scheduler/releases"><img alt="GitHub" src="https://img.nightrainmilkyway.cn/img/202412012125310.svg" height="60"/></a>
+</p>
+</div>
 
 
-### 模块
+### 备用下载(打不开从此处获取)
 
-[![](https://img.nightrainmilkyway.cn/img/202412012147430.svg)](http://118.89.122.106:5244/Tritium)
-[![](https://img.nightrainmilkyway.cn/img/202412012125310.svg)](https://github.com/TimeBreeze/Tritium/releases)
+</br>
 
-## 备用下载(打不开从此处获取)
-
-[![](https://img.nightrainmilkyway.cn/img/202412012147430.svg)](https://pan.nightrain.me/)
-[![](https://img.nightrainmilkyway.cn/img/202412012147430.svg)](https://pan.nightrainmilkyway.cn)
+<p align="middle">
+    <a href="https://pan.nightrain.me/"><img alt="Google Play" src="https://img.nightrainmilkyway.cn/img/202412012147430.svg" height="60"></a>
+     <a href="https://pan.nightrainmilkyway.cn"><img alt="Google Play" src="https://img.nightrainmilkyway.cn/img/202412012147430.svg" height="60"></a>
+    
+</p>
+</div>
 
 
 
