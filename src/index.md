@@ -5,7 +5,7 @@ titleTemplate: Tritium
 
 hero:
   name: Tritium
-  text: CuprumTurbo Scheduler的衍生版本
+  text: 基于 CuprumTurbo Scheduler
   tagline: 他何尝不是我们心中神明呢，一切，终将得到救赎... ...
   image:
     src: 芙宁娜.png

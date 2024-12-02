@@ -13,7 +13,7 @@ titleTemplate: Tritium_docs
 
 
 ## Tritium
-CuprumTurbo Scheduler的衍生版本
+基于 CuprumTurbo Scheduler
 
 Tritium调度是CuprumTurbo Scheduler的衍生分支版本，只不过是对CuprumTurbo Scheduler进行2次修改分发自定义配置，以适配更多的SOC，提供更好的性能和功耗控制.
 
