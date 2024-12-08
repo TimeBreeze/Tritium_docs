@@ -13,11 +13,11 @@ titleTemplate: Tritium_docs
 
 ## 使用须知
 
-- 1.安装软件或者模块之前请务必并卸载`asoulopt`模块
-- 2.使用软件和模块时请勿开启系统的性能模式开关，保持均衡即可
-- 4.模块是由scene控制，scene需要关闭`核心分配`
-- 5.请务必安装`CuJankDetector`附加模块，保证调度的体验
-- 6.请务必仔细阅读本文档
+- 安装软件或者模块之前请务必并卸载`Magisk_AsoulOpt`模块
+- 使用软件和模块时请勿开启系统的性能模式开关，保持均衡即可
+- 模块是由`scene`控制，`scene`需要关闭`核心分配`
+- 请务必安装`cu_jank_detector.zip`和`cu_util_monitor.zip`和附加模块(强烈建议)
+- 请务必仔细阅读本文档
 
 
 
@@ -26,6 +26,8 @@ titleTemplate: Tritium_docs
 :::
 
 ## 使用方法1 -app导入
+> **如果你不会导入配置建议使用Tritium box**  
+
 ![](https://tritium.nightrainmilkyway.cn/img/ResizedImage_2024-02-11_18-52-03_8500.png)
 
 :::tip
@@ -62,3 +64,42 @@ titleTemplate: Tritium_docs
 - 如果为模块，则CuprumTurbo Scheduler日志输出路径为`/storage/emulated/0/Android/ct/scheduler.log`
 
 出现`Daemon Running`即为调度正常运行
+
+#### 附加模块是否加载
+
+需要在日志输出内查看输出的附加模块是否加载，例如下面高亮部分
+
+```shell{12,16}
+12-07 20:58:29 [I] CuprumTurbo Scheduler V20 (20241202) by chenzyadb.
+12-07 20:58:29 [I] Config "Dimensity9200/9200+" by "chenzyadb".
+12-07 20:58:29 [I] Thermal is enabled.
+12-07 20:58:29 [I] Trigger is enabled.
+12-07 20:58:29 [I] CpuGovernor is enabled.
+12-07 20:58:29 [I] ThreadSchedOpt is enabled.
+12-07 20:58:29 [I] MtkGpuGovernor is enabled.
+12-07 20:58:29 [I] DevfreqTuner is enabled.
+12-07 20:58:29 [I] Initial Mode: "powersave".
+12-07 20:58:29 [I] Thermal Type: "soc_max"
+12-07 20:58:29 [I] Listening Touch "goodix_ts", position: x=0-12200, y=0-27120.
+12-07 20:58:29 [I] CuJankDetector Connected.
+12-07 20:58:29 [I] Policy0 (CPU: 0-3, Type: "little-core") PowerModel:
+    ......
+12-07 20:58:29 [I] Use CPU Freq WRITER_GOVERNOR.
+12-07 20:58:29 [I] CuUtilMonitor Connected.
+12-07 20:58:29 [I] Use MTK GPUFREQ_V2 Interface.
+12-07 20:58:29 [I] MTK GPU OPP Table:
+    ......
+12-07 20:58:29 [I] Use DDR Freq HELIO_DVFSRC Interface.
+12-07 20:58:29 [I] DDR FreqTable: [8533000,6400000,5500000,4100000,3094000,2133000,1866000,1600000,800000].
+12-07 20:58:29 [I] Daemon Running (pid=19962).
+12-07 21:04:02 [I] Mode switched "powersave" -> "performance".
+
+```
+
+或者可以查看`/data/adb/modules/cu_util_monitor/load.log`
+```shell
+12-08 13:11:58 [I] BPF Daemon by chenzyadb@github.com
+12-08 13:11:58 [I] Attach program "CuUtilMonitor" to trace point "sched/sched_switch" succeed.
+12-08 13:11:58 [I] Daemon Running (pid=2887).
+
+```

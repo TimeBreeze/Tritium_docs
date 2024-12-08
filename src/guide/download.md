@@ -34,7 +34,7 @@ layout: doc
 :::
 
 
-## 下载配置` APP `| 配置文件`config.zip`或模块刷入使用(建议一并安装附加模块`jank_xxx.zip`)
+## 下载配置` APP `| 配置文件`config.zip`或模块刷入使用(建议一并安装附加模块`cu_jank_detector.zip`和`cu_util_monitor.zip`)
 
 ### 下载 (第二个GitHub为cutolbox)
 <div style="text-align: center; display: flex; justify-content: center; gap: 20px;">
