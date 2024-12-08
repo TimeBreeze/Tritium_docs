@@ -103,3 +103,7 @@ titleTemplate: Tritium_docs
 12-08 13:11:58 [I] Daemon Running (pid=2887).
 
 ```
+
+::: danger
+目前在安卓15的设备上无法使用`cu_util_monitor`模块，等待修复
+::: 
