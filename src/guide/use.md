@@ -105,5 +105,5 @@ titleTemplate: Tritium_docs
 ```
 
 ::: danger
-目前在安卓15的设备上无法使用`cu_util_monitor`模块，等待修复
+~~目前在安卓15的设备上无法使用`cu_util_monitor`模块，等待修复~~
 ::: 
