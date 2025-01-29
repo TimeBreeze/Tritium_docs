@@ -1,33 +1,33 @@
 [
    {   "gender": 1,
 		"location": "China",
-		"name": "NightRainMilkyWay",
+		"name": "YumeYuka",
 		"qq": 3293811490,
 		"title": "Tritium",
         "languages": ["English","Chinese","日本语"],
         "website": {
-        "label": "nightrainmilkyway.cn",
+        "label": "YumeYuka.cn",
         "url": "https://nightrainmilkyway.cn"
          },
 		"company": "梦——それは现実の続き；现実——それは梦の终わり",
-		"companyLink": "https://github.com/nightrainmilkyway",
+		"companyLink": "https://github.com/YumeYuka",
 		"projects": [
 		    {
 				"label": "Tritium",
-				"url": "https://github.com/TimeBreeze//Tritium"
+				"url": "https://github.com/TimeBreeze/Tritium"
 			},
 			{
 				"label": "Tritium - docs",
-				"url": "https://github.com/TimeBreeze//Tritium_docs"
+				"url": "https://github.com/TimeBreeze/Tritium_docs"
 			},
 			{
 				"label": "Tritium - box",
-				"url": "https://github.com/TimeBreeze//Tritium_box"
+				"url": "https://github.com/TimeBreeze/Tritium_box"
 			}
 		],
 		"socials": {
-			"github": "nightrainmilkyway",
-			"gitee": "nightrainmilkyways",
+			"github": "YumeYuka",
+			"gitee": "YumeYuka",
 	        "coolapk": "21210032"
 			
 		}
