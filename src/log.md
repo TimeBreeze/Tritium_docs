@@ -66,7 +66,7 @@ V8.2.1 测试版 更新内容:
 - @chenzyadb 
 - @Suni-code
 - @xianyu6556
-- @NightRainMilkyWay
+- @YumeYuka
 
 Full Changelog: [`V4.9.0 -> V5.0.0`](https://github.com/TimeBreeze/Tritium/commits/main/)
 
@@ -92,7 +92,7 @@ Full Changelog: [`V4.9.0 -> V5.0.0`](https://github.com/TimeBreeze/Tritium/commi
 ## 贡献:
 - @chenzyadb 
 - @Suni-code
-- @NightRainMilkyWay
+- @YumeYuka
 
 Full Changelog: [`V4.8.1 -> V4.8.2`](https://github.com/TimeBreeze/Tritium/commits/main/)
 

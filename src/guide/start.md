@@ -29,7 +29,7 @@ CuprumTurbo Scheduler是一个高性能的调度器，具有非常强的自定�
 当开始使用Tritium时，请确保您已阅读相关协议，当然大多数与CuprumTurbo Scheduler保持一致
 #### [免责声明](/disclaimer.md)
 #### [用户协议](/agreement.md)
-#### [Apache-2.0 license](https://github.com/NightRainMilkyWay/Tritium/blob/main/LICENSE)
+#### [Apache-2.0 license](https://github.com/YumeYuka/Tritium/blob/main/LICENSE)
 
 ### ✨我该如何选择？
 根据个人喜好需求选择即可，当然你也可以选择

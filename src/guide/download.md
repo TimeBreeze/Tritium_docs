@@ -39,13 +39,13 @@ layout: doc
 ### 下载 (第二个GitHub为cutolbox)
 <div style="text-align: center; display: flex; justify-content: center; gap: 20px;">
     <a href="http://118.89.122.106:5244/Tritium" target="_blank">
-        <img alt="Google Play" src="https://img.nightrainmilkyway.cn/img/202412012147430.svg" height="60" style="pointer-events: none; user-select: none;">
+        <img alt="Google Play" src="https://img.YumeYuka.cn/img/202412012147430.svg" height="60" style="pointer-events: none; user-select: none;">
     </a>
     <a href="https://github.com/TimeBreeze/Tritium/releases" target="_blank">
-        <img alt="F-Droid" src="https://img.nightrainmilkyway.cn/img/202412012125310.svg" height="60" style="pointer-events: none; user-select: none;">
+        <img alt="F-Droid" src="https://img.YumeYuka.cn/img/202412012125310.svg" height="60" style="pointer-events: none; user-select: none;">
     </a>
     <a href="https://github.com/chenzyadb/CuprumTurbo-Scheduler/releases" target="_blank">
-        <img alt="GitHub" src="https://img.nightrainmilkyway.cn/img/202412012125310.svg" height="60" style="pointer-events: none; user-select: none;">
+        <img alt="GitHub" src="https://img.YumeYuka.cn/img/202412012125310.svg" height="60" style="pointer-events: none; user-select: none;">
     </a>
 </div>
 
@@ -54,10 +54,10 @@ layout: doc
 ### 备用下载(打不开从此处获取)
 <div style="text-align: center; display: flex; justify-content: center; gap: 20px;">
     <a href="https://pan.nightrain.me/" target="_blank">
-        <img alt="Google Play" src="https://img.nightrainmilkyway.cn/img/202412012147430.svg" height="60" style="pointer-events: none;">
+        <img alt="Google Play" src="https://img.YumeYuka.cn/img/202412012147430.svg" height="60" style="pointer-events: none;">
     </a>
-    <a href="https://pan.nightrainmilkyway.cn" target="_blank">
-        <img alt="Google Play" src="https://img.nightrainmilkyway.cn/img/202412012147430.svg" height="60" style="pointer-events: none;">
+    <a href="https://pan.YumeYuka.cn" target="_blank">
+        <img alt="Google Play" src="https://img.YumeYuka.cn/img/202412012147430.svg" height="60" style="pointer-events: none;">
     </a>
 </div>
 

@@ -1,86 +1,89 @@
 [
-   {   "gender": 1,
-		"location": "China",
-		"name": "YumeYuka",
-		"qq": 3293811490,
-		"title": "Tritium",
-        "languages": ["English","Chinese","日本语"],
-        "website": {
-        "label": "YumeYuka.cn",
-        "url": "https://nightrainmilkyway.cn"
-         },
-		"company": "梦——それは现実の続き；现実——それは梦の终わり",
-		"companyLink": "https://github.com/YumeYuka",
-		"projects": [
-		    {
-				"label": "Tritium",
-				"url": "https://github.com/TimeBreeze/Tritium"
-			},
-			{
-				"label": "Tritium - docs",
-				"url": "https://github.com/TimeBreeze/Tritium_docs"
-			},
-			{
-				"label": "Tritium - box",
-				"url": "https://github.com/TimeBreeze/Tritium_box"
-			}
-		],
-		"socials": {
-			"github": "YumeYuka",
-			"gitee": "YumeYuka",
-	        "coolapk": "21210032"
-			
-		}
-	},
-	{   "gender": 1,
-		"location": "China",
-		"name": "Suni",
-		"qq": 1548211759,
-		"title": "Tritium",
-	    "languages": ["Chinese"],
-		"company": "与其仰望星空，不如去做摘星星的人。",
-		"companyLink": "https://github.com/Suni-code",
-		"projects": [
-			{
-				"label": "Tritium",
-				"url": "https://github.com/Suni-code/Tritium"
-			}
-		],
-		"socials": {
-			"github": "Suni-code",
-			"coolapk": "19969152"
-		}
-	},
-	{   "gender": 2,
-		"location": "China",
-		"name": "Fiage",
-		"qq": 3551226104,
-		"title": "Tritium ",
-		"languages": ["Chinese"],
-		"company": "混吃等死",
-		"projects": [
-			{
-				"label": "Tritium",
-				"url": "https://github.com/Suni-code/Tritium"
-			}
-		],
-		"socials": {
-		"coolapk": "3922059"
-		}
-	},
-	{   "gender": 3,
-		"location": "China",
-		"name": "fangzy（Active Grass Spirit)",
-		"qq": 2452328276,
-		"title": "Tritium ",
-		"languages": ["Chinese"],
-		"company": "无",
-		"projects": [
-			{
-				"label": "Tritium",
-				"url": "https://github.com/Suni-code/Tritium"
-			}
-		],
-		"socials": {}
-	}
+  {
+    "gender": 1,
+    "location": "China",
+    "name": "YumeYuka",
+    "qq": 3293811490,
+    "title": "Tritium",
+    "languages": ["English", "Chinese", "日本语"],
+    "website": {
+      "label": "YumeYuka.cn",
+      "url": "https://YumeYuka.cn"
+    },
+    "company": "梦——それは现実の続き；现実——それは梦の终わり",
+    "companyLink": "https://github.com/YumeYuka",
+    "projects": [
+      {
+        "label": "Tritium",
+        "url": "https://github.com/TimeBreeze/Tritium"
+      },
+      {
+        "label": "Tritium - docs",
+        "url": "https://github.com/TimeBreeze/Tritium_docs"
+      },
+      {
+        "label": "Tritium - box",
+        "url": "https://github.com/TimeBreeze/Tritium_box"
+      }
+    ],
+    "socials": {
+      "github": "YumeYuka",
+      "gitee": "YumeYuka",
+      "coolapk": "21210032"
+    }
+  },
+  {
+    "gender": 1,
+    "location": "China",
+    "name": "Suni",
+    "qq": 1548211759,
+    "title": "Tritium",
+    "languages": ["Chinese"],
+    "company": "与其仰望星空，不如去做摘星星的人。",
+    "companyLink": "https://github.com/Suni-code",
+    "projects": [
+      {
+        "label": "Tritium",
+        "url": "https://github.com/Suni-code/Tritium"
+      }
+    ],
+    "socials": {
+      "github": "Suni-code",
+      "coolapk": "19969152"
+    }
+  },
+  {
+    "gender": 2,
+    "location": "China",
+    "name": "Fiage",
+    "qq": 3551226104,
+    "title": "Tritium ",
+    "languages": ["Chinese"],
+    "company": "混吃等死",
+    "projects": [
+      {
+        "label": "Tritium",
+        "url": "https://github.com/Suni-code/Tritium"
+      }
+    ],
+    "socials": {
+      "coolapk": "3922059"
+    }
+  },
+  {
+    "gender": 3,
+    "location": "China",
+    "name": "fangzy（Active Grass Spirit)",
+    "qq": 2452328276,
+    "title": "Tritium ",
+    "languages": ["Chinese"],
+    "company": "无",
+    "projects": [
+      {
+        "label": "Tritium",
+        "url": "https://github.com/Suni-code/Tritium"
+      }
+    ],
+    "socials": {}
+  }
 ]

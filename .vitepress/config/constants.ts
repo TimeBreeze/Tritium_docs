@@ -1,4 +1,4 @@
-const site = 'https://tritium.nightrainmilkyway.cn';
+const site = 'https://tritium.YumeYuka.cn';
 
 export const metaData = {
   lang: 'zh-CN',

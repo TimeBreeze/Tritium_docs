@@ -28,7 +28,7 @@ titleTemplate: Tritium_docs
 ## 使用方法1 -app导入
 > **如果你不会导入配置建议使用Tritium box**  
 
-![](https://tritium.nightrainmilkyway.cn/img/ResizedImage_2024-02-11_18-52-03_8500.png)
+![](https://tritium.YumeYuka.cn/img/ResizedImage_2024-02-11_18-52-03_8500.png)
 
 :::tip
 导入之后查看日志调度是否正常启动，出现`Daemon Running`即为调度正常运行
@@ -38,7 +38,7 @@ titleTemplate: Tritium_docs
 
 ## 使用方法2 -模块刷入
 
-![](https://tritium.nightrainmilkyway.cn/img/ResizedImage_2024-02-11_18-42-00_2162.png)
+![](https://tritium.YumeYuka.cn/img/ResizedImage_2024-02-11_18-42-00_2162.png)
 
 :::tip
 同理，模块是由scene进行接管，相应的你应该授予和上面一样的权限
@@ -48,7 +48,7 @@ titleTemplate: Tritium_docs
 :::tip
 适合小白新手使用，开箱即用，注意授予`自启动和root权限`
 :::
-![](https://img.nightrainmilkyway.cn/img/202411102113524.png)
+![](https://img.YumeYuka.cn/img/202411102113524.png)
 
 :::tip
 关于 Tritium box，同样的授予上面的权限，与上面两种不同的是，我们去掉了状态栏通知常驻，因为我们感觉很不好，现在我们可以通过在控制中心中添加`应用快捷开关`，一共有4个，你可以将他们固定，每次且切换只需要，通过控制中心，减去了状态栏常驻，我们认为这是美观的，与oem厂商的切换策略保持一致

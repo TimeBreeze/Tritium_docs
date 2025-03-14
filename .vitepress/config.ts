@@ -22,7 +22,7 @@ default defineConfig({
     scrollOffset: 'header',
     cleanUrls: true,
     sitemap: {
-        hostname: 'https://tritium.nightrainmilkyway.cn/',
+        hostname: 'https://tritium.YumeYuka.cn/',
     },
     head, // <head>内标签配置
     markdown: markdown, // Markdown配置
